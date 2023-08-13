@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+  <style>
+    #loading {
+      display: block;
+      opacity: 1.0;
+      background-color: #FFFFFF;
+
+      position: fixed;
+      z-index: 10000;
+
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+    }
+
+    #loading.anim {
+      animation: hide 0.5s;
+    }
+
+    #loading.hide {
+      display: none;
+      opacity: 0.0;
+      background-color: #EEEEEE;
+    }
+
+    @keyframes hide {
+      0% {
+        display: block;
+        opacity: 1.0;
+        background-color: #EEEEEE;
+      }
+
+      100% {
+        display: none;
+        opacity: 0.0;
+        background-color: #EEEEEE;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="loading">
+    <div class="load" style="display: none;">
+      <img class="image" rel="preload" src="./img/loadingScreen.png" />
+      <p> Loading </p>
+      <div class="spinner">
+
+      </div>
+    </div>
+  </div>
+  <div id="app"></div>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>

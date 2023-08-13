@@ -1,0 +1,530 @@
+
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+html, body {
+    font-family: 'Advent Pro', sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+
+
+
+#app {
+    position: absolute;
+    z-index: 0;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    min-width: 300px;
+    // border: 1px solid red;
+    overflow: hidden;
+
+    .nav {
+        user-select: none;
+        position: absolute;
+        z-index: 100;
+
+        top: 0px;
+        right: 0px;
+        left: 0px;
+        // height: 30px;
+
+        background-color: #FFFFFF;
+        // opacity: 0.9;
+
+        padding: 10px;
+
+        .btn-menu {
+            display: none;
+        }
+
+        .nav-items {
+            .select-group {
+                display: inline-block;
+                .label {
+                    display: block;
+                }
+                .select {
+                    display: block;
+                    width: 200px;
+                    height: 40px;
+        
+                    
+        
+                    margin-right: 5px;
+
+                    border-width: 1px;
+                    border-radius: 0px;
+                    border-style: solid;
+                    border-color: rgb(169, 169, 169);
+                    border-image: initial;
+                }   
+            }
+            .select-group.hide {
+                display: none;
+            }
+            .toggle-group {
+                display: inline-block;
+                .label {
+                    display: block;
+                }
+                input {
+                    
+                    border-width: 1px;
+                    border-radius: 0px;
+                }
+            }
+            .toggle-group.hide {
+                display: none;
+            }
+
+            .chkMuscleLeft {
+                border: 1px solid #a9a9a9;
+                display: inline-block; 
+                width: 50px;
+
+                background-color: #FFFFFF;
+                // border-radius: 5px 0px 0px 5px;
+
+                text-align: center;
+                // margin-top: 18px;
+                padding: 10px;
+                vertical-align: bottom;
+                // -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.25);
+                // -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.25);
+                // box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.25);
+            }
+            .chkMuscleLeft.active {
+                // background-color: #ff0000;
+                // opacity: 0.5;
+                background-color: #cccccc;
+            }
+            .chkMuscleRight {
+                border: 1px solid #a9a9a9;
+                display: inline-block; 
+                width: 50px;
+
+                background-color: #FFFFFF;
+
+                // border-radius: 0px 5px 5px 0px;
+                text-align: center;
+                // margin-top: 18px;
+                padding: 10px;
+                // -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.25);
+                // -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.25);
+                // box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.25);
+            }
+            .chkMuscleRight.active {
+                // background-color: #ff0000;
+                // opacity: 0.5;
+
+                background-color: #cccccc;
+            }
+
+            .check-textures {
+                display: inline-block;
+                // width: 
+                height: 28px;
+    
+                vertical-align: top;
+    
+                // float: right;
+                padding: 10px 10px 0px 10px;
+    
+                border-color: #a9a9a9;
+                border-width: 1px;
+                border-style: solid;
+                border-radius: 0px;
+
+                margin-top: 18px;
+                // margin-left: 10px;
+            }
+    
+            .check-move {
+                display: inline-block;
+                // width: 
+                height: 28px;
+    
+                vertical-align: top;
+    
+                float: right;
+                padding: 10px 10px 0px 10px;
+    
+                border-color: #a9a9a9;
+                border-width: 1px;
+                border-style: solid;
+                border-radius: 0px;
+
+                margin-top: 18px;
+                margin-left: 10px;
+                
+    
+                input {
+                    
+                    border-width: 1px;
+                    border-radius: 0px;
+                }
+                .label {
+                    user-select: none;
+                    vertical-align: top;
+                }
+            }
+            .check-move.hide {
+                display: none;
+            }
+    
+            .btn-reset {
+                display: inline-block;
+                width: 100px;
+                height: 28px;
+    
+                vertical-align: top;
+    
+                float: right;
+    
+                padding: 10px 10px 0px 10px;
+                text-align: center;
+                
+
+                border-color: #a9a9a9;
+                border-width: 1px;
+                border-style: solid;
+                border-radius: 0px;
+
+                margin-top: 18px;
+                margin-left: 10px;
+            }
+        }
+
+        
+
+        @media only screen and (max-width: 768px) {
+            // border: 1px solid red;
+
+            // height: 140px;
+
+
+
+            .btn-menu {
+                display: block;
+                // margin-bottom: 10px;
+                .menu-icon {
+                    width: 30px;
+                    margin-left: auto;
+                    // margin-bottom: 10px;
+                    text-align: right;
+
+
+
+                    font-size: 50px;
+                }
+                .menu-icon.active {
+                    // border: 1px solid red;
+                    // margin-bottom: 10px;
+                }
+                .menu-icon.inactive {
+                    // border: 1px solid green;
+                    
+                    display: none;
+                }
+            }
+
+            .nav-items {
+                display: none;
+                .select-group {
+                    display: block;
+                    .select {
+                        display: block;
+                        width: 100%;
+        
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                    }
+                }
+                .check-move {
+                    float: inherit;
+                    margin-left: 0px;
+                }
+                .btn-reset {
+                    // float: inherit;
+                    margin-left: 0px;
+                }
+            }
+            .nav-items.active {
+                display: block;
+            }
+           
+        }
+    }
+    .overlay {
+        pointer-events:none;
+        position: absolute;
+        z-index: 2;
+        overflow: hidden;
+
+        top: 60px;
+        right: 0px;
+        left: 0px;
+        bottom: 0px;
+
+        padding: 10px;
+
+        .overlay-scale {
+            position: absolute;
+            z-index: 4;
+            // top: calc(100% - 80px);
+            // left: calc(100px);
+
+            bottom: 20px;
+            left: 0px;
+            right: 0px;
+           
+            text-align: center;
+            
+
+            .scale-parent {
+                display: flex;
+                width: 300px;
+                margin: 0 auto;
+                .scale-min {
+                    border-width: 1px 0 1px 1px;
+                    border-style: solid;
+                    border-color: #333333;
+    
+                    text-align: center;
+                    width: 50px;
+                    background-color: #FFFFFF;
+                    padding: 5px;
+                }
+                .scale-max {
+                    border-width: 1px 1px 1px 0;
+                    border-style: solid;
+                    border-color: #333333;
+    
+                    text-align: center;
+                    width: 50px;
+                    background-color: #FFFFFF;
+                    padding: 5px;
+                }
+                .scale-colour {
+                    border: 1px solid #333333;
+                    width: 200px;
+                    height: 30px;
+
+                    // new THREE.Color(0x0037ff), // blue
+                    //             new THREE.Color(0x00ff2a), // green
+                    //             new THREE.Color(0xfff200), // yellow
+                    //             // new THREE.Color(0xff8c00), // orange
+                    //             new THREE.Color(0xFF0000), // red
+
+                    $colour1: #01cdcb;
+                    $colour2: #32b229;
+                    $colour3: #fccf2b;
+                    $colour4: #e9542e;
+
+                    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#0037ff+10,00ff2a+35,fff200+65,ff0000+90 */
+                    background: $colour1; /* Old browsers */
+                    background: -moz-linear-gradient(left,  $colour1 0%, $colour2 33%, $colour3 66%,$colour4 100%); /* FF3.6-15 */
+                    background: -webkit-linear-gradient(left,  $colour1 0%, $colour2 33%, $colour3 66%,$colour4 100%); /* Chrome10-25,Safari5.1-6 */
+                    background: linear-gradient(to right,  $colour1 0%, $colour2 33%, $colour3 66%,$colour4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0037ff', endColorstr='#ff0000',GradientType=1 ); /* IE6-9 */
+    
+                }
+            }
+        }
+        .overlay-scale.hide {
+            display: none;
+        }
+
+        .overlay-muscle {
+            position: absolute;
+            z-index: 3;
+            // top: calc(100px);
+            // left: calc(100% - 400px);
+
+            top: 30px;
+            right: 20px;
+
+            width: 320px;
+            padding: 10px;
+
+            background-color: #FFFFFF;
+
+            border: 1px solid #333333;
+            border-radius: 5px;
+            .muscle-name {
+                font-weight: 700;
+                margin: 0 0 5px 0;
+            }
+            .flex-row {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 5px;
+
+                .flex-text {
+                    // width: 70%;
+                    // border: 1px solid red;
+                }
+                .flex-value {
+                    // width: 30%;
+                    // border: 1px solid red;
+                }
+            }
+            .flex-row:last-child {
+                margin-bottom: 0px;
+            }
+        }
+        .overlay-muscle.hide {
+            display: none;
+        }
+
+        .overlay-condition {
+            position: absolute;
+            z-index: 3;
+            // top: calc(100% - 200px);
+            // left: calc(100% - 300px);
+
+            bottom: 20px;
+            right: 20px;
+
+            width: 200px;
+            // min-width: 100px;
+            // width: 300px;
+            // height: 200px;
+
+            padding: 10px;
+
+            background-color: #FFFFFF;
+
+            border: 1px solid #333333;
+            border-radius: 5px;
+            .condition-name {
+                font-weight: 700;
+                margin: 0 0 5px 0;
+            }
+            .flex-row {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 5px;
+
+                .flex-text {
+                    // width: 70%;
+                    // border: 1px solid red;
+                }
+                .flex-value {
+                    // width: 30%;
+                    // border: 1px solid red;
+                }
+            }
+            .flex-row:last-child {
+                margin-bottom: 0px;
+            }
+        }
+        .overlay-condition.hide {
+            display: none;
+        }
+
+        @media only screen and (min-width: 769px) {
+            .overlay-condition {
+                // border: 1px solid red !important;
+            }
+        }
+        @media only screen and (max-width: 768px) {
+            .overlay-scale {
+                left: 0px;
+                right: 0px;
+               
+                .scale-parent {
+                    margin: 0 auto;
+                    text-align: center;
+                }
+            }   
+
+            .overlay-condition {
+
+                top: calc(100% - 300px);
+                // left: calc(100px);
+            }
+        }
+    }
+    .container {
+        position: absolute;
+        z-index: 1;
+        overflow: hidden;
+
+        top: 60px;
+        right: 0px;
+        left: 0px;
+        bottom: 0px;
+    
+        padding: 10px;
+
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+        @media only screen and (max-width: 768px) {
+            // top: 40px;
+        }
+    }
+}
+
+#loading {
+    
+    .load {
+        display: block !important;
+        position: absolute;
+        z-index: 1000;
+
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+
+        max-width: 300px;
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+
+        .image {
+            width: 100%;
+            height: auto;
+        }
+        p {
+            font-size: 1.5rem;
+        }
+        .spinner {
+            border: 3px solid #333333;
+            border-radius: 100px 0px 100px 100px;
+
+            width: 64px;
+            height: 64px;
+
+            text-align: center;
+            margin: 0 auto;
+
+            animation:spin 4s linear infinite;
+        }
+    }
+
+}
+
+// #loading {
+//     opacity: 0.5;
+//     background-color: #ff0000;
+
+//     position: fixed;
+//     z-index: 10000;
+
+//     top: 0px;
+//     right: 0px;
+//     bottom: 0px;
+//     left: 0px; 
+// }
+

@@ -213,7 +213,8 @@ let app = {
   raycastList: [],
 
   cameraLastPos: new THREE.Vector3(0, 0, 0),
-
+  cameraDefaultPos: new THREE.Vector3(0, 150, 50),
+  cameraTargetDefaultPos: new THREE.Vector3(0, 150, 0),
   // Loaders
   loader: loader,
   textureLoader: new THREE.TextureLoader(),
@@ -277,11 +278,10 @@ let app = {
       let width = window.innerWidth - 20;
       let height = (window.innerWidth <= 768 ? window.innerHeight - 60 : window.innerHeight - 60);
       app.camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 10000);
-      app.camera.position.y = 10;
-      app.camera.position.z = 50;
+      app.camera.position.copy(app.cameraDefaultPos);
 
       app.controls = new OrbitControls(app.camera, app.renderer.domElement)
-      app.controls.target = new THREE.Vector3(0, 11, 0);
+      app.controls.target.copy(app.cameraTargetDefaultPos);
       // app.controls.enableDamping = true
       // app.controls.dampingFactor = 0.25
       app.controls.enableZoom = true;
@@ -501,14 +501,17 @@ let app = {
                   texture: md.texture,
                   textureGrey: md.textureGrey,
                 });
-                // console.log('$$$ model', model);
-
-                if (md.name === 'Trapezius') {
-                  console.log('$$$ model', model);
-                }
+                console.log('loaded', md.fileName, model);
 
                 resolve();
-              });
+              }, function (xhr) {
+
+              },
+                function (error) {
+                  console.log('Failed to load ', md.fileName);
+
+                  resolve();
+                });
             });
             promises.push(promise);
           }
@@ -519,10 +522,17 @@ let app = {
             let promise = new Promise(function (resolve, reject) {
               app.loader.load('./obj/' + md.fileName + '.' + md.fileType, function (model) {
                 app.modelsMisc.list.push({ id: md.id, type: 'misc', name: md.name, mesh: model, texture: md.texture });
-                console.log('model', model);
+                console.log('loaded', md.fileName, model);
 
                 resolve();
-              });
+              }, function (xhr) {
+
+              },
+                function (error) {
+                  console.log('Failed to load ', md.fileName);
+
+                  resolve();
+                });
             });
             promises.push(promise);
           }
@@ -1000,12 +1010,12 @@ let app = {
 
 
       if (item.type === 'muscle') {
-        // color = new THREE.Color(0xdd785a);
+        color = new THREE.Color(0xdd785a);
 
         // item.material.map = null;
 
         // color = 0xdd785a;
-        item.material.color.setHex(0xFF0000);
+        // item.material.color.setHex(0xFF0000);
         if (app.toggleTextures) {
           item.material.map = item.textureGrey;
         }
@@ -1018,20 +1028,20 @@ let app = {
 
       if (app.conditionId !== null && app.muscleGroupId === null) {
         if (item.type === 'muscle') {
-          // color = item.scaleColor;
+          color = item.scaleColor;
           // item.material.color.copy(item.scaleColor);
         }
       }
       else if (app.conditionId !== null && app.muscleGroupId !== null && app.raycast.currentObject !== null) {
         if (item.type === 'muscle') {
-          // color = item.scaleColor;
+          color = item.scaleColor;
           // item.material.color.copy(item.scaleColor);
         }
       }
       else {
         if (item.type === 'muscle') {
           // color = new THREE.Color(0xdd785a);
-          // color = 0xFFFFFF;
+          color = new THREE.Color(0xFFFFFF);
           // item.material.color.setHex(0xFFFFFF);
         }
       }
@@ -1040,7 +1050,7 @@ let app = {
         if (item.type === 'muscle') {
           if (item.state.groupSelected) {
             item.material.opacity = 1;
-            // color = item.scaleColor;
+            color = item.scaleColor;
             // item.material.color.copy(item.scaleColor);
           }
           else {
@@ -1710,23 +1720,35 @@ const initThree = function () {
   app.domRoot.appendChild(app.renderer.domElement);
 
   app.camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 10000);
-  app.camera.position.y = 10;
-  app.camera.position.z = 50;
+  app.camera.position.copy(app.cameraDefaultPos);
+
 
   app.controls = new OrbitControls(app.camera, app.renderer.domElement)
-  app.controls.target = new THREE.Vector3(0, 11, 0);
+  app.controls.target.copy(app.cameraTargetDefaultPos);
   // app.controls.enableDamping = true
   // app.controls.dampingFactor = 0.25
   app.controls.enableZoom = true
 };
 
 const initScene = function () {
-  var light = new THREE.AmbientLight(0x404040, 0.5); // soft white light
-  app.scene.add(light);
 
+
+  app.lightObject = new THREE.Object3D();
+
+  let lightGeo = new THREE.BoxGeometry(1, 1, 1);
+  let lightMat = new THREE.MeshPhongMaterial({ color: 0xFF0000, flatShading: true, wireframe: false, visible: true, transparent: true });
+  app.lightCube = new THREE.Mesh(lightGeo, lightMat);
+  app.lightCube.update = () => {
+    app.lightCube.position.copy(app.controls.target);
+  }
+  // app.scene.add(app.lightCube);
+  app.lightObject.add(app.lightCube);
+  app.scene.add(app.lightObject);
+
+  var light = new THREE.AmbientLight(0x404040, 1); // soft white light
+  app.scene.add(light);
   // const ambient = new THREE.HemisphereLight(0xffffff, 0x8d8d8d, 0.15);
   // app.scene.add(ambient);
-
 
   app.directionalLight = new THREE.DirectionalLight(0xffffff, 1);
   app.directionalLight.position.set(0, 5, 50);
@@ -1740,133 +1762,47 @@ const initScene = function () {
 
     let tar = new THREE.Vector3(0, 0, 0);
 
-    app.directionalLight.position.copy(tar.add(normal));
-    // app.spotLight.position.copy(app.controls.target);
-    app.directionalLight.lookAt(app.controls.target);
+    app.directionalLight.position.copy(app.camera.position);
+    app.directionalLight.target.position.copy(app.controls.target);
+
   }
-  // app.scene.add(app.directionalLight);
+  app.scene.add(app.directionalLight);
+  app.scene.add(app.directionalLight.target);
 
 
-  app.spotLight = new THREE.SpotLight(0xffffff, 500);
-  app.spotLight.position.set(0, 5, 100);
+  app.spotLight = new THREE.SpotLight({ color: 0xffffff, intensity: 100, distance: 0, decay: 0 });
+  app.spotLight.position.copy(app.cameraDefaultPos);
+  // app.spotLight.target(app.controls);
   app.spotLight.update = (dt) => {
     console.log('update');
     let normal = new THREE.Vector3().copy(app.controls.target);
     normal.add(app.camera.position);
     normal.normalize();
-    normal.multiplyScalar(50);
+    normal.multiplyScalar(100);
     // console.log(normal);
 
     let tar = new THREE.Vector3(0, 0, 0);
 
-    app.spotLight.position.copy(tar.add(normal));
+    // console.log('update spotlight', app.controls.target, app.camera.position);
+
+
+
+
+    // app.spotLight.position.copy(tar.add(normal));
     // app.spotLight.position.copy(app.controls.target);
-    app.spotLight.lookAt(app.controls.target);
+    app.spotLight.position.copy(app.camera.position);
+    app.spotLight.target.position.copy(app.controls.target);
+
+
     // app.spotLight.position.x = Math.cos(dt) * 20;
     // app.spotLight.position.z = Math.sin(dt) * 20;
   }
-  app.scene.add(app.spotLight);
+  // app.scene.add(app.spotLight);
+  // app.scene.add(app.spotLight.target);
 
-  let lightGeo = new THREE.BoxGeometry(1, 1, 1);
-  let lightMat = new THREE.MeshPhongMaterial({ color: 0xFF0000, flatShading: true, wireframe: false, visible: true, transparent: true });
-  app.lightCube = new THREE.Mesh(lightGeo, lightMat);
-  app.lightCube.update = () => {
-    app.lightCube.position.copy(app.spotLight.position);
-  }
-  // app.scene.add(app.lightCube);
-}
+  app.lightHelper = new THREE.SpotLightHelper(app.spotLight);
+  app.scene.add(app.lightHelper);
 
-const initObjects = function () {
-  let geometry = new THREE.BoxGeometry(1, 1, 1);
-  let material = new THREE.MeshPhongMaterial({ color: 0xFF0000, flatShading: true, wireframe: false, visible: false, transparent: true });
-  let cube = new THREE.Mesh(geometry, material);
-  cube.scale.x = 2;
-  cube.scale.y = 2;
-  cube.scale.z = 2;
-  cube.update = function (dt) {
-    // this.rotation.x += 0.01;
-    // this.rotation.y += 0.01;
-    var t = (Date.now() / 1000);
-    // move light in circle around center
-    // change light height with sine curve
-
-    var r = 10.0;
-
-    var lx = r * Math.cos(t);
-    var lz = r * Math.sin(t);
-
-    // var ly = 5.0 + 5.0 * Math.sin( t / 3.0 );
-    var ly = 0;
-
-    this.position.set(lx, ly, lz);
-    this.lookAt(app.camera.position);
-  }
-  // app.scene.add(cube);
-
-  var loader = new THREE.FontLoader();
-  // console.log('loader start');
-
-  loader.load('./fonts/helvetiker_regular.typeface.json', function (font) {
-    // console.log('loader finished');
-    // console.log('font', font);
-    var geometry = new THREE.TextGeometry('Teerzo', {
-      font: font,
-      size: 80,
-      height: 1,
-      curveSegments: 12,
-      bevelEnabled: false,
-      bevelThickness: 10,
-      bevelSize: 0,
-      bevelSegments: 5
-    });
-
-    // new THREE.MeshPhongMaterial({ color: 0x00ff00, flatShading: true, wireframe: false});
-    var material = new THREE.MeshPhongMaterial({ color: 0x00ff00, flatShading: true, wireframe: false });
-    var mesh = new THREE.Mesh(geometry, material);
-    mesh.position.x = -9;
-    mesh.position.y = 0;
-    mesh.position.z = 0;
-
-
-    mesh.scale.x = 0.05;
-    mesh.scale.y = 0.05;
-    mesh.scale.z = 0.05;
-
-    // mesh.add(cube);
-
-    mesh.update = function () {
-      // console.log('updating text geo');
-      var t = (Date.now() / 1000);
-      // move light in circle around center
-      // change light height with sine curve
-
-      var r = 10.0;
-
-      var lx = r * Math.cos(t);
-      var lz = r * Math.sin(t);
-
-      var ly = 5.0 + 5.0 * Math.sin(t / 3.0);
-
-      this.position.set(lx, ly, lz);
-      this.lookAt(app.camera.position);
-    }
-
-    cube.add(mesh);
-  });
-
-  // if( font ) {
-  //     let geometry = new THREE.TextGeometry( 'Hello three.js!', {
-  //         font: font.data,
-  //         size: 80,
-  //         height: 5,
-  //         curveSegments: 12,
-  //         bevelEnabled: true,
-  //         bevelThickness: 10,
-  //         bevelSize: 8,
-  //         bevelSegments: 5
-  //     });
-  //     app.scene.add(geometry);
-  // }
 }
 
 const initRaycast = function () {
@@ -1881,9 +1817,7 @@ const initRaycast = function () {
   app.raycast.plane.name = 'RaycastPlane';
   app.scene.add(app.raycast.plane);
 
-
   app.raycastList.push(app.raycast.plane);
-
 };
 
 const createObject = function (props) {
@@ -1971,7 +1905,6 @@ const update = function () {
   const cameraPos = app.cameraLastPos ? app.cameraLastPos : new THREE.Vector3(0, 0, 0).copy(app.camera.position);
   const targetPos = new THREE.Vector3(0, 0, 0).copy(app.controls.target);
 
-
   if (cameraPos.distanceTo(targetPos) > 100) {
     // console.log(cameraPos, targetPos, cameraPos.distanceTo(targetPos));
 
@@ -1980,13 +1913,15 @@ const update = function () {
     // norm.multiplyScalar(100);
     // app.camera.position.copy(norm);
 
-    app.camera.position.copy(cameraPos);
-    if (cameraPos.distanceTo(targetPos) > 90) {
-      let norm = cameraPos;
-      norm.normalize();
-      norm.multiplyScalar(90);
-      app.camera.position.copy(norm);
-    }
+
+    // $$$ CLAMP MAX CAMERA DISTANCE
+    // app.camera.position.copy(cameraPos);
+    // if (cameraPos.distanceTo(targetPos) > 90) {
+    //   let norm = cameraPos;
+    //   norm.normalize();
+    //   norm.multiplyScalar(90);
+    //   app.camera.position.copy(norm);
+    // }
   }
   // if( cameraPos.distanceTo(targetPos) < 90 ) {
   //     app.controls.update(app.clock.getDelta());
@@ -1995,7 +1930,9 @@ const update = function () {
   app.cameraLastPos = new THREE.Vector3(0, 0, 0).copy(app.camera.position);
 
 
+  app.directionalLight.update(app.clock.getDelta());
   app.spotLight.update(app.clock.getDelta());
+  app.lightHelper.update();
   app.lightCube.update();
 }
 

@@ -913,13 +913,13 @@ let app = {
 
       if (app.conditionId !== null && app.muscleGroupId === null) {
         if (item.type === 'muscle') {
-          emissive = item.scaleColor;
+          color = item.scaleColor;
           // item.material.color.copy(item.scaleColor);
         }
       }
       else if (app.conditionId !== null && app.muscleGroupId !== null && app.raycast.currentObject !== null) {
         if (item.type === 'muscle') {
-          emissive = item.scaleColor;
+          color = item.scaleColor;
           // item.material.color.copy(item.scaleColor);
         }
       }
@@ -936,7 +936,7 @@ let app = {
         if (item.type === 'muscle') {
           if (item.state.groupSelected) {
             item.material.opacity = 1;
-            emissive = item.scaleColor;
+            color = item.scaleColor;
             // item.material.color.copy(item.scaleColor);
           }
           else {
@@ -951,7 +951,7 @@ let app = {
         }
       }
       item.material.color.copy(color);
-      item.material.emissive.copy(emissive);
+      // item.material.emissive.copy(emissive);
 
     }
   },
@@ -960,7 +960,7 @@ let app = {
     // Clear scale colours
 
     for (let m = 0; m < app.objectList.length; m++) {
-      app.objectList[m].scaleColor = new THREE.Color(0x000000);
+      app.objectList[m].scaleColor = new THREE.Color(0xFFFFFF).copy(app.colorMuscle);
     }
 
 

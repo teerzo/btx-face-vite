@@ -277,12 +277,16 @@ body {
             top: 30px;
             right: 20px;
 
-            width: 320px;
+            // width: 320px;
             padding: 10px;
 
 
             border: 1px solid #333333;
             border-radius: 5px;
+
+            @media only screen and (max-width: 768px) {
+                font-size: 12px;
+            }
             .muscle-name {
                 font-weight: 700;
                 margin: 0 0 5px 0;
@@ -319,7 +323,7 @@ body {
             bottom: 20px;
             right: 20px;
 
-            width: 200px;
+            // width: 200px;
             // min-width: 100px;
             // width: 300px;
             // height: 200px;
@@ -330,6 +334,10 @@ body {
 
             border: 1px solid #333333;
             border-radius: 5px;
+
+            @media only screen and (max-width: 768px) {
+                font-size: 12px;
+            }
             .condition-name {
                 font-weight: 700;
                 margin: 0 0 5px 0;
@@ -345,6 +353,7 @@ body {
                     // border: 1px solid red;
                 }
                 .flex-value {
+                    margin-left: 10px;
                     // width: 30%;
                     // border: 1px solid red;
                 }

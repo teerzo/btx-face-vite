@@ -11,125 +11,17 @@ import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 import axios from 'axios';
-import { FeatherIcon } from 'feather-icons';
+import menuSvg from '/vite.svg'
+
+
+// import { feather } from 'feather-icons';
 
 const loader = new OBJLoader();
 
 
-document.querySelector('#app').innerHTML = `
-<div id="nav" class="nav">
-<div id="btn-menu" class="btn-menu">
-    <div id="btn-menu-off" class="menu-icon">
-        <i data-feather="menu"></i>
-    </div>
-    <div id="btn-menu-on" class="menu-icon">
-        <i data-feather="x"></i>
-    </div>
-</div>
+// document.querySelector('#app').innerHTML = `
 
-<div id="nav-items" class="nav-items">
-    <div id="groupCondition"class="select-group">
-        <label> Conditions </label>
-        <select id="navSelectConditions" class="select">
-            <option value=""> Please select... </option>
-        </select>
-    </div>
-    <div id="groupMuscle" class="select-group">
-        <label> Muscles </label>
-        <select id="navSelectMuscles" class="select">
-            <option value=""> All muscles </option>
-        </select>
-    </div>
-    <div id="groupSidesButtons" class="toggle-group">
-        <div id="btnLeftMuscle" class="chkMuscleLeft" title="Hide left muscle"> L </div>
-        <div id="btnRightMuscle" class="chkMuscleRight" title="Hide right muscle"> R </div>
-
-
-        <!-- 
-        <label for="chkToggleLeft"> Toggle Left Muscle </label>
-        <input id="chkToggleLeft" type="checkbox" />
-        <label for="chkToggleRight"> Toggle Right Muscle </label>
-        <input id="chkToggleRight" type="checkbox" /> -->
-    </div>
-    <div class="toggle-group">
-
-    </div>
-    <div id="groupTextures" class="check-textures">
-        <input id="chkToggleTextures" type="checkbox" />
-        <label for="chkToggleTextures" class="label"> Toggle Greyscale </label>
-    </div>
-
-
-
-    <div id="btn-reset" class="btn-reset"> Reset </div>
-    <div id="groupMove" class="check-move">
-        <input id="chkMoveMuscles" type="checkbox" />
-        <label for="chkMoveMuscles" class="label"> Move muscles </label>
-    </div>
-</div>
-</div>
-
-<div id="container" class="container">
-
-</div>
-
-<div id="overlay" class="overlay">
-
-<div id="overlayScale" class="overlay-scale">
-    <div class="scale-parent">
-        <div class="scale-min"> 1% </div>
-        <div class="scale-colour"> </div>
-        <div class="scale-max"> 100% </div>
-    </div>
-</div>
-
-<div id="overlayMuscle" class="overlay-muscle">
-    <p id="metaMuscleName" class="muscle-name"> Muscle name </p>
-    <div class="flex-row">
-        <div class="flex-text"> 
-            <b> Injected in <span id="metaInjectedPercentage"> 90% </span>% of sessions </b>
-        </div>
-    </div>
-    <div class="flex-row">
-        <div class="flex-text"> Botox, 
-            <span id="metaBotoxValue"> 20 units</span> units, 
-            <span id="metaBotoxSessions"> 5 sites </span> sites per session 
-        </div>
-    </div>
-    <div class="flex-row">
-        <div class="flex-text"> Dysport, 
-            <span id="metaDysportValue"> 20 units</span> units, 
-            <span id="metaDysportSessions"> 3 sites </span> sites per session 
-        </div>
-    </div>
-</div>
-
-<div id="overlayCondition" class="overlay-condition">
-    <p id="metaConditionName" class="condition-name"> Belpharospasm </p>
-    <div class="flex-row">
-        <div class="flex-text"> Number of patients </div>
-        <div id="metaNumPatients" class="flex-value"> 20 </div>
-    </div>
-    <div class="flex-row">
-        <div class="flex-text"> Number of sessions </div>
-        <div id="metaNumSessions" class="flex-value"> 99 </div>
-    </div>
-    <div class="flex-row">
-        <div class="flex-text"> Average Age </div>
-        <div id="metaAverageAge" class="flex-value"> 54 </div>
-    </div>
-    <div class="flex-row">
-        <div class="flex-text"> Percentage Male </div>
-        <div id="metaPercentageMale" class="flex-value"> 32 </div>
-    </div>
-    <div class="flex-row">
-        <div class="flex-text"> Percentage Female </div>
-        <div id="metaPercentageFemale" class="flex-value"> 68 </div>
-    </div>
-</div>
-</div>
-`
-
+// `
 
 
 let app = {
@@ -219,9 +111,13 @@ let app = {
   loader: loader,
   textureLoader: new THREE.TextureLoader(),
 
+  colorMuscle: new THREE.Color(0xe09a84),
+  colorBone: new THREE.Color(0xd9d0b8),
 
   initialize: function () {
     // replace icons
+    // console.log('feather', feather);
+    // feather.replace();
     // feather.replace({ class: '', width: '30', height: '30', color: '#333333' });
 
 
@@ -309,7 +205,7 @@ let app = {
   resetDomTextureToggle: function () {
     app.toggleTextures = false;
 
-    document.getElementById("chkToggleTextures").checked = false;
+    // document.getElementById("chkToggleTextures").checked = false;
 
   },
   resetDomMoveMuscles: function () {
@@ -724,9 +620,6 @@ let app = {
     let domSelectCondition = document.getElementById('navSelectConditions');
     domSelectCondition.selectedIndex = 0;
 
-    let domGroupMuscle = document.getElementById('groupMuscle');
-    domGroupMuscle.classList.add('hide');
-
     app.showSidesButtons(false);
 
     // let domGroupSidesButtons = document.getElementById('groupSidesButtons');
@@ -776,8 +669,8 @@ let app = {
               name: app.models.list[i].name,
               side: app.models.list[i].side,
               mesh: app.models.list[i].mesh,
-              texture: app.models.list[i].texture,
-              textureGrey: app.models.list[i].textureGrey,
+              // texture: app.models.list[i].texture,
+              // textureGrey: app.models.list[i].textureGrey,
             }
 
             let obj = createObject(objProps);
@@ -999,49 +892,42 @@ let app = {
       item.material.opacity = 1;
       item.material.color.setHex(0xFFFFFF);
       item.material.emissive.setHex(0x000000);
-      item.material.emissiveIntensity = 1.0;
+      item.material.emissiveIntensity = 0.5;
 
       if (item.state.raycastSelected) {
         item.material.emissive.setHex(0xFF0000);
       }
 
       let color = new THREE.Color(0xFFFFFF);
-
+      let emissive = new THREE.Color(0x000000);
 
 
       if (item.type === 'muscle') {
-        color = new THREE.Color(0xdd785a);
-
-        // item.material.map = null;
-
-        // color = 0xdd785a;
-        // item.material.color.setHex(0xFF0000);
-        if (app.toggleTextures) {
-          item.material.map = item.textureGrey;
-        }
-        else {
-          item.material.map = item.texture;
-        }
+        color.copy(app.colorMuscle)
+      }
+      else if (item.type === 'misc') {
+        color.copy(app.colorBone);
       }
 
 
 
       if (app.conditionId !== null && app.muscleGroupId === null) {
         if (item.type === 'muscle') {
-          color = item.scaleColor;
+          emissive = item.scaleColor;
           // item.material.color.copy(item.scaleColor);
         }
       }
       else if (app.conditionId !== null && app.muscleGroupId !== null && app.raycast.currentObject !== null) {
         if (item.type === 'muscle') {
-          color = item.scaleColor;
+          emissive = item.scaleColor;
           // item.material.color.copy(item.scaleColor);
         }
       }
       else {
         if (item.type === 'muscle') {
+          // color.copy(this.colorMuscle)
           // color = new THREE.Color(0xdd785a);
-          color = new THREE.Color(0xFFFFFF);
+          // color = new THREE.Color(0xFFFFFF);
           // item.material.color.setHex(0xFFFFFF);
         }
       }
@@ -1050,20 +936,23 @@ let app = {
         if (item.type === 'muscle') {
           if (item.state.groupSelected) {
             item.material.opacity = 1;
-            color = item.scaleColor;
+            emissive = item.scaleColor;
             // item.material.color.copy(item.scaleColor);
           }
           else {
             item.material.opacity = 0.2;
+            // color.copy(this.colorMuscle)
             // item.material.emissive.setHex(0x000000);
           }
         }
         else {
           // item.transparent = true;
-          item.material.opacity = 0.2;
+          // item.material.opacity = 0.2;
         }
       }
       item.material.color.copy(color);
+      item.material.emissive.copy(emissive);
+
     }
   },
   updateObjectsScale: function () {
@@ -1071,7 +960,7 @@ let app = {
     // Clear scale colours
 
     for (let m = 0; m < app.objectList.length; m++) {
-      app.objectList[m].scaleColor = new THREE.Color(0xFFFFFF);
+      app.objectList[m].scaleColor = new THREE.Color(0x000000);
     }
 
 
@@ -1095,7 +984,7 @@ let app = {
 
               if (condMuscle.percentageOfSessionsInjected !== '' && condMuscle.percentageOfSessionsInjected > 0) {
                 // console.log(muscle.name, condMuscle.percentageOfSessionsInjected);
-                muscle.scaleColor = new THREE.Color(0xFFFFFF);
+                muscle.scaleColor.copy(app.colorMuscle)
 
                 let percentage = condMuscle.percentageOfSessionsInjected;
                 let colours = [
@@ -1108,7 +997,7 @@ let app = {
 
                 if (percentage === 0) {
                   // colour white 
-                  muscle.scaleColor = new THREE.Color(0xFFFFFF);
+                  muscle.scaleColor.copy(app.colorMuscle)
                   // muscle.scaleColor = new THREE.Color(0x000000);
                 }
                 else if (percentage <= 33) {
@@ -1122,7 +1011,9 @@ let app = {
                 }
               }
               else {
-                muscle.scaleColor = new THREE.Color(0xFFFFFF);
+                muscle.scaleColor.copy(app.colorMuscle)
+                // color.copy(this.colorMuscle)
+
               }
             }
           }
@@ -1416,7 +1307,18 @@ let app = {
     else {
       domGroupSidesButtons.classList.add('hide');
     }
-  }
+  },
+
+  showMusclesSelect: function(show) {
+    let domEle = document.getElementById('navSelectMuscles');
+    if (show) {
+      domEle.classList.remove('hide');
+    }
+    else {
+      domEle.classList.add('hide');
+    }
+  },
+
 
 };
 
@@ -1462,15 +1364,15 @@ const initEventListeners = function () {
   let container = document.getElementById('container');
 
   let btnReset = document.getElementById('btn-reset');
-  let btnMenuOff = document.getElementById('btn-menu-off');
-  let btnMenuOn = document.getElementById('btn-menu-on');
+  // let btnMenuOff = document.getElementById('btn-menu-off');
+  // let btnMenuOn = document.getElementById('btn-menu-on');
   let btnLeftMuscle = document.getElementById('btnLeftMuscle');
   let btnRightMuscle = document.getElementById('btnRightMuscle');
 
   let selectConditions = document.getElementById('navSelectConditions');
   let selectMuscles = document.getElementById('navSelectMuscles');
 
-  let chkToggleTextures = document.getElementById('chkToggleTextures');
+  // let chkToggleTextures = document.getElementById('chkToggleTextures');
   let chkMoveMuscles = document.getElementById('chkMoveMuscles');
 
   container.addEventListener('mousedown', (event) => {
@@ -1501,16 +1403,16 @@ const initEventListeners = function () {
     return false;
   }
 
-  btnMenuOff.onclick = (event) => {
-    event.preventDefault();
-    onToggleMenu(event);
-    return false;
-  }
-  btnMenuOn.onclick = (event) => {
-    event.preventDefault();
-    onToggleMenu(event);
-    return false;
-  }
+  // btnMenuOff.onclick = (event) => {
+  //   event.preventDefault();
+  //   onToggleMenu(event);
+  //   return false;
+  // }
+  // btnMenuOn.onclick = (event) => {
+  //   event.preventDefault();
+  //   onToggleMenu(event);
+  //   return false;
+  // }
   btnLeftMuscle.onclick = (event) => {
     event.preventDefault();
     app.toggleLeftMuscles();
@@ -1553,14 +1455,12 @@ const initEventListeners = function () {
     if (value !== null) {
       app.conditionId = value;
       app.selectCondition(value);
+      app.showMusclesSelect(true);
 
       let domOverlayCondition = document.getElementById('overlayCondition');
       domOverlayCondition.classList.remove('hide');
       let domOverlayScale = document.getElementById('overlayScale');
       domOverlayScale.classList.remove('hide');
-
-      let domGroupMuscle = document.getElementById('groupMuscle');
-      domGroupMuscle.classList.remove('hide');
 
       app.showSidesButtons(true);
       // let domGroupSidesButtons = document.getElementById('groupSidesButtons');
@@ -1575,6 +1475,7 @@ const initEventListeners = function () {
       console.log('clear overlay');
       app.resetSelectCondition();
       app.updateObjects();
+      app.showMusclesSelect(false);
     }
   }
 
@@ -1596,10 +1497,10 @@ const initEventListeners = function () {
     }
   }
 
-  chkToggleTextures.onchange = (event) => {
-    app.toggleTextures = !app.toggleTextures;
-    app.updateObjects();
-  }
+  // chkToggleTextures.onchange = (event) => {
+  //   app.toggleTextures = !app.toggleTextures;
+  //   app.updateObjects();
+  // }
   chkMoveMuscles.onchange = (event) => {
     app.raycast.moveEnabled = !app.raycast.moveEnabled;
 
@@ -1611,44 +1512,44 @@ const initEventListeners = function () {
 };
 
 const initDom = function () {
-  let menuOff = document.getElementById('btn-menu-off');
-  let menuOn = document.getElementById('btn-menu-on');
+  // let menuOff = document.getElementById('btn-menu-off');
+  // let menuOn = document.getElementById('btn-menu-on');
 
-  menuOff.classList.add('active');
-  menuOff.classList.remove('inactive');
-  menuOn.classList.remove('active');
-  menuOn.classList.add('inactive');
+  // menuOff.classList.add('active');
+  // menuOff.classList.remove('inactive');
+  // menuOn.classList.remove('active');
+  // menuOn.classList.add('inactive');
 }
 
 // DOM EVENTS
 
-const onToggleMenu = function (event) {
-  console.log('onToggleMenu', event);
+// const onToggleMenu = function (event) {
+//   console.log('onToggleMenu', event);
 
-  let menuOff = document.getElementById('btn-menu-off');
-  let menuOn = document.getElementById('btn-menu-on');
+//   let menuOff = document.getElementById('btn-menu-off');
+//   let menuOn = document.getElementById('btn-menu-on');
 
-  let navItems = document.getElementById('nav-items');
+//   let navItems = document.getElementById('nav-items');
 
-  if (!app.menuToggle) {
-    menuOff.classList.remove('active');
-    menuOff.classList.add('inactive');
+//   if (!app.menuToggle) {
+//     menuOff.classList.remove('active');
+//     menuOff.classList.add('inactive');
 
-    menuOn.classList.add('active');
-    menuOn.classList.remove('inactive');
+//     menuOn.classList.add('active');
+//     menuOn.classList.remove('inactive');
 
-    navItems.classList.add('active');
-  }
-  else {
-    menuOff.classList.add('active');
-    menuOff.classList.remove('inactive');
-    menuOn.classList.remove('active');
-    menuOn.classList.add('inactive');
+//     navItems.classList.add('active');
+//   }
+//   else {
+//     menuOff.classList.add('active');
+//     menuOff.classList.remove('inactive');
+//     menuOn.classList.remove('active');
+//     menuOn.classList.add('inactive');
 
-    navItems.classList.remove('active');
-  }
-  app.menuToggle = !app.menuToggle;
-}
+//     navItems.classList.remove('active');
+//   }
+//   app.menuToggle = !app.menuToggle;
+// }
 
 const onResize = function (event) {
   // console.log('onResize', event);
@@ -1835,43 +1736,29 @@ const createObject = function (props) {
       groupSelected: false,
       raycastSelected: false,
     }
-
-
-    if (props.side) {
-      data.side = props.side;
-    }
-
-
-
+    if (props.side) { data.side = props.side }
 
     let texture = app.getTexture(props.texture);
     let textureGrey = app.getTexture(props.textureGrey);
 
-
     let obj = props.mesh.clone();
     obj.scale.copy(app.objectScale);
 
-    // add test object
-
-    const testObj = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), new THREE.MeshPhongMaterial({ color: 0x00FF00, flatShading: true, wireframe: false, visible: true, transparent: false }));
-    // obj.children[0].children.push(testObj);
-    // obj.children.push(testObj);
-
-
     let mesh = obj.children[0];
-    // let material = new THREE.MeshPhongMaterial({ color: 0xFF0000, map: texture });
-    let material = new THREE.MeshPhongMaterial({ map: texture, transparent: true, visible: data.state.visible });
 
+    let color = new THREE.Color(0xFF0000);
+    if( data.type === 'muscle') {
+      color.copy(app.colorMuscle);
+    }
+    if( data.type === 'misc') {
+      color.copy(app.colorBone);
+    }
 
+    let material = new THREE.MeshPhongMaterial({ color: color, transparent: true, visible: data.state.visible });
 
     obj.name = props.name;
-
-
-
     mesh.material = material;
-
     data.object = obj;
-    // data.object.children.push(mesh);
 
     data.mesh = mesh;
     data.material = material;

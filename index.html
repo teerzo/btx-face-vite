@@ -3,9 +3,9 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vite App</title>
+  <title>BTX Face</title>
   <style>
     #loading {
       display: block;
@@ -66,18 +66,12 @@
         </select>
       </div>
 
-      <!-- <div class="group marg-end">
-        <div id="btn-reset" class="btn btn-reset"> Reset </div>
-      </div> -->
-
       <div class="group group-select grow marg">
         <label> Muscles </label>
         <select id="navSelectMuscles" class="hide">
           <option value=""> All muscles </option>
         </select>
       </div>
-
-      <!-- <div class="grow"> </div> -->
 
       <div class="group marg">
         <label> Hide </label>
@@ -87,11 +81,13 @@
         </div>
       </div>
 
-      <!-- <div class="grow"> </div> -->
-
       <div id="groupMove" class="group group-move marg" title="Toggle to move muscles">
         <label for="chkMoveMuscles" class="label"> <input id="chkMoveMuscles" type="checkbox" /> Move </label>
       </div>
+
+      <!-- <div class="group"> 
+        Camera locked
+      </div> -->
 
       <div class="group group-end">
         <div id="btn-reset" class="btn btn-reset"> Reset </div>
@@ -99,13 +95,24 @@
     </div>
 
 
-    
+
 
     <div id="container" class="container">
 
     </div>
 
     <div id="overlay" class="overlay">
+
+      <div id="overlayMove" class="overlay-move">
+
+        <div class="move-parent">
+
+          Camera locked
+          <br />
+          Move muscles
+
+        </div>
+      </div>
 
       <div id="overlayScale" class="overlay-scale">
         <div class="scale-parent">

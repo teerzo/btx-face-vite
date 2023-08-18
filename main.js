@@ -114,6 +114,8 @@ let app = {
   colorMuscle: new THREE.Color(0xe09a84),
   colorBone: new THREE.Color(0xd9d0b8),
 
+  colorBg: 0xEEEEEE,
+
   initialize: function () {
     // replace icons
     // console.log('feather', feather);
@@ -232,9 +234,8 @@ let app = {
       // }
     }
 
-    let clearColour = 0xAAAAAA;
     app.renderer.clear();
-    app.renderer.setClearColor(clearColour);
+    app.renderer.setClearColor(app.colorBg);
     app.renderer.render(app.scene, app.camera);
 
     app.renderer.render(app.scene, app.camera);
@@ -907,6 +908,7 @@ let app = {
       }
       else if (item.type === 'misc') {
         color.copy(app.colorBone);
+        item.material.map = item.texture;
       }
 
 
@@ -1134,7 +1136,7 @@ let app = {
           // let firstObject  = 
           app.setRaycastTarget(target.object);
 
-          if (app.raycast.moveEnabled) {
+          if (app.raycast.moveEnabled && app.raycast.currentObject ) {
             var offsetPos = new THREE.Vector3().copy(intersectPos);
             console.log(target);
             offsetPos.sub(app.raycast.currentObject.object.position);
@@ -1633,18 +1635,15 @@ const initThree = function () {
 
 const initScene = function () {
 
-
-  app.lightObject = new THREE.Object3D();
-
-  let lightGeo = new THREE.BoxGeometry(1, 1, 1);
-  let lightMat = new THREE.MeshPhongMaterial({ color: 0xFF0000, flatShading: true, wireframe: false, visible: true, transparent: true });
-  app.lightCube = new THREE.Mesh(lightGeo, lightMat);
-  app.lightCube.update = () => {
-    app.lightCube.position.copy(app.controls.target);
-  }
-  // app.scene.add(app.lightCube);
-  app.lightObject.add(app.lightCube);
-  app.scene.add(app.lightObject);
+  // app.lightObject = new THREE.Object3D();
+  // let lightGeo = new THREE.BoxGeometry(1, 1, 1);
+  // let lightMat = new THREE.MeshPhongMaterial({ color: 0xFF0000, flatShading: true, wireframe: false, visible: true, transparent: true });
+  // app.lightCube = new THREE.Mesh(lightGeo, lightMat);
+  // app.lightCube.update = () => {
+  //   app.lightCube.position.copy(app.controls.target);
+  // }
+  // app.lightObject.add(app.lightCube);
+  // app.scene.add(app.lightObject);
 
   var light = new THREE.AmbientLight(0x404040, 1); // soft white light
   app.scene.add(light);
@@ -1754,9 +1753,11 @@ const createObject = function (props) {
       color.copy(app.colorBone);
     }
 
-    let material = new THREE.MeshPhongMaterial({ color: color, transparent: true, visible: data.state.visible });
+
+    let material = new THREE.MeshPhongMaterial({ color: color, map: texture ? texture: null, transparent: true, visible: data.state.visible });
 
     obj.name = props.name;
+    if( mesh )
     mesh.material = material;
     data.object = obj;
 
@@ -1820,7 +1821,7 @@ const update = function () {
   app.directionalLight.update(app.clock.getDelta());
   app.spotLight.update(app.clock.getDelta());
   app.lightHelper.update();
-  app.lightCube.update();
+  // app.lightCube.update();
 }
 
 app.initialize();

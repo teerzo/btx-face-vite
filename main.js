@@ -116,6 +116,10 @@ let app = {
 
   colorBg: 0xEEEEEE,
 
+  initalized: false,
+  loadedCount: 0,
+  loadedMax: 140,
+
   initialize: function () {
     // replace icons
     // console.log('feather', feather);
@@ -134,6 +138,9 @@ let app = {
                   app.initModels().then(() => {
                     app.updateDom();
                     app.hideLoading();
+
+                    app.initalized = true;
+                    console.log('loaded count', app.loadedCount);
 
                     console.log('initModels done');
                   });
@@ -400,6 +407,9 @@ let app = {
                 });
                 console.log('loaded', md.fileName, model);
 
+                app.updateLoadedCount();
+
+
                 resolve();
               }, function (xhr) {
 
@@ -420,6 +430,9 @@ let app = {
               app.loader.load('./obj/' + md.fileName + '.' + md.fileType, function (model) {
                 app.modelsMisc.list.push({ id: md.id, type: 'misc', name: md.name, mesh: model, texture: md.texture });
                 console.log('loaded', md.fileName, model);
+
+                app.updateLoadedCount();
+
 
                 resolve();
               }, function (xhr) {
@@ -451,6 +464,23 @@ let app = {
     }
     return result;
   },
+
+  updateLoadedCount: function() {
+
+    let domProgress = document.getElementById('loadedProgress');
+    let domCurrent = document.getElementById('loadedCurrent');
+    let domMax = document.getElementById('loadedMax');
+
+    app.loadedCount += 1;
+
+    domProgress.value = app.loadedCount;
+    domProgress.max = app.loadedMax;
+
+    domCurrent.innerText = app.loadedCount;
+    domMax.innerText = app.loadedMax;
+  },
+
+
   updateSelectMuscles: function (list) {
     console.log('$ updateSelectMuscles');
     let domSelect = document.getElementById('navSelectMuscles');
@@ -1674,7 +1704,7 @@ const initScene = function () {
   app.spotLight.position.copy(app.cameraDefaultPos);
   // app.spotLight.target(app.controls);
   app.spotLight.update = (dt) => {
-    console.log('update');
+    // console.log('update');
     let normal = new THREE.Vector3().copy(app.controls.target);
     normal.add(app.camera.position);
     normal.normalize();
@@ -1788,6 +1818,9 @@ const updateScene = function () {
 };
 
 const update = function () {
+  if( !app.initalized ) {
+    return;
+  }
   app.controls.update(app.clock.getDelta());
 
   const cameraPos = app.cameraLastPos ? app.cameraLastPos : new THREE.Vector3(0, 0, 0).copy(app.camera.position);

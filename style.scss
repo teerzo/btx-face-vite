@@ -497,35 +497,10 @@ body {
             height: auto;
         }
         p {
-            font-size: 1.5rem;
-        }
-        .spinner {
-            border: 3px solid #333333;
-            border-radius: 100px 0px 100px 100px;
-
-            width: 64px;
-            height: 64px;
-
-            text-align: center;
-            margin: 0 auto;
-
-            animation: spin 4s linear infinite;
+            font-size: 16px;
         }
     }
 }
-
-// #loading {
-//     opacity: 0.5;
-//     background-color: #ff0000;
-
-//     position: fixed;
-//     z-index: 10000;
-
-//     top: 0px;
-//     right: 0px;
-//     bottom: 0px;
-//     left: 0px;
-// }
 
 .menu-icon {
     span {

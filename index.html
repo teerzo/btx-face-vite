@@ -84,7 +84,7 @@
 
       <div class="group group-sides marg">
         <label> Hide <span id="side-name">Muscles</span></label>
-        <div id="group-btn-sides" class="group-row  hide">
+        <div id="group-btn-sides" class="group-row">
           <div id="btn-side-left" class="btn btn-marg" title="Hide left muscle"> L </div>
           <div id="btn-side-right" class="btn" title="Hide right muscle"> R </div>
         </div>
@@ -120,8 +120,44 @@
         <div class="help-parent">
           <h3> Instructions </h3>
 
-          <p> $TODO add basic usage instructions here </p>
-      
+          <label> Camera Controls: </label>
+          <ul>
+            <li> Left click and drag to rotate </li>
+            <li> Right click and drag to pan </li>
+            <li> Scroll wheel in and out to zoom </li>
+          </ul>
+
+          <label> Usage: </label>
+          <ul>
+            <li> Select a condition from the condition dropdown </li>
+          </ul>
+          <div class="usage">
+            <p> The condition selected with highlight the muscles with the corresponding injection percentage relative to the colour scale at the bottom of the window while also displaying the condition data in the bottom right hand corner of the window </p>
+          </div>
+          <ul>
+            <li> Select a muscle from the muscle dropdown </li>
+          </ul>
+          <div class="usage">
+            <p> Selecting a muscle from the muscle dropdown will highlight and focus on that muscle while also displaying the injection data in the top right hand corner of the window </p>
+          </div>
+
+          <ul>
+            <li> The L and R buttons will hide/show either the muscle selected or all muscles on that side of the face when clicked </li>
+          </ul>
+
+          <ul>
+            <li> The move checkbox when enabled disables the camera movement and allows muscles and bones to be moved by clicking and dragging </li>
+          </ul>
+
+          <div class="usage">
+            <p> Muscles moved will stay in that position until moved again or the reset button is pressed, this is helpful to see various muscles obscured by muscles such as the frontalis  </p>
+          </div>
+          
+
+          <ul>
+            <li> Reset button resets the entire scene back to default layout </li>
+          </ul>
+
           <div class="center">
             <div id="btn-help-close" class="btn btn-help"> Close </div>
           </div>

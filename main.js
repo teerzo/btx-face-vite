@@ -527,8 +527,8 @@ let app = {
 
     app.showOverlayMuscle(true);
 
-
-    app.showSidesButtons(true);
+    app.showSideBtnLeft(true);
+    app.showSideBtnRight(true);
 
 
     app.muscleGroupId = id;
@@ -593,7 +593,9 @@ let app = {
   selectMuscle: function (object) {
 
     app.showOverlayMuscle(true);
-    app.showSidesButtons(false);
+    app.showSideBtnLeft(false);
+    app.showSideBtnRight(false);
+    // app.showSidesButtons(false);
 
     let muscleMeta = {
       name: object.name,
@@ -631,7 +633,9 @@ let app = {
   selectMisc: function (object) {
 
     app.showOverlayMisc(true);
-    app.showSidesButtons(false);
+    app.showSideBtnLeft(false);
+    app.showSideBtnRight(false);
+    // app.showSidesButtons(false);
 
     let miscMeta = {
       name: object.name,
@@ -646,7 +650,9 @@ let app = {
     app.conditionId = null;
     app.domSelectConditions.selectedIndex = 0;
 
-    app.showSidesButtons(false);
+    // app.showSidesButtons(false);
+    app.showSideBtnLeft(false);
+    app.showSideBtnRight(false);
     app.showGroupMove(true);
 
     app.showOverlayCondition(false);
@@ -1298,7 +1304,7 @@ let app = {
 
   showMusclesSelect: function (show) { show ? app.domSelectMuscles.classList.remove('hide') : app.domSelectMuscles.classList.add('hide') },
 
-  showSidesButtons: function (show) { show ? app.domGroupBtnSides.classList.remove('hide') : app.domGroupBtnSides.classList.add('hide') },
+  // showSidesButtons: function (show) { show ? app.domGroupBtnSides.classList.remove('hide') : app.domGroupBtnSides.classList.add('hide') },
   showSideBtnLeft: function (show) { show ? app.domBtnSideLeft.classList.remove('hide') : app.domBtnSideLeft.classList.add('hide') },
   showSideBtnRight: function (show) { show ? app.domBtnSideRight.classList.remove('hide') : app.domBtnSideRight.classList.add('hide') },
 
@@ -1454,7 +1460,8 @@ const initEventListeners = function () {
 
   function handleSelectConditions(event) {
     app.resetSelectMuscle();
-    app.showSidesButtons(true);
+    app.showSideBtnLeft(true);
+    app.showSideBtnRight(true);
     app.resetObjects();
 
     app.resetSideBtnLeft();
@@ -1473,7 +1480,8 @@ const initEventListeners = function () {
       app.showOverlayCondition(true);
       app.showOverlayScale(true);
 
-      app.showSidesButtons(true);
+      app.showSideBtnLeft(true);
+      app.showSideBtnRight(true);
       app.showGroupMove(true);
 
 

@@ -266,25 +266,25 @@ body {
             background-color: rgba($color: #000000, $alpha: 0.5);
             padding: 20px;
 
+            overflow-y: auto;
+
             &.hide {
                 display: none;
             }
             .help-parent {
                 padding: 10px;
-                max-width: 300px;
+                max-width: 400px;
                 // height: 100%;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
 
                 background-color: #ffffff;
-                text-align: center;
+                // text-align: center;
                 margin: 0 auto;
             }
-            .center {
-                text-align: center;
-                margin: 0 auto;
-            }
+
+            
             .btn {
                 width: 50px;
                 padding: 10px;
@@ -305,6 +305,34 @@ body {
                 &.active {
                     background-color: rgb(54, 211, 153);
                 }
+            }
+
+            h3 {
+                text-align: center;
+                margin: 5px auto;
+            }
+            label {
+                font-size: 16px;
+                font-weight: 700;
+                padding-left: 10px;
+            }
+            ul {
+                margin: 0px 0px 10px 0px;
+                li {
+                    font-size: 16px;
+                    font-style: italic;
+                }
+            }
+
+            .usage {
+                padding-left: 10px;
+                p {
+                    margin: 0px 0px 10px 0px;
+                }
+            }
+            .center {
+                text-align: center;
+                margin: 0 auto;
             }
         }
 

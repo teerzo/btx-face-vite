@@ -57,9 +57,16 @@ body {
             // margin-right: 5px;
         }
 
-        .group-end {
+        .group-grow {
             align-items: flex-end;
             flex-grow: 1;
+            margin-bottom: 5px;
+            margin-right: 5px;
+        }
+
+        .group-end {
+            // align-items: flex-end;
+            // flex-grow: 1;
             margin-bottom: 5px;
         }
 
@@ -83,6 +90,9 @@ body {
             flex-direction: row;
         }
         label {
+            @media only screen and (max-width: 420px) {
+                font-size: 14px;
+            }
         }
         input {
             font-size: 16px;
@@ -132,10 +142,26 @@ body {
             &.active {
                 background-color: rgb(54, 211, 153);
             }
+
+            @media only screen and (max-width: 420px) {
+                width: 30px;
+                // padding: 5px;
+
+                font-size: 12px;
+            }
         }
 
         .btn-marg {
             margin-right: 5px;
+        }
+
+        .btn-help {
+            width: 20px;
+            border-radius: 100px;
+            &:hover {
+                background-color: #eeeeee;
+                // background-color: rgb(248, 114, 114);
+            }
         }
 
         .btn-reset {
@@ -144,11 +170,23 @@ body {
                 background-color: #f9f9f9;
                 // background-color: rgb(248, 114, 114);
             }
+            @media only screen and (max-width: 420px) {
+                width: auto;
+            }
         }
 
         .hide {
             cursor: not-allowed;
             opacity: 0.2;
+        }
+
+        .group-sides {
+            @media only screen and (max-width: 420px) {
+                // max-width: 70px;
+            }
+            label {
+                white-space: nowrap;
+            }
         }
 
         .group-move {
@@ -172,10 +210,6 @@ body {
             -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.25);
             box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.25);
 
-            &:hover {
-                background-color: #f9f9f9;
-            }
-
             input {
                 border-width: 1px;
                 border-radius: 0px;
@@ -183,6 +217,20 @@ body {
             .label {
                 user-select: none;
                 vertical-align: top;
+            }
+            &.hide {
+                cursor: not-allowed;
+                opacity: 0.2;
+                input {
+                    cursor: not-allowed;
+                }
+                .label {
+                    cursor: not-allowed;
+                }
+            }
+
+            &:hover {
+                background-color: #f9f9f9;
             }
         }
     }
@@ -200,6 +248,62 @@ body {
 
         padding: 10px;
 
+        .overlay-help {
+            pointer-events: auto;
+
+            position: absolute;
+            z-index: 100;
+
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+
+            background-color: rgba($color: #000000, $alpha: 0.5);
+            padding: 20px;
+
+            &.hide {
+                display: none;
+            }
+            .help-parent {
+                padding: 10px;
+                max-width: 300px;
+                // height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                background-color: #ffffff;
+                text-align: center;
+                margin: 0 auto;
+            }
+            .center {
+                text-align: center;
+                margin: 0 auto;
+            }
+            .btn {
+                width: 50px;
+                padding: 10px;
+                text-align: center;
+
+                border-color: #a9a9a9;
+                border-width: 1px;
+                border-style: solid;
+                border-radius: 0px;
+                -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.25);
+                -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.25);
+                box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.25);
+
+                // margin-right: 5px;
+                &:hover {
+                    background-color: #f9f9f9;
+                }
+                &.active {
+                    background-color: rgb(54, 211, 153);
+                }
+            }
+        }
+
         .overlay-move {
             position: absolute;
             z-index: 4;
@@ -207,7 +311,6 @@ body {
             top: 100px;
             left: 0px;
             right: 0px;
-
 
             .move-parent {
                 display: none;
@@ -221,7 +324,6 @@ body {
                 font-weight: 700;
 
                 background-color: rgba($color: #ffffff, $alpha: 0.5);
-
 
                 -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.25);
                 -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.25);
@@ -321,7 +423,7 @@ body {
             background-color: rgba($color: #ffffff, $alpha: 0.5);
 
             // top: calc(100px);
-            // left: calc(100% - 400px);
+            // left: calc(100% - 420px);
 
             top: 30px;
             right: 20px;
@@ -349,14 +451,7 @@ body {
                 justify-content: space-between;
                 margin-bottom: 5px;
 
-                .flex-text {
-                    // width: 70%;
-                    // border: 1px solid red;
-                }
-                .flex-value {
-                    // width: 30%;
-                    // border: 1px solid red;
-                }
+               
             }
             .flex-row:last-child {
                 margin-bottom: 0px;
@@ -404,10 +499,7 @@ body {
                 justify-content: space-between;
                 margin-bottom: 5px;
 
-                .flex-text {
-                    // width: 70%;
-                    // border: 1px solid red;
-                }
+             
                 .flex-value {
                     margin-left: 10px;
                     // width: 30%;
@@ -422,11 +514,6 @@ body {
             display: none;
         }
 
-        @media only screen and (min-width: 769px) {
-            .overlay-condition {
-                // border: 1px solid red !important;
-            }
-        }
         @media only screen and (max-width: 768px) {
             .overlay-muscle {
                 top: 150px;
@@ -471,7 +558,7 @@ body {
             box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.25);
         }
         @media only screen and (max-width: 768px) {
-            // top: 40px;
+            top: 190px;
         }
     }
 }

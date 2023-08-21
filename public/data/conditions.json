@@ -520,7 +520,7 @@
     "dysportAverageNumberOfSites": 0
   },
   {
-    "id": null,
+    "id": 32,
     "name": "Masseter",
     "groupName": "Masseter",
     "side": "left",
@@ -531,7 +531,7 @@
     "dysportAverageNumberOfSites": 1
   },
   {
-    "id": null,
+    "id": 33,
     "name": "Masseter",
     "groupName": "Masseter",
     "side": "right",

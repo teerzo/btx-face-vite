@@ -53,46 +53,48 @@
       <img class="image" rel="preload" src="./img/loadingScreen.png" />
 
       <h1> BTX Face </h1>
-      <h4> Loading... </h4>
-
-      <progress id="loadedProgress" value="0" max="140"> </progress>
-      <p> <span id="loadedCurrent"> -- </span> / <span id="loadedMax"> -- </span> </p>
+      <h4> Loading... <span id="loading-percentage"> 0 </span> % </span> </h4>
+      <progress id="loading-progress" value="0" max="140"> </progress>
     </div>
   </div>
   <div id="app">
     <div class="nav">
       <div class="group group-select grow marg">
         <label> Conditions </label>
-        <select id="navSelectConditions">
+        <select id="select-conditions">
           <option value=""> Please select... </option>
         </select>
       </div>
 
       <div class="group group-select grow marg">
         <label> Muscles </label>
-        <select id="navSelectMuscles" class="hide">
+        <select id="select-muscles" class="hide">
           <option value=""> All muscles </option>
         </select>
       </div>
 
-      <div class="group marg">
-        <label> Hide </label>
-        <div id="groupSidesButtons" class="group-row hide">
-          <div id="btnLeftMuscle" class="btn btn-marg" title="Hide left muscle"> L </div>
-          <div id="btnRightMuscle" class="btn" title="Hide right muscle"> R </div>
+      <div class="group group-sides marg">
+        <label> Hide <span id="side-name">Muscles</span></label>
+        <div id="group-btn-sides" class="group-row  hide">
+          <div id="btn-side-left" class="btn btn-marg" title="Hide left muscle"> L </div>
+          <div id="btn-side-right" class="btn" title="Hide right muscle"> R </div>
         </div>
       </div>
 
-      <div id="groupMove" class="group group-move marg" title="Toggle to move muscles">
-        <label for="chkMoveMuscles" class="label"> <input id="chkMoveMuscles" type="checkbox" /> Move </label>
+      <div id="group-move" class="group group-move marg" title="Toggle to move muscles">
+        <label for="input-move" class="label"> <input id="input-move" type="checkbox" /> Move </label>
       </div>
 
-      <!-- <div class="group"> 
-        Camera locked
+      <!-- <div class="group group-grow">
+        <div id="btn-overlay" class="btn btn-overlay" title="Hide/Show Muscle, Condition, Scale overlays"> Overlay </div>
       </div> -->
 
+      <div class="group group-grow">
+        <div id="btn-reset" class="btn btn-reset" title="Reset condition and all muscles"> Reset </div>
+      </div>
+
       <div class="group group-end">
-        <div id="btn-reset" class="btn btn-reset"> Reset </div>
+        <div id="btn-help" class="btn btn-help"> ? </div>
       </div>
     </div>
 
@@ -105,18 +107,34 @@
 
     <div id="overlay" class="overlay">
 
-      <div id="overlayMove" class="overlay-move">
+      <div id="overlay-help" class="overlay-help">
+        <div class="help-parent">
+          <h3> Instructions </h3>
 
+          <p> Lorem ipsum </p>
+          <p> Lorem ipsum </p>
+          <p> Lorem ipsum </p>
+          <p> Lorem ipsum </p>
+          <p> Lorem ipsum </p>
+          <p> Lorem ipsum </p>
+          <p> Lorem ipsum </p>
+
+          <div class="center">
+            <div id="btn-help-close" class="btn btn-help"> Close </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="overlay-move" class="overlay-move">
         <div class="move-parent">
-
           Camera locked
           <br />
           Move muscles
-
         </div>
       </div>
 
-      <div id="overlayScale" class="overlay-scale">
+      <div id="overlay-scale" class="overlay-scale">
         <div class="scale-parent">
           <div class="scale-min"> 1% </div>
           <div class="scale-colour"> </div>
@@ -124,48 +142,53 @@
         </div>
       </div>
 
-      <div id="overlayMuscle" class="overlay-muscle">
-        <p id="metaMuscleName" class="muscle-name"> Muscle name </p>
+      <div id="overlay-muscle" class="overlay-muscle">
+        <p id="meta-muscle" class="muscle-name"></p>
         <div class="flex-row">
           <div class="flex-text">
-            <b> Injected in <span id="metaInjectedPercentage"> 90% </span>% of sessions </b>
+            <b> Injected in <span id="meta-muscle-injected"></span>% of sessions </b>
           </div>
         </div>
         <div class="flex-row">
           <div class="flex-text"> Botox,
-            <span id="metaBotoxValue"> 20 units</span> units,
-            <span id="metaBotoxSessions"> 5 sites </span> sites per session
+            <span id="meta-muscle-botox"></span> units,
+            <span id="meta-muscle-botox-sessions"></span> sites per session
           </div>
         </div>
         <div class="flex-row">
           <div class="flex-text"> Dysport,
-            <span id="metaDysportValue"> 20 units</span> units,
-            <span id="metaDysportSessions"> 3 sites </span> sites per session
+            <span id="meta-muscle-dysport"></span> units,
+            <span id="meta-muscle-dysport-sessions"></span> sites per session
           </div>
         </div>
       </div>
 
-      <div id="overlayCondition" class="overlay-condition">
-        <p id="metaConditionName" class="condition-name"> Belpharospasm </p>
+      <div id="overlay-misc" class="overlay-muscle">
+        <p id="meta-misc" class="muscle-name"></p>
+
+      </div>
+
+      <div id="overlay-condition" class="overlay-condition">
+        <p id="meta-condition" class="condition-name"> - </p>
         <div class="flex-row">
           <div class="flex-text"> Number of patients </div>
-          <div id="metaNumPatients" class="flex-value"> 20 </div>
+          <div class="flex-value"><span id="meta-condition-patients"></span></div>
         </div>
         <div class="flex-row">
           <div class="flex-text"> Number of sessions </div>
-          <div id="metaNumSessions" class="flex-value"> 99 </div>
+          <div class="flex-value"><span id="meta-condition-sessions"></span></div>
         </div>
         <div class="flex-row">
           <div class="flex-text"> Average Age </div>
-          <div id="metaAverageAge" class="flex-value"> 54 </div>
+          <div class="flex-value"><span id="meta-condition-age"></span></div>
         </div>
         <div class="flex-row">
           <div class="flex-text"> Percentage Male </div>
-          <div id="metaPercentageMale" class="flex-value"> 32 </div>
+          <div class="flex-value"><span id="meta-condition-male"></span>%</div>
         </div>
         <div class="flex-row">
           <div class="flex-text"> Percentage Female </div>
-          <div id="metaPercentageFemale" class="flex-value"> 68 </div>
+          <div class="flex-value"><span id="meta-condition-female"></span>%</div>
         </div>
       </div>
     </div>

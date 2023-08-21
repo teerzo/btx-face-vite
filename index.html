@@ -53,8 +53,17 @@
       <img class="image" rel="preload" src="./img/loadingScreen.png" />
 
       <h1> BTX Face </h1>
-      <h4> Loading... <span id="loading-percentage"> 0 </span> % </span> </h4>
-      <progress id="loading-progress" value="0" max="140"> </progress>
+
+      <div id="loading-group" class="loading-group">
+        <h4> Loading... <span id="loading-percentage"> 0 </span> % </span> </h4>
+        <progress id="loading-progress" value="0" max="140"> </progress>
+      </div>
+
+      <div id="loading-error" class="loading-error hide">
+        Error:
+        <br />
+        <span id="loading-error-message"></span>
+      </div>
     </div>
   </div>
   <div id="app">

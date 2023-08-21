@@ -25,6 +25,8 @@ body {
     // border: 1px solid red;
     overflow: hidden;
 
+  
+
     .nav {
         position: fixed;
         top: 0px;
@@ -586,6 +588,18 @@ body {
         }
         p {
             font-size: 16px;
+        }
+        
+        .loading-group.hide {
+            display: none;
+        }
+
+        .loading-error {
+            font-size: 20px;
+            color: #FF0000;
+            &.hide {
+                display: none;
+            }
         }
     }
 }

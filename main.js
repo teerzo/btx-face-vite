@@ -40,6 +40,9 @@ let app = {
   // Dom selectors
   domContainer: document.getElementById('container'),
   domLoading: document.getElementById('loading'),
+  domLoadingGroup: document.getElementById('loading-group'),
+  domLoadingError: document.getElementById('loading-error'),
+  domLoadingErrorMessage: document.getElementById('loading-error-message'),
   domPercentage: document.getElementById('loading-percentage'),
   domProgress: document.getElementById('loading-progress'),
 
@@ -289,12 +292,19 @@ let app = {
       app.conditions.downloading = true;
 
       axios.get(app.conditions.path).then(function (response) {
-        if (response.data) {
+
+        console.log('app.conditions', response.data);
+        if (response.data && response.data.length > 0) {
           app.conditions.downloading = false;
           app.conditions.loading = true;
           app.conditions.fullList = response.data;
 
           resolve();
+        }
+        else {
+          console.log('invalid conditions');
+          app.showLoadingError('Failed to load conditions.json, format or content may be invalid');
+          reject();
         }
       });
     })
@@ -304,13 +314,19 @@ let app = {
       app.textures.downloading = true;
 
       axios.get(app.textures.path).then(function (response) {
-        if (response.data) {
+        if (response.data && response.data.length > 0) {
           app.textures.downloading = false;
           app.textures.loading = true;
           app.textures.fullList = response.data;
 
           resolve();
         }
+        else {
+          console.log('invalid textures');
+          app.showLoadingError('Failed to load textures.json, format or content may be invalid');
+          reject();
+        }
+
       });
     })
   },
@@ -319,11 +335,16 @@ let app = {
       app.models.downloading = true;
 
       axios.get(app.models.path).then(function (response) {
-        if (response.data) {
+        if (response.data && response.data.length > 0) {
           app.models.downloading = false;
           app.models.loading = true;
           app.models.fullList = response.data;
           resolve();
+        }
+        else {
+          console.log('invalid muscles');
+          app.showLoadingError('Failed to load muscles.json, format or content may be invalid');
+          reject();
         }
       });
     });
@@ -339,6 +360,11 @@ let app = {
           app.modelsMisc.fullList = response.data;
 
           resolve();
+        }
+        else {
+          console.log('invalid misc');
+          app.showLoadingError('Failed to load misc.json, format or content may be invalid');
+          reject();
         }
       });
     })
@@ -1313,6 +1339,14 @@ let app = {
       app.domOverlayMisc.classList.add('hide')
     }
   },
+
+  showLoadingError: function (message) {
+
+    app.domLoadingGroup.classList.add('hide');
+
+    app.domLoadingErrorMessage.innerHTML = message ? message : 'Undefined error';
+    app.domLoadingError.classList.remove('hide');
+  }
 
 
 

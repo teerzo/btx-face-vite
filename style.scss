@@ -160,6 +160,8 @@ body {
         .btn-help {
             width: 20px;
             border-radius: 100px;
+            font-weight: 700;
+            font-size: 16px;
             &:hover {
                 background-color: #eeeeee;
                 // background-color: rgb(248, 114, 114);
@@ -427,7 +429,7 @@ body {
             // top: calc(100px);
             // left: calc(100% - 420px);
 
-            top: 30px;
+            top: 20px;
             right: 20px;
 
             // width: 320px;
@@ -461,6 +463,13 @@ body {
         }
         .overlay-muscle.hide {
             display: none;
+        }
+
+        .overlay-misc {
+            p {
+                font-weight: 700;
+                margin: 0px;
+            }
         }
 
         .overlay-condition {
@@ -518,9 +527,7 @@ body {
 
         @media only screen and (max-width: 768px) {
             top: 190px;
-            .overlay-muscle {
-                top: 150px;
-            }
+            
 
             .overlay-scale {
                 left: 0px;

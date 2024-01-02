@@ -445,7 +445,7 @@ let app = {
               let promise = new Promise(function (resolve, reject) {
                 app.loader.load(`./obj/${cm.fileName}`, function (model) {
                   if (md.name === 'teeth') {
-                    console.log('model', model);
+                    // console.log('model', model);
                   }
                   let obj = {
                     id: md.id,
@@ -454,7 +454,7 @@ let app = {
                     mesh: model,
                   }
                   if (cm.texture) {
-                    console.log('texture', cm);
+                    // console.log('texture', cm);
                     obj.texture = cm.texture;
                   }
 
@@ -600,6 +600,7 @@ let app = {
   },
 
   selectMuscle: function (object) {
+    console.log('selectMuscle', object);
     app.showOverlayMuscle(true);
     app.showSideBtnLeft(false);
     app.showSideBtnRight(false);
@@ -648,12 +649,14 @@ let app = {
         const muscleGroup = app.models.fullList[i];
         meta.name = muscleGroup.name;
 
+        console.log('length', muscleGroup.children.length);
         for (let j in muscleGroup.children) {
           for (let c in app.conditions.fullList) {
             for (let m in app.conditions.fullList[c].muscles) {
               const cMuscle = app.conditions.fullList[c].muscles[m];
 
               if (cMuscle.id === muscleGroup.children[j].btxId) {
+                console.log('add');
                 meta.percentageOfSessionsInjected += cMuscle.percentageOfSessionsInjected;
                 meta.botoxAverageDosePerMuscle += cMuscle.botoxAverageDosePerMuscle;
                 meta.botoxAverageNumberOfSites += cMuscle.botoxAverageNumberOfSites;
@@ -663,15 +666,18 @@ let app = {
             }
           }
         }
+
+        const divide = muscleGroup.children.length > 1 ? 2 : 1;
+
+        console.log('pre', meta.dysportAverageDosePerMuscle);
+        meta.percentageOfSessionsInjected = (meta.percentageOfSessionsInjected ).toFixed(2);
+        meta.botoxAverageDosePerMuscle = (meta.botoxAverageDosePerMuscle / divide).toFixed(2);
+        meta.botoxAverageNumberOfSites = (meta.botoxAverageNumberOfSites / divide ).toFixed(2);
+        meta.dysportAverageDosePerMuscle = (meta.dysportAverageDosePerMuscle / divide).toFixed(2);
+        meta.dysportAverageNumberOfSites = (meta.dysportAverageNumberOfSites / divide).toFixed(2);
+        console.log('post', meta.dysportAverageDosePerMuscle);
       }
     }
-
-    meta.percentageOfSessionsInjected = meta.percentageOfSessionsInjected.toFixed(2);
-    meta.botoxAverageDosePerMuscle = meta.botoxAverageDosePerMuscle.toFixed(2);
-    meta.botoxAverageNumberOfSites = meta.botoxAverageNumberOfSites.toFixed(2);
-    meta.dysportAverageDosePerMuscle = meta.dysportAverageDosePerMuscle.toFixed(2);
-    meta.dysportAverageNumberOfSites = meta.dysportAverageNumberOfSites.toFixed(2);
-
     return meta;
   },
 
@@ -778,7 +784,15 @@ let app = {
             let obj = createObject(objProps);
             // obj.object.scale
             app.objectList.push(obj);
-            app.raycastList.push(obj.mesh);
+            if (obj.mesh && obj.mesh.length > 0) {
+              for (let i in obj.mesh) {
+                app.raycastList.push(obj.mesh[i]);
+              }
+            }
+            else {
+              app.raycastList.push(obj.mesh);
+            }
+
           }
         }
       }
@@ -798,7 +812,14 @@ let app = {
           let obj = createObject(objProps);
           // obj.object.scale.multiplyScalar(8.0);
           app.objectList.push(obj);
-          app.raycastList.push(obj.mesh);
+          if (obj.mesh && obj.mesh.length > 0) {
+            for (let i in obj.mesh) {
+              app.raycastList.push(obj.mesh[i]);
+            }
+          }
+          else {
+            app.raycastList.push(obj.mesh);
+          }
         }
       }
       addObjectsToScene();
@@ -1132,7 +1153,7 @@ let app = {
           }
         }
         if (target !== null) {
-          // console.log('intersected object', target.object);
+          console.log('intersected object', target.object);
           const intersectPos = new THREE.Vector3().copy(target.point);
           app.raycastPos.position.copy(intersectPos);
           // let firstObject  = 
@@ -1172,6 +1193,7 @@ let app = {
       else {
         console.log('no target?');
         app.clearSelectedMuscle();
+        app.clearRaycastTarget();
       }
 
       app.updateObjects();
@@ -1179,37 +1201,34 @@ let app = {
   },
 
   setRaycastTarget: function (mesh) {
-    // console.log('setRaycastTarget', mesh);
-
-    // if (app.conditionId !== null) {
-    // app.resetObjects();
-
-
+    console.log('setRaycastTarget', mesh);
 
     for (let i in app.objectList) {
       let item = app.objectList[i];
 
-      // console.log('raycast item', item);
+      console.log('setRaycastTarget check', item, mesh.name);
 
-      if (item.mesh.name === mesh.name) {
-        item.state.raycastSelected = true;
+      item.state.raycastSelected = false;
 
-        app.raycast.currentObject = item;
+      if (item.mesh && item.mesh.length > 0) {
+        for (let j in item.mesh) {
+          // console.log('item mesh name', item.mesh[j].name);
 
-        if (item.type === 'muscle') {
-          app.selectMuscle(item);
+          if (item.mesh[j].name === mesh.name) {
+            item.state.raycastSelected = true;
+
+            app.raycast.currentObject = item;
+
+            if (item.type === 'muscle') {
+              app.selectMuscle(item);
+            }
+            else {
+              app.selectMisc(item);
+            }
+          }
         }
-        else {
-          app.selectMisc(item);
-        }
-
       }
-      else {
-        item.state.raycastSelected = false;
-      }
-      // }
     }
-
   },
   clearRaycastTarget: function () {
     // console.log('clearRaycastTarget');
@@ -1721,7 +1740,7 @@ const createObject = function (props) {
     obj.scale.copy(app.objectScale);
 
     let mesh = obj.children;
-    
+
     // let mesh = null;
     // if (props.multi) {
     //   mesh = obj.children;
@@ -1743,12 +1762,12 @@ const createObject = function (props) {
 
     obj.name = props.name;
     if (obj.name === 'mentalis') {
-      console.log('mesh', obj, mesh);
+      // console.log('mesh', obj, mesh);
       mesh = obj.children;
       // material = new THREE.MeshPhongMaterial({ color: 0x00FF00, transparent: true, visible: data.state.visible });
     }
     if (mesh) {
-      for( let i in mesh ) {
+      for (let i in mesh) {
         mesh[i].material = material;
       }
     }

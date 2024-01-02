@@ -62,8 +62,7 @@
             "models": [
                 {
                     "fileName": "teeth.obj",
-                    "texture": "teeth",
-                    "multi": true
+                    "texture": "teeth"
                 }
             ]
         }
@@ -238,11 +237,6 @@
             ],
             "models": []
         },
-        
-    
-
-
-
         {
             "name": "abductor digit minimi pedis",
             "displayName": "Abductor Digit Minimi Pedis",
@@ -263,11 +257,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "abductor_digit_minimi_pedis_left.obj"
+                    "fileName": "abductor_digit_minimi_pedis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "abductor_digit_minimi_pedis_right.obj"
+                    "fileName": "abductor_digit_minimi_pedis_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -291,15 +287,17 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "abductor_digiti_minimi_manus_left.obj"
+                    "fileName": "abductor_digiti_minimi_manus_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "abductor_digiti_minimi_manus_right.obj"
+                    "fileName": "abductor_digiti_minimi_manus_right.obj",
+                    "skip": true
                 }
             ]
         },
-        {   
+        {
             "name": "abductor hallucis",
             "displayName": "Abductor Hallucis",
             "children": [
@@ -319,11 +317,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "adductor_hallucis_left.obj"
+                    "fileName": "adductor_hallucis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "adductor_hallucis_right.obj"
+                    "fileName": "adductor_hallucis_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -347,11 +347,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "adductor_pollicis_brevis_left.obj"
+                    "fileName": "adductor_pollicis_brevis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "adductor_pollicis_brevis_right.obj"
+                    "fileName": "adductor_pollicis_brevis_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -375,11 +377,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "adductor_pollicis_longus_left.obj"
+                    "fileName": "adductor_pollicis_longus_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "adductor_pollicis_longus_right.obj"
+                    "fileName": "adductor_pollicis_longus_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -403,11 +407,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "adductor_brevis_left.obj"
+                    "fileName": "adductor_brevis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "adductor_brevis_right.obj"
+                    "fileName": "adductor_brevis_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -431,11 +437,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "adductor_hallucis_left.obj"
+                    "fileName": "adductor_hallucis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "adductor_hallucis_right.obj"
+                    "fileName": "adductor_hallucis_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -459,11 +467,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "adductor_longus_left.obj"
+                    "fileName": "adductor_longus_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "adductor_longus_right.obj"
+                    "fileName": "adductor_longus_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -487,11 +497,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "adductor_magnus_left.obj"
+                    "fileName": "adductor_magnus_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "adductor_magnus_right.obj"
+                    "fileName": "adductor_magnus_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -515,11 +527,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "adductor_pollicis_left.obj"
+                    "fileName": "adductor_pollicis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "adductor_pollicis_right.obj"
+                    "fileName": "adductor_pollicis_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -543,11 +557,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "anterior_deltoid_left.obj"
+                    "fileName": "anterior_deltoid_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "anterior_deltoid_right.obj"
+                    "fileName": "anterior_deltoid_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -571,11 +587,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "biceps_brachii_left.obj"
+                    "fileName": "biceps_brachii_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "biceps_brachii_right.obj"
+                    "fileName": "biceps_brachii_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -599,11 +617,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "biceps_femoris_left.obj"
+                    "fileName": "biceps_femoris_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "biceps_femoris_right.obj"
+                    "fileName": "biceps_femoris_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -620,8 +640,9 @@
             ],
             "models": [
                 {
-                    "side": "left",
-                    "fileName": "bladder.obj"
+                    "side": "both",
+                    "fileName": "bladder.obj",
+                    "skip": true
                 }
             ]
         },
@@ -645,11 +666,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "brachialis_left.obj"
+                    "fileName": "brachialis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "brachialis_right.obj"
+                    "fileName": "brachialis_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -673,14 +696,16 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "brachioradialis_left.obj"
+                    "fileName": "brachioradialis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "brachioradialis_right.obj"
+                    "fileName": "brachioradialis_right.obj",
+                    "skip": true
                 }
             ]
-        }, 
+        },
         {
             "name": "corrugator supercilii",
             "displayName": "Corrugator Supercilii",
@@ -709,7 +734,6 @@
                     "side": "right",
                     "groupId": 1
                 }
-               
             ],
             "models": [
                 {
@@ -721,7 +745,7 @@
                     "fileName": "corrugator_supercilii_right.obj"
                 }
             ]
-        }, 
+        },
         {
             "name": "depressor anguli oris",
             "displayName": "Depressor Anguli Oris",
@@ -738,7 +762,6 @@
                     "side": "right",
                     "groupId": 1
                 }
-               
             ],
             "models": [
                 {
@@ -750,7 +773,7 @@
                     "fileName": "depressor_anguli_oris_right.obj"
                 }
             ]
-        }, 
+        },
         {
             "name": "depressor labii inferioris",
             "displayName": "Depressor Labii Inferioris",
@@ -767,7 +790,6 @@
                     "side": "right",
                     "groupId": 1
                 }
-               
             ],
             "models": [
                 {
@@ -779,7 +801,7 @@
                     "fileName": "depressor_labii_inferioris_right.obj"
                 }
             ]
-        }, 
+        },
         {
             "name": "digastric",
             "displayName": "Digastric",
@@ -796,7 +818,6 @@
                     "side": "right",
                     "groupId": 2
                 }
-               
             ],
             "models": [
                 {
@@ -808,7 +829,7 @@
                     "fileName": "digastric_right.obj"
                 }
             ]
-        }, 
+        },
         {
             "name": "dorsal interossei manus 1-4",
             "displayName": "Dorsal Interossei Manus 1-4",
@@ -825,19 +846,20 @@
                     "side": "right",
                     "groupId": 5
                 }
-               
             ],
             "models": [
                 {
                     "side": "left",
-                    "fileName": "dorsal_interossei_manus_left.obj"
+                    "fileName": "dorsal_interossei_manus_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "dorsal_interossei_manu_right.obj"
+                    "fileName": "dorsal_interossei_manu_right.obj",
+                    "skip": true
                 }
             ]
-        }, 
+        },
         {
             "name": "dorsal interossei pedis 1-4",
             "displayName": "Dorsal Interossei Pedis 1-4",
@@ -854,19 +876,20 @@
                     "side": "right",
                     "groupId": 8
                 }
-               
             ],
             "models": [
                 {
                     "side": "left",
-                    "fileName": "dorsal_interossei_pedis_left.obj"
+                    "fileName": "dorsal_interossei_pedis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "dorsal_interossei_pedis_right.obj"
+                    "fileName": "dorsal_interossei_pedis_right.obj",
+                    "skip": true
                 }
             ]
-        }, 
+        },
         {
             "name": "extensor carpi radialis longus brevis",
             "displayName": "Extensor Carpi Radialis Longus Brevis",
@@ -883,19 +906,20 @@
                     "side": "right",
                     "groupId": 5
                 }
-               
             ],
             "models": [
                 {
                     "side": "left",
-                    "fileName": "extensor_carpi_radialis_longus_brevis_left.obj"
+                    "fileName": "extensor_carpi_radialis_longus_brevis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "extensor_carpi_radialis_longus_brevis_right.obj"
+                    "fileName": "extensor_carpi_radialis_longus_brevis_right.obj",
+                    "skip": true
                 }
             ]
-        }, 
+        },
         {
             "name": "extensor carpi ilnaris",
             "displayName": "Extensor Carpi Ulnaris",
@@ -912,19 +936,20 @@
                     "side": "right",
                     "groupId": 5
                 }
-               
             ],
             "models": [
                 {
                     "side": "left",
-                    "fileName": "extensor_carpi_ulnaris_left.obj"
+                    "fileName": "extensor_carpi_ulnaris_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "extensor_carpi_ulnaris_right.obj"
+                    "fileName": "extensor_carpi_ulnaris_right.obj",
+                    "skip": true
                 }
             ]
-        }, 
+        },
         {
             "name": "extensor digiti minimi",
             "displayName": "Extensor Digiti Minimi",
@@ -941,19 +966,20 @@
                     "side": "right",
                     "groupId": 5
                 }
-               
             ],
             "models": [
                 {
                     "side": "left",
-                    "fileName": "extensor_digiti_minimi_left.obj"
+                    "fileName": "extensor_digiti_minimi_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "extensor_digiti_minimi_right.obj"
+                    "fileName": "extensor_digiti_minimi_right.obj",
+                    "skip": true
                 }
             ]
-        }, 
+        },
         {
             "name": "extensor digitorum",
             "displayName": "Extensor Digitorum",
@@ -970,19 +996,20 @@
                     "side": "right",
                     "groupId": 5
                 }
-               
             ],
             "models": [
                 {
                     "side": "left",
-                    "fileName": "extensor_digitorum_left.obj"
+                    "fileName": "extensor_digitorum_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "extensor_digitorum_right.obj"
+                    "fileName": "extensor_digitorum_right.obj",
+                    "skip": true
                 }
             ]
-        }, 
+        },
         {
             "name": "extensor digitorum brevis",
             "displayName": "Extensor Digitorum Brevis",
@@ -999,19 +1026,20 @@
                     "side": "right",
                     "groupId": 8
                 }
-               
             ],
             "models": [
                 {
                     "side": "left",
-                    "fileName": "extensor_digitorum_brevis_left.obj"
+                    "fileName": "extensor_digitorum_brevis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "extensor_digitorum_brevis_right.obj"
+                    "fileName": "extensor_digitorum_brevis_right.obj",
+                    "skip": true
                 }
             ]
-        }, 
+        },
         {
             "name": "extensor digitorum longus",
             "displayName": "Extensor Digitorum Longus",
@@ -1028,19 +1056,20 @@
                     "side": "right",
                     "groupId": 7
                 }
-               
             ],
             "models": [
                 {
                     "side": "left",
-                    "fileName": "extensor_digitorum_longus_left.obj"
+                    "fileName": "extensor_digitorum_longus_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "extensor_digitorum_longus_right.obj"
+                    "fileName": "extensor_digitorum_longus_right.obj",
+                    "skip": true
                 }
             ]
-        }, 
+        },
         {
             "name": "extensor hallucis brevis",
             "displayName": "Extensor Hallucis Brevis",
@@ -1057,19 +1086,20 @@
                     "side": "right",
                     "groupId": 8
                 }
-               
             ],
             "models": [
                 {
                     "side": "left",
-                    "fileName": "extensor_hallucis_brevis_left.obj"
+                    "fileName": "extensor_hallucis_brevis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "extensor_hallucis_brevis_right.obj"
+                    "fileName": "extensor_hallucis_brevis_right.obj",
+                    "skip": true
                 }
             ]
-        }, 
+        },
         {
             "name": "extensor hallucis longus",
             "displayName": "Extensor Hallucis Longus",
@@ -1086,19 +1116,20 @@
                     "side": "right",
                     "groupId": 7
                 }
-               
             ],
             "models": [
                 {
                     "side": "left",
-                    "fileName": "extensor_hallucis_longus_left.obj"
+                    "fileName": "extensor_hallucis_longus_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "extensor_hallucis_longus_right.obj"
+                    "fileName": "extensor_hallucis_longus_right.obj",
+                    "skip": true
                 }
             ]
-        }, 
+        },
         {
             "name": "extensor indicis",
             "displayName": "Extensor Indicis",
@@ -1115,19 +1146,20 @@
                     "side": "right",
                     "groupId": 5
                 }
-               
             ],
             "models": [
                 {
                     "side": "left",
-                    "fileName": "extensor_tndicis_left.obj"
+                    "fileName": "extensor_tndicis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "extensor_tndicis_right.obj"
+                    "fileName": "extensor_tndicis_right.obj",
+                    "skip": true
                 }
             ]
-        },  
+        },
         {
             "name": "extensor pollicis brevis",
             "displayName": "Extensor Pollicis Brevis",
@@ -1144,19 +1176,20 @@
                     "side": "right",
                     "groupId": 5
                 }
-               
             ],
             "models": [
                 {
                     "side": "left",
-                    "fileName": "extensor_pollicis_brevis_left.obj"
+                    "fileName": "extensor_pollicis_brevis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "extensor_pollicis_brevis_right.obj"
+                    "fileName": "extensor_pollicis_brevis_right.obj",
+                    "skip": true
                 }
             ]
-        },  
+        },
         {
             "name": "extensor pollicis longus",
             "displayName": "Extensor Pollicis Longus",
@@ -1173,19 +1206,20 @@
                     "side": "right",
                     "groupId": 5
                 }
-               
             ],
             "models": [
                 {
                     "side": "left",
-                    "fileName": "extensor_pollicis_longus_left.obj"
+                    "fileName": "extensor_pollicis_longus_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "extensor_pollicis_longus_right.obj"
+                    "fileName": "extensor_pollicis_longus_right.obj",
+                    "skip": true
                 }
             ]
-        },  
+        },
         {
             "name": "external oblique",
             "displayName": "External Oblique",
@@ -1202,19 +1236,20 @@
                     "side": "right",
                     "groupId": 4
                 }
-               
             ],
             "models": [
                 {
                     "side": "left",
-                    "fileName": "external_oblique_left.obj"
+                    "fileName": "external_oblique_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "external_oblique_right.obj"
+                    "fileName": "external_oblique_right.obj",
+                    "skip": true
                 }
             ]
-        },  
+        },
         {
             "name": "flexor carpi radialis",
             "displayName": "Flexor Carpi Radialis",
@@ -1231,19 +1266,20 @@
                     "side": "right",
                     "groupId": 5
                 }
-               
             ],
             "models": [
                 {
                     "side": "left",
-                    "fileName": "flexor_carpi_radialis_left.obj"
+                    "fileName": "flexor_carpi_radialis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "flexor_carpi_radialis_right.obj"
+                    "fileName": "flexor_carpi_radialis_right.obj",
+                    "skip": true
                 }
             ]
-        },  
+        },
         {
             "name": "flexor carpi ulnaris",
             "displayName": "Flexor Carpi Ulnaris",
@@ -1260,19 +1296,20 @@
                     "side": "right",
                     "groupId": 5
                 }
-               
             ],
             "models": [
                 {
                     "side": "left",
-                    "fileName": "flexor_carpi_ulnaris_left.obj"
+                    "fileName": "flexor_carpi_ulnaris_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "flexor_carpi_ulnaris_right.obj"
+                    "fileName": "flexor_carpi_ulnaris_right.obj",
+                    "skip": true
                 }
             ]
-        },  
+        },
         {
             "name": "flexor digiti minimi brevis manus",
             "displayName": "Flexor Digiti Minimi Brevis Manus",
@@ -1289,19 +1326,20 @@
                     "side": "right",
                     "groupId": 5
                 }
-               
             ],
             "models": [
                 {
                     "side": "left",
-                    "fileName": "flexor_digiti_minimi_brevis_manus_left.obj"
+                    "fileName": "flexor_digiti_minimi_brevis_manus_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "flexor_digiti_minimi_brevis_manus_right.obj"
+                    "fileName": "flexor_digiti_minimi_brevis_manus_right.obj",
+                    "skip": true
                 }
             ]
-        },  
+        },
         {
             "name": "flexor digiti minimi brevis pedis",
             "displayName": "Flexor Digiti Minimi Brevis Pedis",
@@ -1318,16 +1356,17 @@
                     "side": "right",
                     "groupId": 8
                 }
-               
             ],
             "models": [
                 {
                     "side": "left",
-                    "fileName": "flexor_digiti_minimi_brevis_pedis_left.obj"
+                    "fileName": "flexor_digiti_minimi_brevis_pedis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "flexor_digiti_minimi_brevis_pedis_right.obj"
+                    "fileName": "flexor_digiti_minimi_brevis_pedis_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -1347,16 +1386,17 @@
                     "side": "right",
                     "groupId": 8
                 }
-               
             ],
             "models": [
                 {
                     "side": "left",
-                    "fileName": "flexor_digitorum_brevis_left.obj"
+                    "fileName": "flexor_digitorum_brevis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "flexor_digitorum_brevis_right.obj"
+                    "fileName": "flexor_digitorum_brevis_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -1376,20 +1416,21 @@
                     "side": "right",
                     "groupId": 7
                 }
-               
             ],
             "models": [
                 {
                     "side": "left",
-                    "fileName": "flexor_digitorum_longus_left.obj"
+                    "fileName": "flexor_digitorum_longus_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "flexor_digitorum_longus_right.obj"
+                    "fileName": "flexor_digitorum_longus_right.obj",
+                    "skip": true
                 }
             ]
         },
-        {   
+        {
             "name": "flexor digitorum profundus",
             "displayName": "Flexor Digitorum Profundus",
             "children": [
@@ -1405,16 +1446,17 @@
                     "side": "right",
                     "groupId": 5
                 }
-               
             ],
             "models": [
                 {
                     "side": "left",
-                    "fileName": "flexor_digitorum_profundus_left.obj"
+                    "fileName": "flexor_digitorum_profundus_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "flexor_digitorum_profundus_right.obj"
+                    "fileName": "flexor_digitorum_profundus_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -1434,16 +1476,17 @@
                     "side": "right",
                     "groupId": 5
                 }
-               
             ],
             "models": [
                 {
                     "side": "left",
-                    "fileName": "flexor_digitorum_superficialis_left.obj"
+                    "fileName": "flexor_digitorum_superficialis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "flexor_digitorum_superficialis_right.obj"
+                    "fileName": "flexor_digitorum_superficialis_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -1463,16 +1506,17 @@
                     "side": "right",
                     "groupId": 8
                 }
-               
             ],
             "models": [
                 {
                     "side": "left",
-                    "fileName": "flexor_hallucis_brevis_left.obj"
+                    "fileName": "flexor_hallucis_brevis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "flexor_hallucis_brevis_right.obj"
+                    "fileName": "flexor_hallucis_brevis_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -1492,16 +1536,17 @@
                     "side": "right",
                     "groupId": 7
                 }
-               
             ],
             "models": [
                 {
                     "side": "left",
-                    "fileName": "flexor_hallucis_longus_left.obj"
+                    "fileName": "flexor_hallucis_longus_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "flexor_hallucis_longus_right.obj"
+                    "fileName": "flexor_hallucis_longus_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -1521,16 +1566,17 @@
                     "side": "right",
                     "groupId": 5
                 }
-               
             ],
             "models": [
                 {
                     "side": "left",
-                    "fileName": "flexor_pollicis_longus_left.obj"
+                    "fileName": "flexor_pollicis_longus_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "flexor_pollicis_longus_right.obj"
+                    "fileName": "flexor_pollicis_longus_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -1594,11 +1640,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "gastrocnemius_left.obj"
+                    "fileName": "gastrocnemius_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "gastrocnemius_right.obj"
+                    "fileName": "gastrocnemius_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -1622,11 +1670,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "gluteus_maximus_left.obj"
+                    "fileName": "gluteus_maximus_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "gluteus_maximus_right.obj"
+                    "fileName": "gluteus_maximus_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -1650,11 +1700,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "gluteus_medius_left.obj"
+                    "fileName": "gluteus_medius_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "gluteus_medius_right.obj"
+                    "fileName": "gluteus_medius_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -1678,11 +1730,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "gluteus_minimus_left.obj"
+                    "fileName": "gluteus_minimus_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "gluteus_minimus_right.obj"
+                    "fileName": "gluteus_minimus_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -1706,11 +1760,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "gracilis_left.obj"
+                    "fileName": "gracilis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "gracilis_right.obj"
+                    "fileName": "gracilis_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -1734,11 +1790,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "iliocostalis_left.obj"
+                    "fileName": "iliocostalis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "iliocostalis_right.obj"
+                    "fileName": "iliocostalis_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -1762,11 +1820,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "iliopsoas_left.obj"
+                    "fileName": "iliopsoas_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "iliopsoas_right.obj"
+                    "fileName": "iliopsoas_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -1790,11 +1850,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "infraspinatus_left.obj"
+                    "fileName": "infraspinatus_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "infraspinatus_right.obj"
+                    "fileName": "infraspinatus_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -1818,11 +1880,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "internal_oblique_left.obj"
+                    "fileName": "internal_oblique_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "internal_oblique_right.obj"
+                    "fileName": "internal_oblique_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -1846,11 +1910,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "lateral_deltoid_left.obj"
+                    "fileName": "lateral_deltoid_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "lateral_deltoid_right.obj"
+                    "fileName": "lateral_deltoid_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -1874,11 +1940,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "lateral_pterygoid_left.obj"
+                    "fileName": "lateral_pterygoid_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "lateral_pterygoid_right.obj"
+                    "fileName": "lateral_pterygoid_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -1902,11 +1970,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "latissimus_dorsi_left.obj"
+                    "fileName": "latissimus_dorsi_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "latissimus_dorsi_right.obj"
+                    "fileName": "latissimus_dorsi_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -1982,19 +2052,11 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "levator_labii_superioris_left_1.obj"
+                    "fileName": "levator_labii_superioris_left.obj"
                 },
                 {
                     "side": "right",
-                    "fileName": "levator_labii_superioris_right_1.obj"
-                },
-                {
-                    "side": "left",
-                    "fileName": "levator_labii_superioris_left_2.obj"
-                },
-                {
-                    "side": "right",
-                    "fileName": "levator_labii_superioris_right_2.obj"
+                    "fileName": "levator_labii_superioris_right.obj"
                 }
             ]
         },
@@ -2030,11 +2092,11 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "levator_labii_superioris_alaeque_nasi_left.obj"
+                    "fileName": "levator_labii_superioris_left.obj"
                 },
                 {
                     "side": "right",
-                    "fileName": "levator_labii_superioris_alaeque_nasi_right.obj"
+                    "fileName": "levator_labii_superioris_right.obj"
                 }
             ]
         },
@@ -2070,35 +2132,11 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "levator_scapulae_left_1.obj"
+                    "fileName": "levator_scapulae_left.obj"
                 },
                 {
                     "side": "right",
-                    "fileName": "levator_scapulae_right_1.obj"
-                },
-                {
-                    "side": "left",
-                    "fileName": "levator_scapulae_left_2.obj"
-                },
-                {
-                    "side": "right",
-                    "fileName": "levator_scapulae_right_2.obj"
-                },
-                {
-                    "side": "left",
-                    "fileName": "levator_scapulae_left_3.obj"
-                },
-                {
-                    "side": "right",
-                    "fileName": "levator_scapulae_right_3.obj"
-                },
-                {
-                    "side": "left",
-                    "fileName": "levator_scapulae_left_4.obj"
-                },
-                {
-                    "side": "right",
-                    "fileName": "levator_scapulae_right_4.obj"
+                    "fileName": "levator_scapulae_right.obj"
                 }
             ]
         },
@@ -2122,11 +2160,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "longissimus_capitis_left.obj"
+                    "fileName": "longissimus_capitis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "longissimus_capitis_right.obj"
+                    "fileName": "longissimus_capitis_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -2150,11 +2190,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "longissimus_thoracis_left.obj"
+                    "fileName": "longissimus_thoracis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "longissimus_thoracis_right.obj"
+                    "fileName": "longissimus_thoracis_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -2206,11 +2248,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "lumbricals_left.obj"
+                    "fileName": "lumbricals_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "lumbricals_right.obj"
+                    "fileName": "lumbricals_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -2234,11 +2278,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "lumbricals_pedis_left.obj"
+                    "fileName": "lumbricals_pedis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "lumbricals_pedis_right.obj"
+                    "fileName": "lumbricals_pedis_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -2298,11 +2344,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "medial_pterygoid_left.obj"
+                    "fileName": "medial_pterygoid_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "medial_pterygoid_right.obj"
+                    "fileName": "medial_pterygoid_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -2320,8 +2368,7 @@
             "models": [
                 {
                     "side": "both",
-                    "fileName": "mentalis.obj",
-                    "multi": true
+                    "fileName": "mentalis.obj"
                 }
             ]
         },
@@ -2345,11 +2392,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "multifidus_left.obj"
+                    "fileName": "multifidus_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "multifidus_right.obj"
+                    "fileName": "multifidus_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -2411,11 +2460,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "obliqus_capitis_inferior_left.obj"
+                    "fileName": "obliqus_capitis_inferior_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "obliqus_capitis_inferior_right.obj"
+                    "fileName": "obliqus_capitis_inferior_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -2439,11 +2490,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "obliqus_capitis_superior_left.obj"
+                    "fileName": "obliqus_capitis_superior_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "obliqus_capitis_superior_right.obj"
+                    "fileName": "obliqus_capitis_superior_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -2467,11 +2520,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "opponens_digiti_minimi_left.obj"
+                    "fileName": "opponens_digiti_minimi_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "opponens_digiti_minimi_right.obj"
+                    "fileName": "opponens_digiti_minimi_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -2495,11 +2550,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "opponens_pollicis_left.obj"
+                    "fileName": "opponens_pollicis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "opponens_pollicis_right.obj"
+                    "fileName": "opponens_pollicis_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -2544,30 +2601,30 @@
             ]
         },
         {
-            "name": "orbicularis oculi palpebral",
-            "displayName": "Orbicularis Oculi Palpebral",
+            "name": "orbicularis oculi pretarsal",
+            "displayName": "Orbicularis Oculi Pretarsal",
             "children": [
                 {
                     "btxId": 18,
-                    "name": "Left Orbicularis Oculi Palpebral",
+                    "name": "Left Orbicularis Oculi Pretarsal",
                     "side": "left",
                     "groupId": 1
                 },
                 {
                     "btxId": 19,
-                    "name": "Right Orbicularis Oculi Palpebral",
+                    "name": "Right Orbicularis Oculi Pretarsal",
                     "side": "right",
                     "groupId": 1
                 },
                 {
                     "btxId": 39,
-                    "name": "Left Orbicularis Oculi Palpebral",
+                    "name": "Left Orbicularis Oculi Pretarsal",
                     "side": "left",
                     "groupId": 1
                 },
                 {
                     "btxId": 53,
-                    "name": "Right Orbicularis Oculi Palpebral",
+                    "name": "Right Orbicularis Oculi Pretarsal",
                     "side": "right",
                     "groupId": 1
                 }
@@ -2575,11 +2632,11 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "orbicularis_oculi_palpebral_left.obj"
+                    "fileName": "orbicularis_oculi_pretarsal_left.obj"
                 },
                 {
                     "side": "right",
-                    "fileName": "orbicularis_oculi_palpebral_right.obj"
+                    "fileName": "orbicularis_oculi_pretarsal_right.obj"
                 }
             ]
         },
@@ -2633,11 +2690,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "palmar_interossei_left.obj"
+                    "fileName": "palmar_interossei_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "palmar_interossei_right.obj"
+                    "fileName": "palmar_interossei_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -2661,11 +2720,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "palmaris_brevis_left.obj"
+                    "fileName": "palmaris_brevis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "palmaris_brevis_left.obj"
+                    "fileName": "palmaris_brevis_left.obj",
+                    "skip": true
                 }
             ]
         },
@@ -2689,11 +2750,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "palmaris_longus_left.obj"
+                    "fileName": "palmaris_longus_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "palmaris_longus_left.obj"
+                    "fileName": "palmaris_longus_left.obj",
+                    "skip": true
                 }
             ]
         },
@@ -2717,11 +2780,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "parotid_gland_left.obj"
+                    "fileName": "parotid_gland_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "parotid_gland_right.obj"
+                    "fileName": "parotid_gland_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -2745,11 +2810,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "pectineus_left.obj"
+                    "fileName": "pectineus_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "pectineus_right.obj"
+                    "fileName": "pectineus_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -2773,11 +2840,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "pectoralis_major_left.obj"
+                    "fileName": "pectoralis_major_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "pectoralis_major_right.obj"
+                    "fileName": "pectoralis_major_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -2801,11 +2870,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "pectoralis_minor_left.obj"
+                    "fileName": "pectoralis_minor_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "pectoralis_minor_right.obj"
+                    "fileName": "pectoralis_minor_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -2829,11 +2900,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "peroneus_brevis_left.obj"
+                    "fileName": "peroneus_brevis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "peroneus_brevis_right.obj"
+                    "fileName": "peroneus_brevis_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -2857,11 +2930,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "peroneus_longus_left.obj"
+                    "fileName": "peroneus_longus_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "peroneus_longus_right.obj"
+                    "fileName": "peroneus_longus_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -2885,11 +2960,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "peroneus_tertius_left.obj"
+                    "fileName": "peroneus_tertius_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "peroneus_tertius_right.obj"
+                    "fileName": "peroneus_tertius_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -2913,11 +2990,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "plantar_interossei_left.obj"
+                    "fileName": "plantar_interossei_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "plantar_interossei_right.obj"
+                    "fileName": "plantar_interossei_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -2969,11 +3048,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "posterior_deltoid_left.obj"
+                    "fileName": "posterior_deltoid_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "posterior_deltoid_right.obj"
+                    "fileName": "posterior_deltoid_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -3015,11 +3096,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "pronator_quadratus_left.obj"
+                    "fileName": "pronator_quadratus_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "pronator_quadratus_right.obj"
+                    "fileName": "pronator_quadratus_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -3043,11 +3126,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "pronator_teres_left.obj"
+                    "fileName": "pronator_teres_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "pronator_teres_right.obj"
+                    "fileName": "pronator_teres_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -3071,11 +3156,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "psoas_major_left.obj"
+                    "fileName": "psoas_major_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "psoas_major_left.obj"
+                    "fileName": "psoas_major_left.obj",
+                    "skip": true
                 }
             ]
         },
@@ -3099,11 +3186,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "psoas_minor_left.obj"
+                    "fileName": "psoas_minor_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "psoas_minor_left.obj"
+                    "fileName": "psoas_minor_left.obj",
+                    "skip": true
                 }
             ]
         },
@@ -3127,11 +3216,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "quadratus_lumborum_left.obj"
+                    "fileName": "quadratus_lumborum_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "quadratus_lumborum_right.obj"
+                    "fileName": "quadratus_lumborum_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -3155,11 +3246,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "quadratus_plantae_left.obj"
+                    "fileName": "quadratus_plantae_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "quadratus_plantae_right.obj"
+                    "fileName": "quadratus_plantae_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -3183,11 +3276,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "rectus_abdominis_left.obj"
+                    "fileName": "rectus_abdominis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "rectus_abdominis_right.obj"
+                    "fileName": "rectus_abdominis_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -3211,11 +3306,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "rectus_capitis_major_left.obj"
+                    "fileName": "rectus_capitis_major_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "rectus_capitis_major_right.obj"
+                    "fileName": "rectus_capitis_major_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -3239,11 +3336,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "rectus_femoris_left.obj"
+                    "fileName": "rectus_femoris_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "rectus_femoris_right.obj"
+                    "fileName": "rectus_femoris_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -3363,11 +3462,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "sartorius_left.obj"
+                    "fileName": "sartorius_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "sartorius_right.obj"
+                    "fileName": "sartorius_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -3391,27 +3492,11 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "scalenus_anterior_left_1.obj"
+                    "fileName": "scalenus_anterior_left.obj"
                 },
                 {
                     "side": "right",
-                    "fileName": "scalenus_anterior_right_1.obj"
-                },
-                {
-                    "side": "left",
-                    "fileName": "scalenus_anterior_left_2.obj"
-                },
-                {
-                    "side": "right",
-                    "fileName": "scalenus_anterior_right_2.obj"
-                },
-                {
-                    "side": "left",
-                    "fileName": "scalenus_anterior_left_3.obj"
-                },
-                {
-                    "side": "right",
-                    "fileName": "scalenus_anterior_right_3.obj"
+                    "fileName": "scalenus_anterior_right.obj"
                 }
             ]
         },
@@ -3435,11 +3520,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "scalenus_medius_left.obj"
+                    "fileName": "scalenus_medius_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "scalenus_medius_right.obj"
+                    "fileName": "scalenus_medius_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -3463,27 +3550,11 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "scalenus_posterior_left_1.obj"
+                    "fileName": "scalenus_posterior_left.obj"
                 },
                 {
                     "side": "right",
-                    "fileName": "scalenus_posterior_right_1.obj"
-                },
-                {
-                    "side": "left",
-                    "fileName": "scalenus_posterior_left_2.obj"
-                },
-                {
-                    "side": "right",
-                    "fileName": "scalenus_posterior_right_2.obj"
-                },
-                {
-                    "side": "left",
-                    "fileName": "scalenus_posterior_left_3.obj"
-                },
-                {
-                    "side": "right",
-                    "fileName": "scalenus_posterior_right_3.obj"
+                    "fileName": "scalenus_posterior_right.obj"
                 }
             ]
         },
@@ -3507,11 +3578,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "semimembranosus_left.obj"
+                    "fileName": "semimembranosus_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "semimembranosus_right.obj"
+                    "fileName": "semimembranosus_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -3547,51 +3620,11 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "semispinalis_capitis_left_1.obj"
+                    "fileName": "semispinalis_capitis_left.obj"
                 },
                 {
                     "side": "right",
-                    "fileName": "semispinalis_capitis_right_1.obj"
-                },
-                {
-                    "side": "left",
-                    "fileName": "semispinalis_capitis_left_2.obj"
-                },
-                {
-                    "side": "right",
-                    "fileName": "semispinalis_capitis_right_2.obj"
-                },
-                {
-                    "side": "left",
-                    "fileName": "semispinalis_capitis_left_3.obj"
-                },
-                {
-                    "side": "right",
-                    "fileName": "semispinalis_capitis_right_3.obj"
-                },
-                {
-                    "side": "left",
-                    "fileName": "semispinalis_capitis_left_4.obj"
-                },
-                {
-                    "side": "right",
-                    "fileName": "semispinalis_capitis_right_4.obj"
-                },
-                {
-                    "side": "left",
-                    "fileName": "semispinalis_capitis_left_5.obj"
-                },
-                {
-                    "side": "right",
-                    "fileName": "semispinalis_capitis_right_5.obj"
-                },
-                {
-                    "side": "left",
-                    "fileName": "semispinalis_capitis_left_6.obj"
-                },
-                {
-                    "side": "right",
-                    "fileName": "semispinalis_capitis_right_6.obj"
+                    "fileName": "semispinalis_capitis_right.obj"
                 }
             ]
         },
@@ -3627,35 +3660,11 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "semispinalis_cervicis_left_1.obj"
+                    "fileName": "semispinalis_cervicis_left.obj"
                 },
                 {
                     "side": "right",
-                    "fileName": "semispinalis_cervicis_right_1.obj"
-                },
-                {
-                    "side": "left",
-                    "fileName": "semispinalis_cervicis_left_2.obj"
-                },
-                {
-                    "side": "right",
-                    "fileName": "semispinalis_cervicis_right_2.obj"
-                },
-                {
-                    "side": "left",
-                    "fileName": "semispinalis_cervicis_left_3.obj"
-                },
-                {
-                    "side": "right",
-                    "fileName": "semispinalis_cervicis_right_3.obj"
-                },
-                {
-                    "side": "left",
-                    "fileName": "semispinalis_cervicis_left_4.obj"
-                },
-                {
-                    "side": "right",
-                    "fileName": "semispinalis_cervicis_right_4.obj"
+                    "fileName": "semispinalis_cervicis_right.obj"
                 }
             ]
         },
@@ -3679,11 +3688,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "semitendinosus_left.obj"
+                    "fileName": "semitendinosus_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "semitendinosus_right.obj"
+                    "fileName": "semitendinosus_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -3735,11 +3746,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "soleus_left.obj"
+                    "fileName": "soleus_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "soleus_right.obj"
+                    "fileName": "soleus_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -3803,11 +3816,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "splenius_cervicis_left.obj"
+                    "fileName": "splenius_cervicis_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "splenius_cervicis_right.obj"
+                    "fileName": "splenius_cervicis_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -3931,11 +3946,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "supinator_left.obj"
+                    "fileName": "supinator_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "supinator_right.obj"
+                    "fileName": "supinator_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -3959,11 +3976,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "supraspinatus_left.obj"
+                    "fileName": "supraspinatus_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "right",
-                    "fileName": "supraspinatus_right.obj"
+                    "fileName": "supraspinatus_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -4382,7 +4401,7 @@
                     "fileName": "zygomaticus_minor_right.obj"
                 }
             ]
-        },  
+        },
         {
             "name": "auricular anterior",
             "displayName": "Auricular Anterior",
@@ -4435,7 +4454,8 @@
                 },
                 {
                     "side": "right",
-                    "fileName": "depressor_supercilii_right.obj"
+                    "fileName": "depressor_supercilii_right.obj",
+                    "skip": true
                 }
             ]
         },
@@ -4483,11 +4503,13 @@
             "models": [
                 {
                     "side": "left",
-                    "fileName": "omohyoideus_left.obj"
+                    "fileName": "omohyoideus_left.obj",
+                    "skip": true
                 },
                 {
                     "side": "left",
-                    "fileName": "omohyoideus_left.obj"
+                    "fileName": "omohyoideus_right.obj",
+                    "skip": true
                 }
             ]
         },

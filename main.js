@@ -75,6 +75,7 @@ let app = {
   domMetaFemale: document.getElementById('meta-condition-female'),
 
   domMetaMuscle: document.getElementById('meta-muscle'),
+  domMetaSide: document.getElementById('meta-side'),
   domMetaInjected: document.getElementById('meta-muscle-injected'),
   domMetaBotox: document.getElementById('meta-muscle-botox'),
   domMetaBotoxSessions: document.getElementById('meta-muscle-botox-sessions'),
@@ -92,17 +93,11 @@ let app = {
   leftVisible: true,
   rightVisible: true,
 
-
-
-  modelList: null,
-  textureList: null,
-
-  meshList: [],
   objectList: [],
+  muscleBtxIds: [],
 
-
-
-
+  selectedMuscleGroup: null,
+  selectedMuscle: null,
 
   raycast: {
     currentObject: null,
@@ -119,40 +114,29 @@ let app = {
   raycaster: new THREE.Raycaster(),
   raycastList: [],
 
-
-
   // JSON data 
   conditions: {
     path: './data/conditions.json',
-    downloading: null,
-    loading: null,
     list: [],
-    rawList: [],
+    fullList: [],
   },
   models: {
     path: './data/muscles.json',
-    downloading: null,
-    loading: null,
     list: [],
-    rawList: [],
+    fullList: [],
   },
   modelsMisc: {
     path: './data/misc.json',
-    downloading: null,
-    loading: null,
     list: [],
-    rawList: [],
+    fullList: [],
   },
   textures: {
     path: './data/textures.json',
-    downloading: null,
-    loading: null,
     list: [],
     fullList: [],
   },
 
   initialize: function () {
-
     app.getConditions().then(() => {
       app.getTextures().then(() => {
         app.getModels().then(() => {
@@ -195,6 +179,12 @@ let app = {
     resizeThree();
     app.resetObjects();
     app.resetRaycast();
+
+
+    // $$$
+    // app.updateObjectsScale();
+    // app.updateMetaCondition(app.conditions.fullList[i]);
+    // app.updateDom();
   },
   resetCamera: function () {
     if (app.renderer) {
@@ -332,13 +322,24 @@ let app = {
   },
   getModels: function () {
     return new Promise(function (resolve, reject) {
-      app.models.downloading = true;
 
       axios.get(app.models.path).then(function (response) {
-        if (response.data && response.data.length > 0) {
-          app.models.downloading = false;
-          app.models.loading = true;
-          app.models.fullList = response.data;
+        if (response.data) {
+          if (response.data.muscles) {
+            app.models.fullList = response.data.muscles;
+            for (let i = 0; i < app.models.fullList.length; i++) {
+              app.models.fullList[i].id = `${i}`;
+              if (app.models.fullList[i].models?.length > 0) {
+                for (let j = 0; j < app.models.fullList[i].models.length; j++) {
+                  app.models.fullList[i].models[j].id = `${i}-${j}`;
+                  app.models.fullList[i].models[j].displayName = app.models.fullList[i].displayName;
+                }
+              }
+            }
+          }
+          if (response.data.misc) {
+            app.modelsMisc.fullList = response.data.misc;
+          }
           resolve();
         }
         else {
@@ -351,22 +352,18 @@ let app = {
   },
   getModelsMisc: function () {
     return new Promise(function (resolve, reject) {
-      app.modelsMisc.downloading = true;
 
-      axios.get(app.modelsMisc.path).then(function (response) {
-        if (response.data) {
-          app.modelsMisc.downloading = false;
-          app.modelsMisc.loading = true;
-          app.modelsMisc.fullList = response.data;
-
-          resolve();
-        }
-        else {
-          console.log('invalid misc');
-          app.showLoadingError('Failed to load misc.json, format or content may be invalid');
-          reject();
-        }
-      });
+      // axios.get(app.modelsMisc.path).then(function (response) {
+      if (app.models.fullList) {
+        // app.modelsMisc.fullList = app.models.fullList;
+        resolve();
+      }
+      else {
+        console.log('invalid misc');
+        app.showLoadingError('Failed to load misc.json, format or content may be invalid');
+        reject();
+      }
+      // });
     })
   },
 
@@ -395,58 +392,86 @@ let app = {
       if (app.loader) {
 
         let promises = [];
+        console.log('models fullList', app.models.fullList);
         for (let i in app.models.fullList) {
           const md = app.models.fullList[i];
-          if (md.fileName !== '' && md.fileName !== null) {
-            let promise = new Promise(function (resolve, reject) {
-              app.loader.load('./obj/' + md.fileName + '.' + md.fileType, function (model) {
-                app.models.list.push({
-                  id: md.id,
-                  type: 'muscle',
-                  name: md.name,
-                  side: md.side,
-                  mesh: model,
-                  texture: md.texture,
-                  textureGrey: md.textureGrey,
+
+          if (md?.models && md?.models.length > 0) {
+            for (let j in md.models) {
+              const cm = md.models[j];
+              if (cm?.skip) {
+                // console.log('skipped loading', cm.fileName);
+              }
+              else if (cm.fileName) {
+                let promise = new Promise(function (resolve, reject) {
+                  // console.log('load', cm.fileName);
+                  app.loader.load(`./obj/${cm.fileName}`, function (model) {
+                    app.models.list.push({
+                      id: cm.id,
+                      type: 'muscle',
+                      name: md.name,
+                      side: cm.side,
+                      mesh: model,
+                      texture: md.texture,
+                      textureGrey: md.textureGrey,
+                    });
+
+                    app.updateLoadedCount();
+
+
+                    resolve();
+                  }, function (xhr) {
+
+                  },
+                    function (error) {
+                      // console.log('Failed to load ', md.fileName);
+
+                      resolve();
+                    });
                 });
-
-                app.updateLoadedCount();
-
-
-                resolve();
-              }, function (xhr) {
-
-              },
-                function (error) {
-                  // console.log('Failed to load ', md.fileName);
-
-                  resolve();
-                });
-            });
-            promises.push(promise);
+                promises.push(promise);
+              }
+            }
           }
         }
+        console.log('modelsMisc fullList', app.modelsMisc.fullList);
+
         for (let i in app.modelsMisc.fullList) {
           const md = app.modelsMisc.fullList[i];
-          if (app.modelsMisc.fullList[i].fileName !== '') {
-            let promise = new Promise(function (resolve, reject) {
-              app.loader.load('./obj/' + md.fileName + '.' + md.fileType, function (model) {
-                app.modelsMisc.list.push({ id: md.id, type: 'misc', name: md.name, mesh: model, texture: md.texture });
+          if (md?.models && md?.models.length > 0) {
+            for (let j in md.models) {
+              const cm = md.models[j];
 
-                app.updateLoadedCount();
+              let promise = new Promise(function (resolve, reject) {
+                app.loader.load(`./obj/${cm.fileName}`, function (model) {
+                  if (md.name === 'teeth') {
+                    console.log('model', model);
+                  }
+                  let obj = {
+                    id: md.id,
+                    type: 'misc',
+                    name: md.name,
+                    mesh: model,
+                  }
+                  if (cm.texture) {
+                    console.log('texture', cm);
+                    obj.texture = cm.texture;
+                  }
 
-
-                resolve();
-              }, function (xhr) {
-
-              },
-                function (error) {
-                  // console.log('Failed to load ', md.fileName);
-
+                  app.modelsMisc.list.push(obj);
+                  app.updateLoadedCount();
                   resolve();
-                });
-            });
-            promises.push(promise);
+                }, function (xhr) {
+
+                },
+                  function (error) {
+                    // console.log('Failed to load ', md.fileName);
+
+                    resolve();
+                  });
+              });
+              promises.push(promise);
+            }
           }
         }
         Promise.all(promises).then(function () {
@@ -479,6 +504,29 @@ let app = {
 
 
   updateSelectMuscles: function (list) {
+    // console.log('updateSelectMuscles conditionMuscles as list', list);
+
+    let optionList = [];
+    // console.log('app.models.fullList', app.models.fullList);
+
+    for (let i in app.models.fullList) {
+      let match = false;
+
+      for (let j in app.models.fullList[i].children) {
+        const child = app.models.fullList[i].children[j];
+
+        for (let l in list) {
+          // console.log('match', child, list[l]);
+          if (child.btxId === list[l].id) {
+            match = true;
+          }
+        }
+      }
+      if (match) {
+        optionList.push(app.models.fullList[i]);
+      }
+    }
+
     if (app.domSelectMuscles.options.length > 0) {
       for (let i in app.domSelectMuscles.options) {
         app.domSelectMuscles.remove(i);
@@ -491,13 +539,11 @@ let app = {
 
     app.domSelectMuscles.add(option);
 
-    for (let i = 0; i < list.length; i++) {
-
-      // console.log(list[i]);
-
+    for (let i = 0; i < optionList.length; i++) {
+      // console.log(optionList[i]);
       let option = document.createElement('option');
-      option.text = list[i].name;
-      option.value = list[i].id;
+      option.text = optionList[i].displayName;
+      option.value = optionList[i].id;
 
       app.domSelectMuscles.add(option);
     }
@@ -522,47 +568,18 @@ let app = {
       }
     }
   },
-  selectMuscleGroup: function (id) {
+  selectMuscleGroup: function (idValue) {
+    console.log('selectMuscleGroup', idValue);
     app.resetRaycast();
 
     app.showOverlayMuscle(true);
-
     app.showSideBtnLeft(true);
     app.showSideBtnRight(true);
 
-
+    const id = `${idValue}`;
     app.muscleGroupId = id;
 
-    let muscleMeta = {
-      name: ''
-    };
-
-    let ids = [];
-    for (let i in app.combinedMuscles) {
-      if (app.combinedMuscles[i].id === id) {
-
-        console.log('$$$', app.combinedMuscles[i]);
-
-
-        for (let j in app.combinedMuscles[i].muscles) {
-          ids.push(app.combinedMuscles[i].muscles[j].id);
-
-          // meta
-          if (muscleMeta.percentageOfSessionsInjected !== '') {
-
-            muscleMeta.name = app.combinedMuscles[i].name;
-            muscleMeta.percentageOfSessionsInjected = app.combinedMuscles[i].muscles[j].percentageOfSessionsInjected;
-            muscleMeta.botoxAverageDosePerMuscle = app.combinedMuscles[i].muscles[j].botoxAverageDosePerMuscle;
-            muscleMeta.botoxAverageNumberOfSites = app.combinedMuscles[i].muscles[j].botoxAverageNumberOfSites;
-            muscleMeta.dysportAverageDosePerMuscle = app.combinedMuscles[i].muscles[j].dysportAverageDosePerMuscle;
-            muscleMeta.dysportAverageNumberOfSites = app.combinedMuscles[i].muscles[j].dysportAverageNumberOfSites;
-
-            app.updateSideName(muscleMeta.name);
-          }
-        }
-      }
-    }
-    app.muscleIds = ids;
+    let muscleMeta = app.getMuscleGroupMeta(id);
 
     for (let i in app.objectList) {
       let item = app.objectList[i];
@@ -570,64 +587,36 @@ let app = {
       item.state.groupSelected = false;
       item.state.transparent = false;
 
-
-
-      for (let j in ids) {
-        if (item.type === 'muscle') {
-          if (item.id === ids[j]) {
-            // console.log('item', item.id, item.name, item);
-            item.state.groupSelected = true;
-
-
-          }
+      if (item.type === 'muscle') {
+        if (item.id.indexOf(`${id}-`) !== -1) {
+          item.state.groupSelected = true;
         }
       }
     }
-
-
 
     app.updateObjects();
     app.updateMetaMuscle(muscleMeta)
+    app.updateSideName(muscleMeta.displayName);
   },
 
   selectMuscle: function (object) {
-
     app.showOverlayMuscle(true);
     app.showSideBtnLeft(false);
     app.showSideBtnRight(false);
-    // app.showSidesButtons(false);
 
-    let muscleMeta = {
-      name: object.name,
-      percentageOfSessionsInjected: 0,
-      botoxAverageDosePerMuscle: 0,
-      botoxAverageNumberOfSites: 0,
-      dysportAverageDosePerMuscle: 0,
-      dysportAverageNumberOfSites: 0,
-    };
+    let muscleMeta = app.getMuscleMeta(object);
 
-
-    for (let i in app.combinedMuscles) {
-      for (let j in app.combinedMuscles[i].muscles) {
-        let muscle = app.combinedMuscles[i].muscles[j];
-
-
-
-        if (object.id === muscle.id) {
-          // console.log(muscle);
-          app.domSelectMuscles.value = app.combinedMuscles[i].id;
-
-          muscleMeta.name = app.combinedMuscles[i].name;
-          muscleMeta.percentageOfSessionsInjected = app.combinedMuscles[i].muscles[j].percentageOfSessionsInjected;
-          muscleMeta.botoxAverageDosePerMuscle = app.combinedMuscles[i].muscles[j].botoxAverageDosePerMuscle;
-          muscleMeta.botoxAverageNumberOfSites = app.combinedMuscles[i].muscles[j].botoxAverageNumberOfSites;
-          muscleMeta.dysportAverageDosePerMuscle = app.combinedMuscles[i].muscles[j].dysportAverageDosePerMuscle;
-          muscleMeta.dysportAverageNumberOfSites = app.combinedMuscles[i].muscles[j].dysportAverageNumberOfSites;
-
-        }
-      }
-    }
     app.updateMetaMuscle(muscleMeta);
+  },
+
+  clearSelectedMuscle: function () {
+    app.showOverlayMuscle(false);
+    // app.showSideBtnLeft(false);
+    // app.showSideBtnRight(false);
+
+    // let muscleMeta = app.clearMuscleMeta();
+
+    // app.updateMetaMuscle(muscleMeta);
   },
 
   selectMisc: function (object) {
@@ -635,7 +624,6 @@ let app = {
     app.showOverlayMisc(true);
     app.showSideBtnLeft(false);
     app.showSideBtnRight(false);
-    // app.showSidesButtons(false);
 
     let miscMeta = {
       name: object.name,
@@ -644,6 +632,95 @@ let app = {
     app.updateMetaMisc(miscMeta);
   },
 
+  getMuscleGroupMeta(id) {
+
+    let meta = {
+      name: '',
+      percentageOfSessionsInjected: 0,
+      botoxAverageDosePerMuscle: 0,
+      botoxAverageNumberOfSites: 0,
+      dysportAverageDosePerMuscle: 0,
+      dysportAverageNumberOfSites: 0
+    }
+
+    for (let i in app.models.fullList) {
+      if (app.models.fullList[i].id === id) {
+        const muscleGroup = app.models.fullList[i];
+        meta.name = muscleGroup.name;
+
+        for (let j in muscleGroup.children) {
+          for (let c in app.conditions.fullList) {
+            for (let m in app.conditions.fullList[c].muscles) {
+              const cMuscle = app.conditions.fullList[c].muscles[m];
+
+              if (cMuscle.id === muscleGroup.children[j].btxId) {
+                meta.percentageOfSessionsInjected += cMuscle.percentageOfSessionsInjected;
+                meta.botoxAverageDosePerMuscle += cMuscle.botoxAverageDosePerMuscle;
+                meta.botoxAverageNumberOfSites += cMuscle.botoxAverageNumberOfSites;
+                meta.dysportAverageDosePerMuscle += cMuscle.dysportAverageDosePerMuscle;
+                meta.dysportAverageNumberOfSites += cMuscle.dysportAverageNumberOfSites;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    meta.percentageOfSessionsInjected = meta.percentageOfSessionsInjected.toFixed(2);
+    meta.botoxAverageDosePerMuscle = meta.botoxAverageDosePerMuscle.toFixed(2);
+    meta.botoxAverageNumberOfSites = meta.botoxAverageNumberOfSites.toFixed(2);
+    meta.dysportAverageDosePerMuscle = meta.dysportAverageDosePerMuscle.toFixed(2);
+    meta.dysportAverageNumberOfSites = meta.dysportAverageNumberOfSites.toFixed(2);
+
+    return meta;
+  },
+
+  getMuscleMeta(muscle) {
+    const id = muscle.id.slice(0, muscle.id.indexOf('-'));
+
+    let meta = {
+      name: '',
+      percentageOfSessionsInjected: 0,
+      botoxAverageDosePerMuscle: 0,
+      botoxAverageNumberOfSites: 0,
+      dysportAverageDosePerMuscle: 0,
+      dysportAverageNumberOfSites: 0
+    }
+
+    for (let i in app.models.fullList) {
+      if (app.models.fullList[i].id === id) {
+        const muscleGroup = app.models.fullList[i];
+        meta.name = `${muscleGroup.displayName} (${muscle.side})`;
+
+        for (let j in muscleGroup.children) {
+          for (let c in app.conditions.fullList) {
+            if (app.conditionId === app.conditions.fullList[c].id)
+              for (let m in app.conditions.fullList[c].muscles) {
+                const cMuscle = app.conditions.fullList[c].muscles[m];
+
+                if (cMuscle.id === muscleGroup.children[j].btxId) {
+                  if (muscle.side === muscleGroup.children[j].side) {
+                    meta.percentageOfSessionsInjected += cMuscle.percentageOfSessionsInjected;
+                    meta.botoxAverageDosePerMuscle += cMuscle.botoxAverageDosePerMuscle;
+                    meta.botoxAverageNumberOfSites += cMuscle.botoxAverageNumberOfSites;
+                    meta.dysportAverageDosePerMuscle += cMuscle.dysportAverageDosePerMuscle;
+                    meta.dysportAverageNumberOfSites += cMuscle.dysportAverageNumberOfSites;
+                  }
+                }
+              }
+          }
+        }
+      }
+    }
+
+    meta.percentageOfSessionsInjected = meta.percentageOfSessionsInjected.toFixed(2);
+    meta.botoxAverageDosePerMuscle = meta.botoxAverageDosePerMuscle.toFixed(2);
+    meta.botoxAverageNumberOfSites = meta.botoxAverageNumberOfSites.toFixed(2);
+    meta.dysportAverageDosePerMuscle = meta.dysportAverageDosePerMuscle.toFixed(2);
+    meta.dysportAverageNumberOfSites = meta.dysportAverageNumberOfSites.toFixed(2);
+
+    return meta;
+  },
 
   resetSelectCondition: function () {
 
@@ -661,7 +738,7 @@ let app = {
 
   resetSelectMuscle: function () {
     app.muscleGroupId = null;
-    app.muscleIds = [];
+    app.muscleBtxIds = [];
     app.muscleId = null;
 
     if (app.domSelectMuscles.options.length > 0) {
@@ -694,6 +771,9 @@ let app = {
               // texture: app.models.list[i].texture,
               // textureGrey: app.models.list[i].textureGrey,
             }
+            if (app.models.list[i].multi) {
+              objProps.multi = app.models.list[i].multi
+            }
 
             let obj = createObject(objProps);
             // obj.object.scale
@@ -704,14 +784,15 @@ let app = {
       }
       if (app.modelsMisc.list && app.modelsMisc.list.length > 0) {
         for (let i in app.modelsMisc.list) {
-          // console.log(app.meshList[i]);
           let objProps = {
             id: app.modelsMisc.list[i].id,
             type: app.modelsMisc.list[i].type,
             name: app.modelsMisc.list[i].name,
             mesh: app.modelsMisc.list[i].mesh,
-
             texture: app.modelsMisc.list[i].texture,
+          }
+          if (app.models.list[i].multi) {
+            objProps.multi = app.models.list[i].multi
           }
 
           let obj = createObject(objProps);
@@ -720,7 +801,7 @@ let app = {
           app.raycastList.push(obj.mesh);
         }
       }
-      updateScene();
+      addObjectsToScene();
       resolve();
     });
 
@@ -738,6 +819,7 @@ let app = {
 
   updateMetaMuscle: function (muscle) {
     if (app.domMetaMuscle) { app.domMetaMuscle.innerHTML = muscle.name }
+    if (app.domMetaSide) { app.domMetaSide.innerHTML = muscle.side }
     if (app.domMetaInjected) { app.domMetaInjected.innerHTML = Number(muscle.percentageOfSessionsInjected) }
     if (app.domMetaBotox && muscle?.botoxAverageDosePerMuscle) { app.domMetaBotox.innerHTML = muscle.botoxAverageDosePerMuscle }
     if (app.domMetaBotoxSessions && muscle?.botoxAverageNumberOfSites) { app.domMetaBotoxSessions.innerHTML = Number(muscle.botoxAverageNumberOfSites) }
@@ -750,7 +832,8 @@ let app = {
   },
 
   updateSideName: function (name) {
-    if (app.domSideName) {
+    if (app.domSideName && name) {
+      // console.log('')
       app.domSideName.innerHTML = name.length > 15 ? `${name.slice(0, 12)}..` : name;
     }
   },
@@ -772,107 +855,37 @@ let app = {
 
 
     // check muscles
-    let combinedMuscles = [];
+    let conditionMuscles = [];
     if (app.conditionId !== null) {
 
       for (let c in app.conditions.fullList) {
         if (app.conditions.fullList[c].id === app.conditionId) {
           for (let cm in app.conditions.fullList[c].muscles) {
             const condMuscle = app.conditions.fullList[c].muscles[cm];
-
-
             let match = true;
-
             if (condMuscle.percentageOfSessionsInjected === '') {
               match = false;
             }
-            else {
-              for (let i in app.fullMuscles) {
-                const muscle = app.fullMuscles[i];
-
-                // if (muscle.id === null || muscle.id === '') {
-                //     match = false;
-                // }
-                if (condMuscle.id === muscle.id) {
-                  // if (condMuscle.percentageOfSessionsInjected === '') {
-                  //     match = false;
-                  // }
-                  // else {
-                  //     // console.log(condMuscle.percentageOfSessionsInjected);
-                  // }
-
-                  for (let j in combinedMuscles) {
-                    let combined = combinedMuscles[j];
-
-                    // console.log(combined, muscle);
-                    if (combined.name === muscle.name) {
-                      match = false;
-                      combined.muscles.push(condMuscle);
-                      // console.log('add', combined.name, muscles);
-                    }
-                  }
-                }
-              }
-            }
             if (match) {
               let data = {
-                id: null,
+                id: condMuscle.id,
                 name: condMuscle.name,
                 muscles: [],
               };
               // console.log('new', data);
               data.muscles.push(condMuscle);
-              combinedMuscles.push(data);
+              conditionMuscles.push(data);
             }
           }
         }
       }
-      // console.log('check muscles', combinedMuscles);
+      // console.log('check muscles', conditionMuscles);
 
-      for (let i in combinedMuscles) {
-        // console.log(app.fullMuscles[i]);
-        // app
-        combinedMuscles[i].id = Number(i);
-        muscles.push(combinedMuscles[i]);
+      for (let i in conditionMuscles) {
+        muscles.push(conditionMuscles[i]);
       }
 
-      // for (let i in app.fullMuscles) {
-      //     console.log(app.fullMuscles[i]);
-      //     let match = true;
-      //     for (let j in combinedMuscles) {
-      //         if (combinedMuscles[j].groupName === app.fullMuscles[i].groupName) {
-
-      //             for( let cm in conditions ) {
-
-      //             }
-
-      //             match = false;
-      //             combinedMuscles[j].muscles.push(app.fullMuscles[i]);
-      //         }
-      //     }
-      //     if (match) {
-      //         let group = {
-      //             groupName: app.fullMuscles[i].groupName,
-      //             muscles: [],
-      //         }
-      //         group.muscles.push(app.fullMuscles[i]);
-      //         combinedMuscles.push(group);
-      //     }
-
-      //     // app
-      // }
-      // console.log(combinedMuscles);
-
-      // for (let i in combinedMuscles) {
-      //     // console.log(app.fullMuscles[i]);
-      //     // app
-      //     combinedMuscles[i].id = Number(i);
-      //     muscles.push(combinedMuscles[i]);
-      // }
-
-
-
-      app.combinedMuscles = combinedMuscles;
+      app.conditionMuscles = conditionMuscles;
       app.updateSelectMuscles(muscles);
     }
   },
@@ -958,77 +971,73 @@ let app = {
       app.objectList[m].scaleColor = new THREE.Color(0xFFFFFF).copy(app.colorMuscle);
     }
 
+    for (let o = 0; o < app.objectList.length; o++) {
+      let muscle = app.objectList[o];
+      if (muscle.type === 'muscle') {
 
-    for (let c = 0; c < app.conditions.fullList.length; c++) {
-      let cond = app.conditions.fullList[c];
+        const id = muscle.id.slice(0, muscle.id.indexOf('-'));
+        let percentage = 0;
 
-      if (app.conditionId === cond.id) {
-        for (let cm = 0; cm < cond.muscles.length; cm++) {
-          let condMuscle = cond.muscles[cm];
+        for (let i in app.models.fullList) {
+          const muscleGroup = app.models.fullList[i];
+          // console.log('muscle', muscle);
 
-          for (let m = 0; m < app.objectList.length; m++) {
-            let muscle = app.objectList[m];
+          if (id === muscleGroup.id) {
+            for (let j in muscleGroup.children) {
 
+              for (let c in app.conditions.fullList) {
+                // console.log('condition id', app.conditionId, app.conditions.fullList[c]);
+                if (app.conditionId === app.conditions.fullList[c].id) {
 
+                  for (let m in app.conditions.fullList[c].muscles) {
+                    const cMuscle = app.conditions.fullList[c].muscles[m];
 
-            if (muscle.id === condMuscle.id && muscle.name === condMuscle.name) {
-              // console.log(muscle.id, muscle.name, condMuscle.percentageOfSessionsInjected);
-              // if( )
-
-              // muscle.scaleColor = new THREE.Color(0x00FF00);
-
-              if (condMuscle.percentageOfSessionsInjected !== '' && condMuscle.percentageOfSessionsInjected > 0) {
-                // console.log(muscle.name, condMuscle.percentageOfSessionsInjected);
-                muscle.scaleColor.copy(app.colorMuscle)
-
-                let percentage = condMuscle.percentageOfSessionsInjected;
-                let colours = [
-                  new THREE.Color(0x01cdcb), // blue
-                  new THREE.Color(0x32b229), // green
-                  new THREE.Color(0xfccf2b), // yellow
-                  // new THREE.Color(0xff8c00), // orange
-                  new THREE.Color(0xe9542e), // red
-                ];
-
-                if (percentage === 0) {
-                  // colour white 
-                  muscle.scaleColor.copy(app.colorMuscle)
-                  // muscle.scaleColor = new THREE.Color(0x000000);
+                    if (muscleGroup.children[j].btxId === cMuscle.id) {
+                      if (muscleGroup.children[j].side === cMuscle.side) {
+                        percentage += cMuscle.percentageOfSessionsInjected;
+                      }
+                    }
+                  }
                 }
-                else if (percentage <= 33) {
-                  muscle.scaleColor = new THREE.Color(colours[0]).lerp(colours[1], percentage / 33);
-                }
-                else if (percentage <= 66) {
-                  muscle.scaleColor = new THREE.Color(colours[1]).lerp(colours[2], percentage / 66);
-                }
-                else { //if (percentage <= 66) {
-                  muscle.scaleColor = new THREE.Color(colours[2]).lerp(colours[3], percentage / 100);
-                }
-              }
-              else {
-                muscle.scaleColor.copy(app.colorMuscle)
-                // color.copy(this.colorMuscle)
-
               }
             }
           }
+        }
+
+        let colours = [
+          new THREE.Color(0x01cdcb), // blue
+          new THREE.Color(0x32b229), // green
+          new THREE.Color(0xfccf2b), // yellow
+          // new THREE.Color(0xff8c00), // orange
+          new THREE.Color(0xe9542e), // red
+        ];
+
+        if (percentage === 0) {
+          // colour white 
+          muscle.scaleColor.copy(app.colorMuscle)
+        }
+        else if (percentage <= 33) {
+          muscle.scaleColor = new THREE.Color(colours[0]).lerp(colours[1], percentage / 33);
+        }
+        else if (percentage <= 66) {
+          muscle.scaleColor = new THREE.Color(colours[1]).lerp(colours[2], percentage / 66);
+        }
+        else { //if (percentage <= 66) {
+          muscle.scaleColor = new THREE.Color(colours[2]).lerp(colours[3], percentage / 100);
         }
       }
     }
   },
 
   toggleLeftMuscles: function () {
-    // console.log("toggleLeftMuscles", app.leftVisible);
 
     app.leftVisible = !app.leftVisible;
-
-
 
     if (app.muscleGroupId !== null) {
       for (let i in app.objectList) {
         let item = app.objectList[i];
-        for (let j in app.muscleIds) {
-          if (item.id === app.muscleIds[j]) {
+        for (let j in app.muscleBtxIds) {
+          if (item.id === app.muscleBtxIds[j]) {
             if (item.side === 'left') {
               item.state.visible = app.leftVisible;
             }
@@ -1069,8 +1078,8 @@ let app = {
     if (app.muscleGroupId !== null) {
       for (let i in app.objectList) {
         let item = app.objectList[i];
-        for (let j in app.muscleIds) {
-          if (item.id === app.muscleIds[j]) {
+        for (let j in app.muscleBtxIds) {
+          if (item.id === app.muscleBtxIds[j]) {
             if (item.side === 'right') {
               item.state.visible = app.rightVisible;
             }
@@ -1160,6 +1169,10 @@ let app = {
         }
         // app.raycast.plane.lookAt( lookPosition );
       }
+      else {
+        console.log('no target?');
+        app.clearSelectedMuscle();
+      }
 
       app.updateObjects();
     }
@@ -1168,31 +1181,33 @@ let app = {
   setRaycastTarget: function (mesh) {
     // console.log('setRaycastTarget', mesh);
 
-    if (app.conditionId !== null) {
-      // app.resetObjects();
+    // if (app.conditionId !== null) {
+    // app.resetObjects();
 
 
 
-      for (let i in app.objectList) {
-        let item = app.objectList[i];
+    for (let i in app.objectList) {
+      let item = app.objectList[i];
 
-        if (item.mesh.name === mesh.name) {
-          item.state.raycastSelected = true;
+      // console.log('raycast item', item);
 
-          app.raycast.currentObject = item;
+      if (item.mesh.name === mesh.name) {
+        item.state.raycastSelected = true;
 
-          if (item.type === 'muscle') {
-            app.selectMuscle(item);
-          }
-          else {
-            app.selectMisc(item);
-          }
+        app.raycast.currentObject = item;
 
+        if (item.type === 'muscle') {
+          app.selectMuscle(item);
         }
         else {
-          item.state.raycastSelected = false;
+          app.selectMisc(item);
         }
+
       }
+      else {
+        item.state.raycastSelected = false;
+      }
+      // }
     }
 
   },
@@ -1272,6 +1287,7 @@ let app = {
                 if (target === null && !intersects[i].object.material.wireframe) {
                   target = intersects[i];
                 }
+
               }
               // console.log('intersected object', target.object);
               const intersectPos = new THREE.Vector3().copy(target.point);
@@ -1704,7 +1720,16 @@ const createObject = function (props) {
     let obj = props.mesh.clone();
     obj.scale.copy(app.objectScale);
 
-    let mesh = obj.children[0];
+    let mesh = obj.children;
+    
+    // let mesh = null;
+    // if (props.multi) {
+    //   mesh = obj.children;
+    // }
+    // else {
+    //   mesh = obj.children[0];
+    // }
+
 
     let color = new THREE.Color(0xFF0000);
     if (data.type === 'muscle') {
@@ -1714,12 +1739,20 @@ const createObject = function (props) {
       color.copy(app.colorBone);
     }
 
-
     let material = new THREE.MeshPhongMaterial({ color: color, map: texture ? texture : null, transparent: true, visible: data.state.visible });
 
     obj.name = props.name;
-    if (mesh)
-      mesh.material = material;
+    if (obj.name === 'mentalis') {
+      console.log('mesh', obj, mesh);
+      mesh = obj.children;
+      // material = new THREE.MeshPhongMaterial({ color: 0x00FF00, transparent: true, visible: data.state.visible });
+    }
+    if (mesh) {
+      for( let i in mesh ) {
+        mesh[i].material = material;
+      }
+    }
+
     data.object = obj;
 
     data.mesh = mesh;
@@ -1734,14 +1767,13 @@ const createObject = function (props) {
   }
 }
 
-const updateScene = function () {
-  // console.log('updateScene');
+const addObjectsToScene = function () {
+  // console.log('addObjectsToScene');
 
   // console.log(app.objectList);
   if (app.scene) {
     if (app.objectList && app.objectList.length > 0) {
       for (let i in app.objectList) {
-
         app.scene.add(app.objectList[i].object);
       }
     }
@@ -1766,7 +1798,7 @@ const update = function () {
     // app.camera.position.copy(norm);
 
 
-    // $$$ CLAMP MAX CAMERA DISTANCE
+    // CLAMP MAX CAMERA DISTANCE
     // app.camera.position.copy(cameraPos);
     // if (cameraPos.distanceTo(targetPos) > 90) {
     //   let norm = cameraPos;

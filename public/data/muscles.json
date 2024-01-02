@@ -1,1436 +1,4600 @@
-[
-    {
-        "id": 1,
-        "name": "Buccinator",
-        "groupName": "Buccinator",
-        "side": "left",
-        "fileName": "buccinator_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 2,
-        "name": "Buccinator",
-        "groupName": "Buccinator",
-        "side": "right",
-        "fileName": "buccinator_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 3,
-        "name": "Corrugator Supercilii",
-        "groupName": "Corrugator Supercilii",
-        "side": "left",
-        "fileName": "corrugator_supercilii_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 4,
-        "name": "Corrugator Supercilii",
-        "groupName": "Corrugator Supercilii",
-        "side": "right",
-        "fileName": "corrugator_supercilii_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 5,
-        "name": "Depressor Anguli Oris",
-        "groupName": "Depressor Anguli Oris",
-        "side": "left",
-        "fileName": "depressor_anguli_oris_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 6,
-        "name": "Depressor Anguli Oris",
-        "groupName": "Depressor Anguli Oris",
-        "side": "right",
-        "fileName": "depressor_anguli_oris_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 7,
-        "name": "Depressor Labii Inferioris",
-        "groupName": "Depressor Labii Inferioris",
-        "side": "left",
-        "fileName": "depressor_labii_inferioris_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 8,
-        "name": "Depressor Labii Inferioris",
-        "groupName": "Depressor Labii Inferioris",
-        "side": "right",
-        "fileName": "depressor_labii_inferioris_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 9,
-        "name": "Depressor Septi Nasi",
-        "groupName": "Depressor Septi Nasi",
-        "side": "both",
-        "fileName": "depressor_septi_nasi",
-        "fileType": "obj"
-    },
-    {
-        "id": 10,
-        "name": "Depressor Supercilii",
-        "groupName": "Depressor Supercilii",
-        "side": "left",
-        "fileName": "depressor_supercilii_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 11,
-        "name": "Depressor Supercilii",
-        "groupName": "Depressor Supercilii",
-        "side": "right",
-        "fileName": "depressor_supercilii_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 12,
-        "name": "Digastric",
-        "groupName": "Digastric",
-        "side": "left",
-        "fileName": "digastric_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 13,
-        "name": "Digastric",
-        "groupName": "Digastric",
-        "side": "right",
-        "fileName": "digastric_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 14,
-        "name": "Frontalis",
-        "groupName": "Frontalis",
-        "side": "left",
-        "fileName": "frontalis_left",
-        "texture": "muscleBodyTex",
-        "textureGrey": "muscleBodyTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 15,
-        "name": "Frontalis",
-        "groupName": "Frontalis",
-        "side": "right",
-        "fileName": "frontalis_right",
-        "texture": "muscleBodyTex",
-        "textureGrey": "muscleBodyTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 16,
-        "name": "Hyoglossus",
-        "groupName": "Hyoglossus",
-        "side": "left",
-        "fileName": "hyoglossus_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 17,
-        "name": "Hyoglossus",
-        "groupName": "Hyoglossus",
-        "side": "right",
-        "fileName": "hyoglossus_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 18,
-        "name": "Levator Anguli Oris",
-        "groupName": "Levator Anguli Oris",
-        "side": "left",
-        "fileName": "levator_anguli_oris_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 19,
-        "name": "Levator Anguli Oris",
-        "groupName": "Levator Anguli Oris",
-        "side": "right",
-        "fileName": "levator_anguli_oris_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 20,
-        "name": "Levator Labii Superioris Alaeque Nasi",
-        "groupName": "Levator Labii Superioris",
-        "side": "left",
-        "fileName": "levator_labii_superioris_left_1",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 21,
-        "name": "Levator Labii Superioris",
-        "groupName": "Levator Labii Superioris",
-        "side": "right",
-        "fileName": "levator_labii_superioris_right_1",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 22,
-        "name": "Levator Labii Superioris Alaeque Nasi",
-        "groupName": "Levator Labii Superioris",
-        "side": "left",
-        "fileName": "levator_labii_superioris_left_2",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 23,
-        "name": "Levator Labii Superioris",
-        "groupName": "Levator Labii Superioris",
-        "side": "right",
-        "fileName": "levator_labii_superioris_right_2",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 24,
-        "name": "Levator Scapulae",
-        "groupName": "Levator Scapulae",
-        "side": "left",
-        "fileName": "levator_scapulae_left_1",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 242,
-        "name": "Levator Scapulae",
-        "groupName": "Levator Scapulae",
-        "side": "left",
-        "fileName": "levator_scapulae_left_2",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 243,
-        "name": "Levator Scapulae",
-        "groupName": "Levator Scapulae",
-        "side": "left",
-        "fileName": "levator_scapulae_left_3",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 244,
-        "name": "Levator Scapulae",
-        "groupName": "Levator Scapulae",
-        "side": "left",
-        "fileName": "levator_scapulae_left_4",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 25,
-        "name": "Levator Scapulae",
-        "groupName": "Levator Scapulae",
-        "side": "right",
-        "fileName": "levator_scapulae_right_1",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 252,
-        "name": "Levator Scapulae",
-        "groupName": "Levator Scapulae",
-        "side": "right",
-        "fileName": "levator_scapulae_right_2",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 253,
-        "name": "Levator Scapulae",
-        "groupName": "Levator Scapulae",
-        "side": "right",
-        "fileName": "levator_scapulae_right_3",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 254,
-        "name": "Levator Scapulae",
-        "groupName": "Levator Scapulae",
-        "side": "right",
-        "fileName": "levator_scapulae_right_4",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 26,
-        "name": "Longissimus Capitis",
-        "groupName": "Longissimus Capitis",
-        "side": "left",
-        "fileName": "longissimus_left",
-        "texture": "",
-        "textureGrey": "",
-        "fileType": "obj"
-    },
-    {
-        "id": 27,
-        "name": "Longissimus Capitis",
-        "groupName": "Longissimus Capitis",
-        "side": "right",
-        "fileName": "longissimus_right",
-        "texture": "",
-        "textureGrey": "",
-        "fileType": "obj"
-    },
-    {
-        "id": 28,
-        "name": "Longus Colli",
-        "groupName": "Longus Colli",
-        "side": "left",
-        "fileName": "longus_colli_left",
-        "texture": "",
-        "textureGrey": "",
-        "fileType": "obj"
-    },
-    {
-        "id": 29,
-        "name": "Longus Colli",
-        "groupName": "Longus Colli",
-        "side": "right",
-        "fileName": "longus_colli_right",
-        "texture": "",
-        "textureGrey": "",
-        "fileType": "obj"
-    },
-    {
-        "id": 30,
-        "name": "Masseter Deep",
-        "groupName": "Masseter Deep",
-        "side": "left",
-        "fileName": "masseter_deep_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 31,
-        "name": "Masseter Deep",
-        "groupName": "Masseter Deep",
-        "side": "right",
-        "fileName": "masseter_deep_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 32,
-        "name": "Masseter",
-        "groupName": "Masseter Superficial",
-        "side": "left",
-        "fileName": "masseter_superficial_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 33,
-        "name": "Masseter",
-        "groupName": "Masseter Superficial",
-        "side": "right",
-        "fileName": "masseter_superficial_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 34,
-        "name": "Mentalis",
-        "groupName": "Mentalis",
-        "side": "left",
-        "fileName": "mentalis_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 342,
-        "name": "Mentalis",
-        "groupName": "Mentalis",
-        "side": "right",
-        "fileName": "mentalis_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 35,
-        "name": "Mylohyoid",
-        "groupName": "Mylohyoid",
-        "side": "both",
-        "fileName": "mylohyoid",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 36,
-        "name": "Nasal Cartilage",
-        "groupName": "Nasal Cartilage",
-        "side": "both",
-        "fileName": "nasal_cartilage",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 37,
-        "name": "Nasalis",
-        "groupName": "Nasalis",
-        "side": "both",
-        "fileName": "nasalis",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 38,
-        "name": "Nasalis Alar",
-        "groupName": "Nasalis Alar",
-        "side": "left",
-        "fileName": "nasalis_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 39,
-        "name": "Nasalis Alar",
-        "groupName": "Nasalis Alar",
-        "side": "right",
-        "fileName": "nasalis_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 40,
-        "name": "Obliqus Capitis Inferior",
-        "groupName": "",
-        "side": "left",
-        "fileName": "obliqus_capitis_inferior_left",
-        "texture": "",
-        "textureGrey": "",
-        "fileType": "obj"
-    },
-    {
-        "id": 41,
-        "name": "Obliqus Capitis Inferior",
-        "groupName": "",
-        "side": "right",
-        "fileName": "obliqus_capitis_inferior_right",
-        "texture": "",
-        "textureGrey": "",
-        "fileType": "obj"
-    },
-    {
-        "id": 42,
-        "name": "Obliqus Capitis Superior",
-        "groupName": "",
-        "side": "left",
-        "fileName": "obliqus_capitis_superior_left",
-        "texture": "",
-        "textureGrey": "",
-        "fileType": "obj"
-    },
-    {
-        "id": 43,
-        "name": "Obliqus Capitis Superior",
-        "groupName": "",
-        "side": "right",
-        "fileName": "obliqus_capitis_superior_right",
-        "texture": "",
-        "textureGrey": "",
-        "fileType": "obj"
-    },
-    {
-        "id": 44,
-        "name": "Orbicularis Oculi (Orbital Portion)",
-        "groupName": "Orbicularis Oculi",
-        "side": "left",
-        "fileName": "orbicularis_oculi_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 45,
-        "name": "Orbicularis Oculi (Orbital Portion)",
-        "groupName": "Orbicularis Oculi",
-        "side": "right",
-        "fileName": "orbicularis_oculi_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 46,
-        "name": "Orbicularis Oculi (Palpebral Portion)",
-        "groupName": "",
-        "side": "left",
-        "fileName": "orbicularis_oculi_palpebral_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 47,
-        "name": "Orbicularis Oculi (Palpebral Portion)",
-        "groupName": "",
-        "side": "right",
-        "fileName": "orbicularis_oculi_palpebral_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 48,
-        "name": "Orbicularis Oris",
-        "groupName": "Orbicularis Oris",
-        "side": "both",
-        "fileName": "orbicularis_oris",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 49,
-        "name": "Platysma",
-        "groupName": "",
-        "side": "left",
-        "fileName": "platysma_left",
-        "texture": "",
-        "textureGrey": "",
-        "fileType": "obj"
-    },
-    {
-        "id": 50,
-        "name": "Platysma",
-        "groupName": "",
-        "side": "right",
-        "fileName": "platysma_right",
-        "texture": "",
-        "textureGrey": "",
-        "fileType": "obj"
-    },
-    {
-        "id": 51,
-        "name": "Posterior Auricular",
-        "groupName": "Posterior Auricular",
-        "side": "left",
-        "fileName": "posterior_auricular_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 52,
-        "name": "Posterior Auricular",
-        "groupName": "Posterior Auricular",
-        "side": "right",
-        "fileName": "posterior_auricular_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 53,
-        "name": "Procerus",
-        "groupName": "Procerus",
-        "side": "both",
-        "fileName": "procerus",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 54,
-        "name": "Pterygoid Medial",
-        "groupName": "",
-        "side": "left",
-        "fileName": "pterygoid_medial_left",
-        "texture": "",
-        "textureGrey": "",
-        "fileType": "obj"
-    },
-    {
-        "id": 55,
-        "name": "Pterygoid Medial",
-        "groupName": "",
-        "side": "right",
-        "fileName": "pterygoid_medial_right",
-        "texture": "",
-        "textureGrey": "",
-        "fileType": "obj"
-    },
-    {
-        "id": 56,
-        "name": "Pterygoid Lateral",
-        "groupName": "",
-        "side": "left",
-        "fileName": "pterygoid_lateral_left",
-        "texture": "",
-        "textureGrey": "",
-        "fileType": "obj"
-    },
-    {
-        "id": 57,
-        "name": "Pterygoid Lateral",
-        "groupName": "",
-        "side": "right",
-        "fileName": "pterygoid_lateral_right",
-        "texture": "",
-        "textureGrey": "",
-        "fileType": "obj"
-    },
-    {
-        "id": 58,
-        "name": "Rectus Capitis Major",
-        "groupName": "",
-        "side": "left",
-        "fileName": "rectus_capitis_major_left",
-        "texture": "",
-        "textureGrey": "",
-        "fileType": "obj"
-    },
-    {
-        "id": 59,
-        "name": "Rectus Capitis Major",
-        "groupName": "",
-        "side": "right",
-        "fileName": "rectus_capitis_major_right",
-        "texture": "",
-        "textureGrey": "",
-        "fileType": "obj"
-    },
-    {
-        "id": 60,
-        "name": "Risorius",
-        "groupName": "Risorius",
-        "side": "left",
-        "fileName": "risorius_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 61,
-        "name": "Risorius",
-        "groupName": "Risorius",
-        "side": "right",
-        "fileName": "risorius_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 62,
-        "name": "Scalene Medius 01",
-        "groupName": "Scalene",
-        "side": "left",
-        "fileName": "scalene_left_1",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 622,
-        "name": "Scalene Medius 02",
-        "groupName": "Scalene",
-        "side": "left",
-        "fileName": "scalene_left_2",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 623,
-        "name": "Scalene Medius 03",
-        "groupName": "Scalene",
-        "side": "left",
-        "fileName": "scalene_left_3",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 63,
-        "name": "Scalene Medius 01",
-        "groupName": "Scalene",
-        "side": "right",
-        "fileName": "scalene_right_1",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 632,
-        "name": "Scalene Medius 02",
-        "groupName": "Scalene",
-        "side": "right",
-        "fileName": "scalene_right_2",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 633,
-        "name": "Scalene Medius 03",
-        "groupName": "Scalene",
-        "side": "right",
-        "fileName": "scalene_right_3",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 64,
-        "name": "Scalenus Anterior 01",
-        "groupName": "Scalenus Anterior",
-        "side": "left",
-        "fileName": "scalenus_anterior_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 642,
-        "name": "Scalenus Anterior 02",
-        "groupName": "Scalenus Anterior",
-        "side": "left",
-        "fileName": "scalenus_anterior_left_1",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 643,
-        "name": "Scalenus Anterior 03",
-        "groupName": "Scalenus Anterior",
-        "side": "left",
-        "fileName": "scalenus_anterior_left_2",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 65,
-        "name": "Scalenus Anterior 01",
-        "groupName": "Scalenus Anterior",
-        "side": "right",
-        "fileName": "scalenus_anterior_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 652,
-        "name": "Scalenus Anterior 02",
-        "groupName": "Scalenus Anterior",
-        "side": "right",
-        "fileName": "scalenus_anterior_right_1",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 653,
-        "name": "Scalenus Anterior 03",
-        "groupName": "Scalenus Anterior",
-        "side": "right",
-        "fileName": "scalenus_anterior_right_2",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 66,
-        "name": "Scalenus Posterior 01",
-        "groupName": "Scalenus Posterior",
-        "side": "left",
-        "fileName": "scalenus_posterior_left_1",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 662,
-        "name": "Scalenus Posterior 02",
-        "groupName": "Scalenus Posterior",
-        "side": "left",
-        "fileName": "scalenus_posterior_left_2",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 663,
-        "name": "Scalenus Posterior 03",
-        "groupName": "Scalenus Posterior",
-        "side": "left",
-        "fileName": "scalenus_posterior_left_3",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 67,
-        "name": "Scalenus Posterior 01",
-        "groupName": "Scalenus Posterior",
-        "side": "right",
-        "fileName": "scalenus_posterior_right_1",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 672,
-        "name": "Scalenus Posterior 02",
-        "groupName": "Scalenus Posterior",
-        "side": "right",
-        "fileName": "scalenus_posterior_right_2",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 673,
-        "name": "Scalenus Posterior 03",
-        "groupName": "Scalenus Posterior",
-        "side": "right",
-        "fileName": "scalenus_posterior_right_3",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 68,
-        "name": "Semispinalis Capitis 01",
-        "groupName": "Semispinalis Capitis",
-        "side": "left",
-        "fileName": "semispinalis_capitis_left_1",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 682,
-        "name": "Semispinalis Capitis 02",
-        "groupName": "Semispinalis Capitis",
-        "side": "left",
-        "fileName": "semispinalis_capitis_left_2",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 683,
-        "name": "Semispinalis Capitis 03",
-        "groupName": "Semispinalis Capitis",
-        "side": "left",
-        "fileName": "semispinalis_capitis_left_3",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 684,
-        "name": "Semispinalis Capitis 04",
-        "groupName": "Semispinalis Capitis",
-        "side": "left",
-        "fileName": "semispinalis_capitis_left_4",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 685,
-        "name": "Semispinalis Capitis 05",
-        "groupName": "Semispinalis Capitis",
-        "side": "left",
-        "fileName": "semispinalis_capitis_left_5",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 686,
-        "name": "Semispinalis Capitis 06",
-        "groupName": "Semispinalis Capitis",
-        "side": "left",
-        "fileName": "semispinalis_capitis_left_6",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 69,
-        "name": "Semispinalis Capitis 01",
-        "groupName": "Semispinalis Capitis",
-        "side": "right",
-        "fileName": "semispinalis_capitis_right_1",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 692,
-        "name": "Semispinalis Capitis 02",
-        "groupName": "Semispinalis Capitis",
-        "side": "right",
-        "fileName": "semispinalis_capitis_right_2",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 693,
-        "name": "Semispinalis Capitis 03",
-        "groupName": "Semispinalis Capitis",
-        "side": "right",
-        "fileName": "semispinalis_capitis_right_3",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 694,
-        "name": "Semispinalis Capitis 04",
-        "groupName": "Semispinalis Capitis",
-        "side": "right",
-        "fileName": "semispinalis_capitis_right_4",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 695,
-        "name": "Semispinalis Capitis 05",
-        "groupName": "Semispinalis Capitis",
-        "side": "right",
-        "fileName": "semispinalis_capitis_right_5",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 696,
-        "name": "Semispinalis Capitis 06",
-        "groupName": "Semispinalis Capitis",
-        "side": "right",
-        "fileName": "semispinalis_capitis_right_6",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 70,
-        "name": "Semispinalis Cervicis 01",
-        "groupName": "Semispinalis Cervicis",
-        "side": "left",
-        "fileName": "semispinalis_cervicis_left_1",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 702,
-        "name": "Semispinalis Cervicis 02",
-        "groupName": "Semispinalis Cervicis",
-        "side": "left",
-        "fileName": "semispinalis_cervicis_left_2",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 703,
-        "name": "Semispinalis Cervicis 03",
-        "groupName": "Semispinalis Cervicis",
-        "side": "left",
-        "fileName": "semispinalis_cervicis_left_3",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 704,
-        "name": "Semispinalis Cervicis 04",
-        "groupName": "Semispinalis Cervicis",
-        "side": "left",
-        "fileName": "semispinalis_cervicis_left_4",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 71,
-        "name": "Semispinalis Cervicis 01",
-        "groupName": "Semispinalis Cervicis",
-        "side": "right",
-        "fileName": "semispinalis_cervicis_right_1",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 712,
-        "name": "Semispinalis Cervicis 02",
-        "groupName": "Semispinalis Cervicis",
-        "side": "right",
-        "fileName": "semispinalis_cervicis_right_2",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 713,
-        "name": "Semispinalis Cervicis 03",
-        "groupName": "Semispinalis Cervicis",
-        "side": "right",
-        "fileName": "semispinalis_cervicis_right_3",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 714,
-        "name": "Semispinalis Cervicis 04",
-        "groupName": "Semispinalis Cervicis",
-        "side": "right",
-        "fileName": "semispinalis_cervicis_right_4",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 72,
-        "name": "Splenius Capitis",
-        "groupName": "Splenius Capitis",
-        "side": "left",
-        "fileName": "splenius_capitis_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 73,
-        "name": "Splenius Capitis",
-        "groupName": "Splenius Capitis",
-        "side": "right",
-        "fileName": "splenius_capitis_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 74,
-        "name": "Sternocleidomastoid",
-        "groupName": "Sternocleidomastoid",
-        "side": "left",
-        "fileName": "sternocleidomastoid_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 75,
-        "name": "Sternocleidomastoid",
-        "groupName": "Sternocleidomastoid",
-        "side": "right",
-        "fileName": "sternocleidomastoid_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 76,
-        "name": "Sternohyoid",
-        "groupName": "Sternohyoid",
-        "side": "left",
-        "fileName": "sternohyoid_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 77,
-        "name": "Sternohyoid",
-        "groupName": "Sternohyoid",
-        "side": "right",
-        "fileName": "sternohyoid_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 78,
-        "name": "Sternothyroideus",
-        "groupName": "Sternothyroideus",
-        "side": "left",
-        "fileName": "sternothyroideus_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 79,
-        "name": "Sternothyroideus",
-        "groupName": "Sternothyroideus",
-        "side": "right",
-        "fileName": "sternothyroideus_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 80,
-        "name": "Stylohyoid",
-        "groupName": "Stylohyoid",
-        "side": "left",
-        "fileName": "stylohyoid_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 81,
-        "name": "Stylohyoid",
-        "groupName": "Stylohyoid",
-        "side": "right",
-        "fileName": "stylohyoid_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 82,
-        "name": "Superior Auricular",
-        "groupName": "Superior Auricular",
-        "side": "left",
-        "fileName": "superior_auricular_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 83,
-        "name": "Superior Auricular",
-        "groupName": "Superior Auricular",
-        "side": "right",
-        "fileName": "superior_auricular_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 84,
-        "name": "Temporalis",
-        "groupName": "Temporal",
-        "side": "left",
-        "fileName": "temporal_left",
-        "texture": "muscleBodyTex",
-        "textureGrey": "muscleBodyTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 85,
-        "name": "Temporalis",
-        "groupName": "Temporal",
-        "side": "right",
-        "fileName": "temporal_right",
-        "texture": "muscleBodyTex",
-        "textureGrey": "muscleBodyTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 86,
-        "name": "Thyrohyoid",
-        "groupName": "Thyrohyoid",
-        "side": "left",
-        "fileName": "thyrohyoid_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 87,
-        "name": "Thyrohyoid",
-        "groupName": "Thyrohyoid",
-        "side": "right",
-        "fileName": "thyrohyoid_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 88,
-        "name": "Trapezius",
-        "groupName": "rapezius",
-        "side": "left",
-        "fileName": "trapezius_left",
-        "fileType": "obj"
-    },
-    {
-        "id": 89,
-        "name": "Trapezius",
-        "groupName": "Trapezius",
-        "side": "right",
-        "fileName": "trapezius_right",
-        "fileType": "obj"
-    },
-    {
-        "id": 90,
-        "name": "Zygomaticus Major",
-        "groupName": "Zygomaticus Major",
-        "side": "left",
-        "fileName": "zygomaticus_major_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 91,
-        "name": "Zygomaticus Major",
-        "groupName": "Zygomaticus Major",
-        "side": "right",
-        "fileName": "zygomaticus_major_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 92,
-        "name": "Zygomaticus Minor",
-        "groupName": "Zygomaticus Minor",
-        "side": "left",
-        "fileName": "zygomaticus_minor_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 93,
-        "name": "Zygomaticus Minor",
-        "groupName": "Zygomaticus Minor",
-        "side": "right",
-        "fileName": "zygomaticus_minor_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 94,
-        "name": "Subcapularis",
-        "groupName": "Subcapularis",
-        "side": "left",
-        "fileName": "subscapularis_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 95,
-        "name": "Subcapularis",
-        "groupName": "Subcapularis",
-        "side": "right",
-        "fileName": "subscapularis_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 96,
-        "name": "Supraspinatus",
-        "groupName": "Supraspinatus",
-        "side": "left",
-        "fileName": "supraspinatus_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 97,
-        "name": "Supraspinatus",
-        "groupName": "Supraspinatus",
-        "side": "right",
-        "fileName": "supraspinatus_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 98,
-        "name": "Teres Major",
-        "groupName": "Teres Major",
-        "side": "left",
-        "fileName": "teres_major_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 99,
-        "name": "Teres Major",
-        "groupName": "Teres Major",
-        "side": "right",
-        "fileName": "teres_major_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 100,
-        "name": "Teres Minor",
-        "groupName": "Teres Minor",
-        "side": "left",
-        "fileName": "teres_minor_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 101,
-        "name": "Teres Minor",
-        "groupName": "Teres Minor",
-        "side": "right",
-        "fileName": "teres_minor_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 102,
-        "name": "Infraspinatus",
-        "groupName": "Infraspinatus",
-        "side": "left",
-        "fileName": "infraspinatus_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 103,
-        "name": "Infraspinatus",
-        "groupName": "Infraspinatus",
-        "side": "right",
-        "fileName": "infraspinatus_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 104,
-        "name": "Rhomboid Major",
-        "groupName": "Rhomboid Major",
-        "side": "left",
-        "fileName": "rhomboid_major_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 105,
-        "name": "Rhomboid Major",
-        "groupName": "Rhomboid Major",
-        "side": "right",
-        "fileName": "rhomboid_major_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 106,
-        "name": "Rhomboid Minor",
-        "groupName": "Rhomboid Minor",
-        "side": "left",
-        "fileName": "rhomboid_minor_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 107,
-        "name": "Rhomboid Minor",
-        "groupName": "Rhomboid Minor",
-        "side": "right",
-        "fileName": "rhomboid_minor_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 108,
-        "name": "Spinalis",
-        "groupName": "Spinalis",
-        "side": "left",
-        "fileName": "spinalis_left",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    },
-    {
-        "id": 108,
-        "name": "Spinalis",
-        "groupName": "Spinalis",
-        "side": "right",
-        "fileName": "spinalis_right",
-        "texture": "muscleTex",
-        "textureGrey": "muscleTexGrey",
-        "fileType": "obj"
-    }
-]
+{
+    "misc": [
+        {
+            "name": "skull",
+            "displayName": "Skull",
+            "children": [],
+            "models": [
+                {
+                    "fileName": "skull.obj"
+                }
+            ]
+        },
+        {
+            "name": "mandible",
+            "displayName": "Mandible",
+            "children": [],
+            "models": [
+                {
+                    "fileName": "mandible.obj"
+                }
+            ]
+        },
+        {
+            "name": "atlas",
+            "displayName": "Atlas",
+            "children": [],
+            "models": [
+                {
+                    "fileName": "atlas.obj"
+                }
+            ]
+        },
+        {
+            "name": "clavical",
+            "displayName": "Clavical",
+            "children": [],
+            "models": [
+                {
+                    "fileName": "clavical.obj"
+                }
+            ]
+        },
+        {
+            "name": "eyes",
+            "displayName": "Eyes",
+            "children": [],
+            "models": [
+                {
+                    "fileName": "eye_left.obj",
+                    "texture": "eyeballTex"
+                },
+                {
+                    "fileName": "eye_right.obj",
+                    "texture": "eyeballTex"
+                }
+            ]
+        },
+        {
+            "name": "teeth",
+            "displayName": "Teeth",
+            "children": [],
+            "models": [
+                {
+                    "fileName": "teeth.obj",
+                    "texture": "teeth",
+                    "multi": true
+                }
+            ]
+        }
+    ],
+    "muscles": [
+        {
+            "name": "subdermal",
+            "displayName": "Subdermal",
+            "children": [
+                {
+                    "btxId": "1",
+                    "name": "Subdermal",
+                    "side": "both",
+                    "groupId": "1"
+                },
+                {
+                    "btxId": "28",
+                    "name": "Subdermal",
+                    "side": "both",
+                    "groupId": "1"
+                },
+                {
+                    "btxId": "29",
+                    "name": "Subdermal",
+                    "side": "both",
+                    "groupId": "1"
+                },
+                {
+                    "btxId": "62",
+                    "name": "Subdermal",
+                    "side": "both",
+                    "groupId": "2"
+                },
+                {
+                    "btxId": "65",
+                    "name": "Subdermal",
+                    "side": "both",
+                    "groupId": "2"
+                },
+                {
+                    "btxId": "66",
+                    "name": "Subdermal",
+                    "side": "both",
+                    "groupId": "2"
+                },
+                {
+                    "btxId": "77",
+                    "name": "Subdermal",
+                    "side": "both",
+                    "groupId": "2"
+                },
+                {
+                    "btxId": "90",
+                    "name": "Subdermal",
+                    "side": "both",
+                    "groupId": "2"
+                },
+                {
+                    "btxId": "91",
+                    "name": "Subdermal",
+                    "side": "both",
+                    "groupId": "2"
+                },
+                {
+                    "btxId": "318",
+                    "name": "Subdermal",
+                    "side": "both",
+                    "groupId": "3"
+                },
+                {
+                    "btxId": "319",
+                    "name": "Subdermal",
+                    "side": "both",
+                    "groupId": "3"
+                },
+                {
+                    "btxId": "320",
+                    "name": "Subdermal",
+                    "side": "both",
+                    "groupId": "4"
+                },
+                {
+                    "btxId": "345",
+                    "name": "Subdermal",
+                    "side": "both",
+                    "groupId": "4"
+                },
+                {
+                    "btxId": "347",
+                    "name": "Subdermal",
+                    "side": "both",
+                    "groupId": "4"
+                },
+                {
+                    "btxId": "349",
+                    "name": "Subdermal",
+                    "side": "both",
+                    "groupId": "4"
+                },
+                {
+                    "btxId": "380",
+                    "name": "Subdermal",
+                    "side": "both",
+                    "groupId": "5"
+                },
+                {
+                    "btxId": "401",
+                    "name": "Subdermal",
+                    "side": "both",
+                    "groupId": "5"
+                },
+                {
+                    "btxId": "600",
+                    "name": "Subdermal",
+                    "side": "both",
+                    "groupId": "6"
+                },
+                {
+                    "btxId": "623",
+                    "name": "Subdermal",
+                    "side": "both",
+                    "groupId": "6"
+                },
+                {
+                    "btxId": "624",
+                    "name": "Subdermal",
+                    "side": "both",
+                    "groupId": "6"
+                },
+                {
+                    "btxId": "627",
+                    "name": "Subdermal",
+                    "side": "both",
+                    "groupId": "6"
+                },
+                {
+                    "btxId": "640",
+                    "name": "Subdermal",
+                    "side": "both",
+                    "groupId": "7"
+                },
+                {
+                    "btxId": "649",
+                    "name": "Subdermal",
+                    "side": "both",
+                    "groupId": "7"
+                },
+                {
+                    "btxId": "650",
+                    "name": "Subdermal",
+                    "side": "both",
+                    "groupId": "7"
+                },
+                {
+                    "btxId": "657",
+                    "name": "Subdermal",
+                    "side": "both",
+                    "groupId": "7"
+                },
+                {
+                    "btxId": "668",
+                    "name": "Subdermal",
+                    "side": "both",
+                    "groupId": "8"
+                },
+                {
+                    "btxId": "671",
+                    "name": "Subdermal",
+                    "side": "both",
+                    "groupId": "8"
+                }
+            ],
+            "models": []
+        },
+        
+    
+
+
+
+        {
+            "name": "abductor digit minimi pedis",
+            "displayName": "Abductor Digit Minimi Pedis",
+            "children": [
+                {
+                    "btxId": 672,
+                    "name": "Left Abductor Digit Minimi Pedis",
+                    "side": "left",
+                    "groupId": 8
+                },
+                {
+                    "btxId": 673,
+                    "name": "Right Abductor Digit Minimi Pedis",
+                    "side": "right",
+                    "groupId": 8
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "abductor_digit_minimi_pedis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "abductor_digit_minimi_pedis_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "abductor digiti minimi manus",
+            "displayName": "Abductor Digiti Minimi Manus",
+            "children": [
+                {
+                    "btxId": 416,
+                    "name": "Left Abductor Digiti Minimi Manus",
+                    "side": "left",
+                    "groupId": 5
+                },
+                {
+                    "btxId": 417,
+                    "name": "Right Abductor Digiti Minimi Manus",
+                    "side": "right",
+                    "groupId": 5
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "abductor_digiti_minimi_manus_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "abductor_digiti_minimi_manus_right.obj"
+                }
+            ]
+        },
+        {   
+            "name": "abductor hallucis",
+            "displayName": "Abductor Hallucis",
+            "children": [
+                {
+                    "btxId": 674,
+                    "name": "Left Abductor Hallucis",
+                    "side": "left",
+                    "groupId": 8
+                },
+                {
+                    "btxId": 675,
+                    "name": "Right Abductor Hallucis",
+                    "side": "right",
+                    "groupId": 8
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "adductor_hallucis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "adductor_hallucis_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "abductor pollicis brevis",
+            "displayName": "Abductor Pollicis Brevis",
+            "children": [
+                {
+                    "btxId": 408,
+                    "name": "Left Adductor Pollicis Brevis",
+                    "side": "left",
+                    "groupId": 5
+                },
+                {
+                    "btxId": 409,
+                    "name": "Right Adductor Pollicis Brevis",
+                    "side": "right",
+                    "groupId": 5
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "adductor_pollicis_brevis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "adductor_pollicis_brevis_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "abductor pollicis longus",
+            "displayName": "Abductor Pollicis Longus",
+            "children": [
+                {
+                    "btxId": 391,
+                    "name": "Left Adductor Pollicis Longus",
+                    "side": "left",
+                    "groupId": 5
+                },
+                {
+                    "btxId": 392,
+                    "name": "Right Adductor Pollicis Longus",
+                    "side": "right",
+                    "groupId": 5
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "adductor_pollicis_longus_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "adductor_pollicis_longus_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "adductor brevis",
+            "displayName": "Adductor Brevis",
+            "children": [
+                {
+                    "btxId": 617,
+                    "name": "Left Adductor Brevis",
+                    "side": "left",
+                    "groupId": 6
+                },
+                {
+                    "btxId": 618,
+                    "name": "Right Adductor Brevis",
+                    "side": "right",
+                    "groupId": 6
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "adductor_brevis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "adductor_brevis_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "adductor hallucis",
+            "displayName": "Adductor Hallucis",
+            "children": [
+                {
+                    "btxId": 682,
+                    "name": "Left Adductor Hallucis",
+                    "side": "left",
+                    "groupId": 8
+                },
+                {
+                    "btxId": 683,
+                    "name": "Right Adductor Hallucis",
+                    "side": "right",
+                    "groupId": 8
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "adductor_hallucis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "adductor_hallucis_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "adductor longus",
+            "displayName": "Adductor Longus",
+            "children": [
+                {
+                    "btxId": 613,
+                    "name": "Left Adductor Longus",
+                    "side": "left",
+                    "groupId": 6
+                },
+                {
+                    "btxId": 614,
+                    "name": "Right Adductor Longus",
+                    "side": "right",
+                    "groupId": 6
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "adductor_longus_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "adductor_longus_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "adductor magnus",
+            "displayName": "Adductor Magnus",
+            "children": [
+                {
+                    "btxId": 621,
+                    "name": "Left Adductor Magnus",
+                    "side": "left",
+                    "groupId": 6
+                },
+                {
+                    "btxId": 622,
+                    "name": "Right Adductor Magnus",
+                    "side": "right",
+                    "groupId": 6
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "adductor_magnus_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "adductor_magnus_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "adductor pollicis",
+            "displayName": "Adductor Pollicis",
+            "children": [
+                {
+                    "btxId": 412,
+                    "name": "Left Adductor Pollicis",
+                    "side": "left",
+                    "groupId": 5
+                },
+                {
+                    "btxId": 413,
+                    "name": "Right Adductor Pollicis",
+                    "side": "right",
+                    "groupId": 5
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "adductor_pollicis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "adductor_pollicis_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "anterior deltoid",
+            "displayName": "Anterior Deltoid",
+            "children": [
+                {
+                    "btxId": 321,
+                    "name": "Left Anterior Deltoid",
+                    "side": "left",
+                    "groupId": 4
+                },
+                {
+                    "btxId": 322,
+                    "name": "Right Anterior Deltoid",
+                    "side": "right",
+                    "groupId": 4
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "anterior_deltoid_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "anterior_deltoid_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "biceps brachii",
+            "displayName": "Biceps Brachii",
+            "children": [
+                {
+                    "btxId": 329,
+                    "name": "Left Biceps Brachii",
+                    "side": "left",
+                    "groupId": 4
+                },
+                {
+                    "btxId": 330,
+                    "name": "Right Biceps Brachii",
+                    "side": "right",
+                    "groupId": 4
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "biceps_brachii_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "biceps_brachii_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "biceps femoris",
+            "displayName": "Biceps Femoris",
+            "children": [
+                {
+                    "btxId": 634,
+                    "name": "Left Biceps Femoris",
+                    "side": "left",
+                    "groupId": 6
+                },
+                {
+                    "btxId": 635,
+                    "name": "Right Biceps Femoris",
+                    "side": "right",
+                    "groupId": 6
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "biceps_femoris_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "biceps_femoris_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "bladder",
+            "displayName": "Bladder",
+            "children": [
+                {
+                    "btxId": 700,
+                    "name": "Bladder",
+                    "side": "both",
+                    "groupId": 9
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "bladder.obj"
+                }
+            ]
+        },
+        {
+            "name": "brachialis",
+            "displayName": "Brachialis",
+            "children": [
+                {
+                    "btxId": 335,
+                    "name": "Left Brachialis",
+                    "side": "left",
+                    "groupId": 4
+                },
+                {
+                    "btxId": 336,
+                    "name": "Right Brachialis",
+                    "side": "right",
+                    "groupId": 4
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "brachialis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "brachialis_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "brachioradialis",
+            "displayName": "Brachioradialis",
+            "children": [
+                {
+                    "btxId": 402,
+                    "name": "Left Brachioradialis",
+                    "side": "left",
+                    "groupId": 5
+                },
+                {
+                    "btxId": 403,
+                    "name": "Right Brachioradialis",
+                    "side": "right",
+                    "groupId": 5
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "brachioradialis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "brachioradialis_right.obj"
+                }
+            ]
+        }, 
+        {
+            "name": "corrugator supercilii",
+            "displayName": "Corrugator Supercilii",
+            "children": [
+                {
+                    "btxId": 25,
+                    "name": "Left Corrugator Supercilii",
+                    "side": "left",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 26,
+                    "name": "Right Corrugator Supercilii",
+                    "side": "right",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 58,
+                    "name": "Left Corrugator Supercilii",
+                    "side": "left",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 60,
+                    "name": "Right Corrugator Supercilii",
+                    "side": "right",
+                    "groupId": 1
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "corrugator_supercilii_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "corrugator_supercilii_right.obj"
+                }
+            ]
+        }, 
+        {
+            "name": "depressor anguli oris",
+            "displayName": "Depressor Anguli Oris",
+            "children": [
+                {
+                    "btxId": 30,
+                    "name": "Left Depressor Anguli Oris",
+                    "side": "left",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 44,
+                    "name": "Right Depressor Anguli Oris",
+                    "side": "right",
+                    "groupId": 1
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "depressor_anguli_oris_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "depressor_anguli_oris_right.obj"
+                }
+            ]
+        }, 
+        {
+            "name": "depressor labii inferioris",
+            "displayName": "Depressor Labii Inferioris",
+            "children": [
+                {
+                    "btxId": 31,
+                    "name": "Left Depressor Labii Inferioris",
+                    "side": "left",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 45,
+                    "name": "Right Depressor Labii Inferioris",
+                    "side": "right",
+                    "groupId": 1
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "depressor_labii_inferioris_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "depressor_labii_inferioris_right.obj"
+                }
+            ]
+        }, 
+        {
+            "name": "digastric",
+            "displayName": "Digastric",
+            "children": [
+                {
+                    "btxId": 110,
+                    "name": "Left Digastric",
+                    "side": "left",
+                    "groupId": 2
+                },
+                {
+                    "btxId": 111,
+                    "name": "Right Digastric",
+                    "side": "right",
+                    "groupId": 2
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "digastric_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "digastric_right.obj"
+                }
+            ]
+        }, 
+        {
+            "name": "dorsal interossei manus 1-4",
+            "displayName": "Dorsal Interossei Manus 1-4",
+            "children": [
+                {
+                    "btxId": 399,
+                    "name": "Left Dorsal Interossei Manus 1-4",
+                    "side": "left",
+                    "groupId": 5
+                },
+                {
+                    "btxId": 400,
+                    "name": "Right Dorsal Interossei Manus 1-4",
+                    "side": "right",
+                    "groupId": 5
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "dorsal_interossei_manus_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "dorsal_interossei_manu_right.obj"
+                }
+            ]
+        }, 
+        {
+            "name": "dorsal interossei pedis 1-4",
+            "displayName": "Dorsal Interossei Pedis 1-4",
+            "children": [
+                {
+                    "btxId": 690,
+                    "name": "Left Dorsal Interossei Pedis 1-4",
+                    "side": "left",
+                    "groupId": 8
+                },
+                {
+                    "btxId": 691,
+                    "name": "Right Dorsal Interossei Pedis 1-4",
+                    "side": "right",
+                    "groupId": 8
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "dorsal_interossei_pedis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "dorsal_interossei_pedis_right.obj"
+                }
+            ]
+        }, 
+        {
+            "name": "extensor carpi radialis longus brevis",
+            "displayName": "Extensor Carpi Radialis Longus Brevis",
+            "children": [
+                {
+                    "btxId": 383,
+                    "name": "Left Extensor Carpi Radialis Longus Brevis",
+                    "side": "left",
+                    "groupId": 5
+                },
+                {
+                    "btxId": 384,
+                    "name": "Right Extensor Carpi Radialis Longus Brevis",
+                    "side": "right",
+                    "groupId": 5
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "extensor_carpi_radialis_longus_brevis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "extensor_carpi_radialis_longus_brevis_right.obj"
+                }
+            ]
+        }, 
+        {
+            "name": "extensor carpi ilnaris",
+            "displayName": "Extensor Carpi Ulnaris",
+            "children": [
+                {
+                    "btxId": 385,
+                    "name": "Left Extensor Carpi Ulnaris",
+                    "side": "left",
+                    "groupId": 5
+                },
+                {
+                    "btxId": 386,
+                    "name": "Right Extensor Carpi Ulnaris",
+                    "side": "right",
+                    "groupId": 5
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "extensor_carpi_ulnaris_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "extensor_carpi_ulnaris_right.obj"
+                }
+            ]
+        }, 
+        {
+            "name": "extensor digiti minimi",
+            "displayName": "Extensor Digiti Minimi",
+            "children": [
+                {
+                    "btxId": 387,
+                    "name": "Left Extensor Digiti Minimi",
+                    "side": "left",
+                    "groupId": 5
+                },
+                {
+                    "btxId": 388,
+                    "name": "Right Extensor Digiti Minimi",
+                    "side": "right",
+                    "groupId": 5
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "extensor_digiti_minimi_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "extensor_digiti_minimi_right.obj"
+                }
+            ]
+        }, 
+        {
+            "name": "extensor digitorum",
+            "displayName": "Extensor Digitorum",
+            "children": [
+                {
+                    "btxId": 381,
+                    "name": "Left Extensor Digitorum",
+                    "side": "left",
+                    "groupId": 5
+                },
+                {
+                    "btxId": 382,
+                    "name": "Right Extensor Digitorum",
+                    "side": "right",
+                    "groupId": 5
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "extensor_digitorum_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "extensor_digitorum_right.obj"
+                }
+            ]
+        }, 
+        {
+            "name": "extensor digitorum brevis",
+            "displayName": "Extensor Digitorum Brevis",
+            "children": [
+                {
+                    "btxId": 669,
+                    "name": "Left Extensor Digitorum Brevis",
+                    "side": "left",
+                    "groupId": 8
+                },
+                {
+                    "btxId": 670,
+                    "name": "Right Extensor Digitorum Brevis",
+                    "side": "right",
+                    "groupId": 8
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "extensor_digitorum_brevis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "extensor_digitorum_brevis_right.obj"
+                }
+            ]
+        }, 
+        {
+            "name": "extensor digitorum longus",
+            "displayName": "Extensor Digitorum Longus",
+            "children": [
+                {
+                    "btxId": 643,
+                    "name": "Left Extensor Digitorum Longus",
+                    "side": "left",
+                    "groupId": 7
+                },
+                {
+                    "btxId": 644,
+                    "name": "Right Extensor Digitorum Longus",
+                    "side": "right",
+                    "groupId": 7
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "extensor_digitorum_longus_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "extensor_digitorum_longus_right.obj"
+                }
+            ]
+        }, 
+        {
+            "name": "extensor hallucis brevis",
+            "displayName": "Extensor Hallucis Brevis",
+            "children": [
+                {
+                    "btxId": 709,
+                    "name": "Left Extensor Hallucis Brevis",
+                    "side": "left",
+                    "groupId": 8
+                },
+                {
+                    "btxId": 710,
+                    "name": "Right Extensor Hallucis Brevis",
+                    "side": "right",
+                    "groupId": 8
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "extensor_hallucis_brevis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "extensor_hallucis_brevis_right.obj"
+                }
+            ]
+        }, 
+        {
+            "name": "extensor hallucis longus",
+            "displayName": "Extensor Hallucis Longus",
+            "children": [
+                {
+                    "btxId": 645,
+                    "name": "Left Extensor Hallucis Longus",
+                    "side": "left",
+                    "groupId": 7
+                },
+                {
+                    "btxId": 646,
+                    "name": "Right Extensor Hallucis Longus",
+                    "side": "right",
+                    "groupId": 7
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "extensor_hallucis_longus_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "extensor_hallucis_longus_right.obj"
+                }
+            ]
+        }, 
+        {
+            "name": "extensor indicis",
+            "displayName": "Extensor Indicis",
+            "children": [
+                {
+                    "btxId": 397,
+                    "name": "Left Extensor Indicis",
+                    "side": "left",
+                    "groupId": 5
+                },
+                {
+                    "btxId": 398,
+                    "name": "Right Extensor Indicis",
+                    "side": "right",
+                    "groupId": 5
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "extensor_tndicis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "extensor_tndicis_right.obj"
+                }
+            ]
+        },  
+        {
+            "name": "extensor pollicis brevis",
+            "displayName": "Extensor Pollicis Brevis",
+            "children": [
+                {
+                    "btxId": 389,
+                    "name": "Left Extensor Pollicis Brevis",
+                    "side": "left",
+                    "groupId": 5
+                },
+                {
+                    "btxId": 390,
+                    "name": "Right Extensor Pollicis Brevis",
+                    "side": "right",
+                    "groupId": 5
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "extensor_pollicis_brevis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "extensor_pollicis_brevis_right.obj"
+                }
+            ]
+        },  
+        {
+            "name": "extensor pollicis longus",
+            "displayName": "Extensor Pollicis Longus",
+            "children": [
+                {
+                    "btxId": 395,
+                    "name": "Left Extensor Pollicis Longus",
+                    "side": "left",
+                    "groupId": 5
+                },
+                {
+                    "btxId": 396,
+                    "name": "Right Extensor Pollicis Longus",
+                    "side": "right",
+                    "groupId": 5
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "extensor_pollicis_longus_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "extensor_pollicis_longus_right.obj"
+                }
+            ]
+        },  
+        {
+            "name": "external oblique",
+            "displayName": "External Oblique",
+            "children": [
+                {
+                    "btxId": 333,
+                    "name": "Left External Oblique",
+                    "side": "left",
+                    "groupId": 4
+                },
+                {
+                    "btxId": 334,
+                    "name": "Right External Oblique",
+                    "side": "right",
+                    "groupId": 4
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "external_oblique_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "external_oblique_right.obj"
+                }
+            ]
+        },  
+        {
+            "name": "flexor carpi radialis",
+            "displayName": "Flexor Carpi Radialis",
+            "children": [
+                {
+                    "btxId": 404,
+                    "name": "Left Flexor Carpi Radialis",
+                    "side": "left",
+                    "groupId": 5
+                },
+                {
+                    "btxId": 405,
+                    "name": "Right Flexor Carpi Radialis",
+                    "side": "right",
+                    "groupId": 5
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "flexor_carpi_radialis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "flexor_carpi_radialis_right.obj"
+                }
+            ]
+        },  
+        {
+            "name": "flexor carpi ulnaris",
+            "displayName": "Flexor Carpi Ulnaris",
+            "children": [
+                {
+                    "btxId": 434,
+                    "name": "Left Flexor Carpi Ulnaris",
+                    "side": "left",
+                    "groupId": 5
+                },
+                {
+                    "btxId": 435,
+                    "name": "Right Flexor Carpi Ulnaris",
+                    "side": "right",
+                    "groupId": 5
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "flexor_carpi_ulnaris_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "flexor_carpi_ulnaris_right.obj"
+                }
+            ]
+        },  
+        {
+            "name": "flexor digiti minimi brevis manus",
+            "displayName": "Flexor Digiti Minimi Brevis Manus",
+            "children": [
+                {
+                    "btxId": 422,
+                    "name": "Left Flexor Digiti Minimi Brevis Manus",
+                    "side": "left",
+                    "groupId": 5
+                },
+                {
+                    "btxId": 423,
+                    "name": "Right Flexor Digiti Minimi Brevis Manus",
+                    "side": "right",
+                    "groupId": 5
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "flexor_digiti_minimi_brevis_manus_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "flexor_digiti_minimi_brevis_manus_right.obj"
+                }
+            ]
+        },  
+        {
+            "name": "flexor digiti minimi brevis pedis",
+            "displayName": "Flexor Digiti Minimi Brevis Pedis",
+            "children": [
+                {
+                    "btxId": 684,
+                    "name": "Left Flexor Digiti Minimi Brevis Pedis",
+                    "side": "left",
+                    "groupId": 8
+                },
+                {
+                    "btxId": 685,
+                    "name": "Right Flexor Digiti Minimi Brevis Pedis",
+                    "side": "right",
+                    "groupId": 8
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "flexor_digiti_minimi_brevis_pedis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "flexor_digiti_minimi_brevis_pedis_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "flexor digitorum brevis",
+            "displayName": "Flexor Digitorum Brevis",
+            "children": [
+                {
+                    "btxId": 676,
+                    "name": "Left Flexor Digitorum Brevis",
+                    "side": "left",
+                    "groupId": 8
+                },
+                {
+                    "btxId": 677,
+                    "name": "Right Flexor Digitorum Brevis",
+                    "side": "right",
+                    "groupId": 8
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "flexor_digitorum_brevis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "flexor_digitorum_brevis_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "flexor digitorum longus",
+            "displayName": "Flexor Digitorum Longus",
+            "children": [
+                {
+                    "btxId": 426,
+                    "name": "Left Flexor Digitorum Longus",
+                    "side": "left",
+                    "groupId": 7
+                },
+                {
+                    "btxId": 427,
+                    "name": "Right Flexor Digitorum Longus",
+                    "side": "right",
+                    "groupId": 7
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "flexor_digitorum_longus_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "flexor_digitorum_longus_right.obj"
+                }
+            ]
+        },
+        {   
+            "name": "flexor digitorum profundus",
+            "displayName": "Flexor Digitorum Profundus",
+            "children": [
+                {
+                    "btxId": 426,
+                    "name": "Left Flexor Digitorum Profundus",
+                    "side": "left",
+                    "groupId": 5
+                },
+                {
+                    "btxId": 427,
+                    "name": "Right Flexor Digitorum Profundus",
+                    "side": "right",
+                    "groupId": 5
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "flexor_digitorum_profundus_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "flexor_digitorum_profundus_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "flexor digitorum superficialis",
+            "displayName": "Flexor Digitorum Superficialis",
+            "children": [
+                {
+                    "btxId": 418,
+                    "name": "Left Flexor Digitorum Superficialis",
+                    "side": "left",
+                    "groupId": 5
+                },
+                {
+                    "btxId": 419,
+                    "name": "Right Flexor Digitorum Superficialis",
+                    "side": "right",
+                    "groupId": 5
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "flexor_digitorum_superficialis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "flexor_digitorum_superficialis_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "flexor hallucis brevis",
+            "displayName": "Flexor Hallucis Brevis",
+            "children": [
+                {
+                    "btxId": 686,
+                    "name": "Left Flexor Hallucis Brevis",
+                    "side": "left",
+                    "groupId": 8
+                },
+                {
+                    "btxId": 687,
+                    "name": "Right Flexor Hallucis Brevis",
+                    "side": "right",
+                    "groupId": 8
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "flexor_hallucis_brevis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "flexor_hallucis_brevis_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "flexor hallucis longus",
+            "displayName": "Flexor Hallucis Longus",
+            "children": [
+                {
+                    "btxId": 662,
+                    "name": "Left Flexor Hallucis Longus",
+                    "side": "left",
+                    "groupId": 7
+                },
+                {
+                    "btxId": 663,
+                    "name": "Right Flexor Hallucis Longus",
+                    "side": "right",
+                    "groupId": 7
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "flexor_hallucis_longus_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "flexor_hallucis_longus_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "flexor pollicis longus",
+            "displayName": "Flexor Pollicis Longus",
+            "children": [
+                {
+                    "btxId": 424,
+                    "name": "Left Flexor Pollicis Longus",
+                    "side": "left",
+                    "groupId": 5
+                },
+                {
+                    "btxId": 425,
+                    "name": "Right Flexor Pollicis Longus",
+                    "side": "right",
+                    "groupId": 5
+                }
+               
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "flexor_pollicis_longus_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "flexor_pollicis_longus_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "frontalis",
+            "displayName": "Frontalis",
+            "children": [
+                {
+                    "btxId": 6,
+                    "name": "Left Frontalis",
+                    "side": "left",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 7,
+                    "name": "Right Frontalis",
+                    "side": "right",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 32,
+                    "name": "Left Frontalis",
+                    "side": "left",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 46,
+                    "name": "Right Frontalis",
+                    "side": "right",
+                    "groupId": 1
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "frontalis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "frontalis_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "gastrocnemius",
+            "displayName": "Gastrocnemius",
+            "children": [
+                {
+                    "btxId": 658,
+                    "name": "Left Gastrocnemius",
+                    "side": "left",
+                    "groupId": 7
+                },
+                {
+                    "btxId": 659,
+                    "name": "Right Gastrocnemius",
+                    "side": "right",
+                    "groupId": 7
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "gastrocnemius_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "gastrocnemius_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "gluteus maximus",
+            "displayName": "Gluteus Maximus",
+            "children": [
+                {
+                    "btxId": 628,
+                    "name": "Left Gluteus Maximus",
+                    "side": "left",
+                    "groupId": 6
+                },
+                {
+                    "btxId": 629,
+                    "name": "Right Gluteus Maximus",
+                    "side": "right",
+                    "groupId": 6
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "gluteus_maximus_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "gluteus_maximus_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "gluteus medius",
+            "displayName": "Gluteus Medius",
+            "children": [
+                {
+                    "btxId": 632,
+                    "name": "Left Gluteus Medius",
+                    "side": "left",
+                    "groupId": 6
+                },
+                {
+                    "btxId": 633,
+                    "name": "Right Gluteus Medius",
+                    "side": "right",
+                    "groupId": 6
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "gluteus_medius_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "gluteus_medius_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "gluteus minimus",
+            "displayName": "Gluteus Minimus",
+            "children": [
+                {
+                    "btxId": 636,
+                    "name": "Left Gluteus Minimus",
+                    "side": "left",
+                    "groupId": 6
+                },
+                {
+                    "btxId": 637,
+                    "name": "Right Gluteus Minimus",
+                    "side": "right",
+                    "groupId": 6
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "gluteus_minimus_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "gluteus_minimus_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "gracilis",
+            "displayName": "Gracilis",
+            "children": [
+                {
+                    "btxId": 619,
+                    "name": "Left Gracilis",
+                    "side": "left",
+                    "groupId": 6
+                },
+                {
+                    "btxId": 620,
+                    "name": "Right Gracilis",
+                    "side": "right",
+                    "groupId": 6
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "gracilis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "gracilis_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "iliocostalis",
+            "displayName": "Iliocostalis",
+            "children": [
+                {
+                    "btxId": 366,
+                    "name": "Left Iliocostalis",
+                    "side": "left",
+                    "groupId": 4
+                },
+                {
+                    "btxId": 367,
+                    "name": "Right Iliocostalis",
+                    "side": "right",
+                    "groupId": 4
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "iliocostalis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "iliocostalis_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "iliopsoas",
+            "displayName": "Iliopsoas",
+            "children": [
+                {
+                    "btxId": 605,
+                    "name": "Left Iliopsoas",
+                    "side": "left",
+                    "groupId": 6
+                },
+                {
+                    "btxId": 606,
+                    "name": "Right Iliopsoas",
+                    "side": "right",
+                    "groupId": 6
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "iliopsoas_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "iliopsoas_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "infraspinatus",
+            "displayName": "Infraspinatus",
+            "children": [
+                {
+                    "btxId": 364,
+                    "name": "Left Infraspinatus",
+                    "side": "left",
+                    "groupId": 4
+                },
+                {
+                    "btxId": 365,
+                    "name": "Right Infraspinatus",
+                    "side": "right",
+                    "groupId": 4
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "infraspinatus_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "infraspinatus_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "internal oblique",
+            "displayName": "Internal Oblique",
+            "children": [
+                {
+                    "btxId": 337,
+                    "name": "Left Internal Oblique",
+                    "side": "left",
+                    "groupId": 4
+                },
+                {
+                    "btxId": 338,
+                    "name": "Right Internal Oblique",
+                    "side": "right",
+                    "groupId": 4
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "internal_oblique_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "internal_oblique_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "lateral deltoid",
+            "displayName": "Lateral Deltoid",
+            "children": [
+                {
+                    "btxId": 323,
+                    "name": "Left Lateral Deltoid",
+                    "side": "left",
+                    "groupId": 4
+                },
+                {
+                    "btxId": 324,
+                    "name": "Right Lateral Deltoid",
+                    "side": "right",
+                    "groupId": 4
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "lateral_deltoid_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "lateral_deltoid_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "lateral pterygoid",
+            "displayName": "Lateral Pterygoid",
+            "children": [
+                {
+                    "btxId": 106,
+                    "name": "Left Lateral Pterygoid",
+                    "side": "left",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 108,
+                    "name": "Right Lateral Pterygoid",
+                    "side": "right",
+                    "groupId": 1
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "lateral_pterygoid_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "lateral_pterygoid_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "latissimus dorsi",
+            "displayName": "Latissimus Dorsi",
+            "children": [
+                {
+                    "btxId": 354,
+                    "name": "Left Latissimus Dorsi",
+                    "side": "left",
+                    "groupId": 4
+                },
+                {
+                    "btxId": 355,
+                    "name": "Right Latissimus Dorsi",
+                    "side": "right",
+                    "groupId": 4
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "latissimus_dorsi_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "latissimus_dorsi_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "levator anguli oris",
+            "displayName": "Levator Anguli Oris",
+            "children": [
+                {
+                    "btxId": 8,
+                    "name": "Left Levator Anguli Oris",
+                    "side": "left",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 9,
+                    "name": "Right Levator Anguli Oris",
+                    "side": "right",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 33,
+                    "name": "Left Levator Anguli Oris",
+                    "side": "left",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 47,
+                    "name": "Right Levator Anguli Oris",
+                    "side": "right",
+                    "groupId": 1
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "levator_anguli_oris_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "levator_anguli_oris_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "levator labii superioris",
+            "displayName": "Levator Labii Superioris",
+            "children": [
+                {
+                    "btxId": 12,
+                    "name": "Left Levator Labii Superioris",
+                    "side": "left",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 13,
+                    "name": "Right Levator Labii Superioris",
+                    "side": "right",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 35,
+                    "name": "Left Levator Labii Superioris",
+                    "side": "left",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 49,
+                    "name": "Right Levator Labii Superioris",
+                    "side": "right",
+                    "groupId": 1
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "levator_labii_superioris_left_1.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "levator_labii_superioris_right_1.obj"
+                },
+                {
+                    "side": "left",
+                    "fileName": "levator_labii_superioris_left_2.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "levator_labii_superioris_right_2.obj"
+                }
+            ]
+        },
+        {
+            "name": "levator labii superioris alaeque nasi",
+            "displayName": "Levator Labii Superioris Alaeque Nasi",
+            "children": [
+                {
+                    "btxId": 10,
+                    "name": "Left Levator Labii Superioris Alaeque Nasi",
+                    "side": "left",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 11,
+                    "name": "Right Levator Labii Superioris Alaeque Nasi",
+                    "side": "right",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 35,
+                    "name": "Left Levator Labii Superioris Alaeque Nasi",
+                    "side": "left",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 48,
+                    "name": "Right Levator Labii Superioris Alaeque Nasi",
+                    "side": "right",
+                    "groupId": 1
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "levator_labii_superioris_alaeque_nasi_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "levator_labii_superioris_alaeque_nasi_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "levator scapulae",
+            "displayName": "Levator Scapulae",
+            "children": [
+                {
+                    "btxId": 96,
+                    "name": "Left Levator Scapulae",
+                    "side": "left",
+                    "groupId": 2
+                },
+                {
+                    "btxId": 98,
+                    "name": "Right Levator Scapulae",
+                    "side": "right",
+                    "groupId": 2
+                },
+                {
+                    "btxId": 350,
+                    "name": "Left Levator Scapulae",
+                    "side": "left",
+                    "groupId": 4
+                },
+                {
+                    "btxId": 351,
+                    "name": "Right Levator Scapulae",
+                    "side": "right",
+                    "groupId": 4
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "levator_scapulae_left_1.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "levator_scapulae_right_1.obj"
+                },
+                {
+                    "side": "left",
+                    "fileName": "levator_scapulae_left_2.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "levator_scapulae_right_2.obj"
+                },
+                {
+                    "side": "left",
+                    "fileName": "levator_scapulae_left_3.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "levator_scapulae_right_3.obj"
+                },
+                {
+                    "side": "left",
+                    "fileName": "levator_scapulae_left_4.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "levator_scapulae_right_4.obj"
+                }
+            ]
+        },
+        {
+            "name": "longissimus capitis",
+            "displayName": "Longissimus Capitis",
+            "children": [
+                {
+                    "btxId": 103,
+                    "name": "Left Longissimus Capitis",
+                    "side": "left",
+                    "groupId": 2
+                },
+                {
+                    "btxId": 105,
+                    "name": "Right Longissimus Capitis",
+                    "side": "right",
+                    "groupId": 2
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "longissimus_capitis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "longissimus_capitis_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "longissimus thoracis",
+            "displayName": "Longissimus Thoracis",
+            "children": [
+                {
+                    "btxId": 368,
+                    "name": "Left Longissimus Thoracis",
+                    "side": "left",
+                    "groupId": 4
+                },
+                {
+                    "btxId": 369,
+                    "name": "Right Longissimus Thoracis",
+                    "side": "right",
+                    "groupId": 4
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "longissimus_thoracis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "longissimus_thoracis_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "longus colli",
+            "displayName": "Longus Colli",
+            "children": [
+                {
+                    "btxId": 69,
+                    "name": "Left Longus Colli",
+                    "side": "left",
+                    "groupId": 2
+                },
+                {
+                    "btxId": 73,
+                    "name": "Right Longus Colli",
+                    "side": "right",
+                    "groupId": 2
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "longus_colli_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "longus_colli_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "lumbricals 1-4",
+            "displayName": "Lumbricals 1-4",
+            "children": [
+                {
+                    "btxId": 420,
+                    "name": "Left Lumbricals 1-4",
+                    "side": "left",
+                    "groupId": 5
+                },
+                {
+                    "btxId": 421,
+                    "name": "Right Lumbricals 1-4",
+                    "side": "right",
+                    "groupId": 5
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "lumbricals_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "lumbricals_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "lumbricals pedis 1-4",
+            "displayName": "Lumbricals Pedis 1-4",
+            "children": [
+                {
+                    "btxId": 680,
+                    "name": "Left Lumbricals Pedis 1-4",
+                    "side": "left",
+                    "groupId": 8
+                },
+                {
+                    "btxId": 681,
+                    "name": "Right Lumbricals Pedis 1-4",
+                    "side": "right",
+                    "groupId": 8
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "lumbricals_pedis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "lumbricals_pedis_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "masseter",
+            "displayName": "Masseter",
+            "children": [
+                {
+                    "btxId": 36,
+                    "name": "Left Masseter",
+                    "side": "left",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 50,
+                    "name": "Right Masseter",
+                    "side": "right",
+                    "groupId": 1
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "masseter_deep_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "masseter_deep_right.obj"
+                },
+                {
+                    "side": "left",
+                    "fileName": "masseter_superficial_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "masseter_superficial_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "medial pterygoid",
+            "displayName": "Medial Pterygoid",
+            "children": [
+                {
+                    "btxId": 107,
+                    "name": "Left Medial Pterygoid",
+                    "side": "left",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 109,
+                    "name": "Right Medial Pterygoid",
+                    "side": "right",
+                    "groupId": 1
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "medial_pterygoid_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "medial_pterygoid_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "mentalis",
+            "displayName": "Mentalis",
+            "children": [
+                {
+                    "btxId": 14,
+                    "name": "Mentalis",
+                    "side": "both",
+                    "groupId": 1
+                }
+            ],
+            "models": [
+                {
+                    "side": "both",
+                    "fileName": "mentalis.obj",
+                    "multi": true
+                }
+            ]
+        },
+        {
+            "name": "multifidus",
+            "displayName": "Multifidus",
+            "children": [
+                {
+                    "btxId": 376,
+                    "name": "Left Multifidus",
+                    "side": "left",
+                    "groupId": 4
+                },
+                {
+                    "btxId": 377,
+                    "name": "Right Multifidus",
+                    "side": "right",
+                    "groupId": 4
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "multifidus_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "multifidus_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "nasalis",
+            "displayName": "Nasalis",
+            "children": [
+                {
+                    "btxId": 37,
+                    "name": "Left Nasalis",
+                    "side": "left",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 51,
+                    "name": "Right Nasalis",
+                    "side": "right",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 15,
+                    "name": "Nasalis",
+                    "side": "both",
+                    "groupId": 1
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "nasalis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "nasalis_right.obj"
+                },
+                {
+                    "side": "both",
+                    "fileName": "nasalis.obj"
+                }
+            ]
+        },
+        {
+            "name": "obliqus capitis inferior",
+            "displayName": "Obliqus Capitis Inferior",
+            "children": [
+                {
+                    "btxId": 86,
+                    "name": "Left Obliqus Capitis Inferior",
+                    "side": "left",
+                    "groupId": 2
+                },
+                {
+                    "btxId": 87,
+                    "name": "Right Obliqus Capitis Inferior",
+                    "side": "right",
+                    "groupId": 2
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "obliqus_capitis_inferior_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "obliqus_capitis_inferior_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "obliqus capitis superior",
+            "displayName": "Obliqus Capitis Superior",
+            "children": [
+                {
+                    "btxId": 88,
+                    "name": "Left Obliqus Capitis Superior",
+                    "side": "left",
+                    "groupId": 2
+                },
+                {
+                    "btxId": 89,
+                    "name": "Right Obliqus Capitis Superior",
+                    "side": "right",
+                    "groupId": 2
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "obliqus_capitis_superior_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "obliqus_capitis_superior_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "opponens digiti minimi",
+            "displayName": "Opponens Digiti Minimi",
+            "children": [
+                {
+                    "btxId": 430,
+                    "name": "Left Opponens Digiti Minimi",
+                    "side": "left",
+                    "groupId": 5
+                },
+                {
+                    "btxId": 431,
+                    "name": "Right Opponens Digiti Minimi",
+                    "side": "right",
+                    "groupId": 5
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "opponens_digiti_minimi_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "opponens_digiti_minimi_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "opponens pollicis",
+            "displayName": "Opponens Pollicis",
+            "children": [
+                {
+                    "btxId": 414,
+                    "name": "Left Opponens Pollicis",
+                    "side": "left",
+                    "groupId": 5
+                },
+                {
+                    "btxId": 415,
+                    "name": "Right Opponens Pollicis",
+                    "side": "right",
+                    "groupId": 5
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "opponens_pollicis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "opponens_pollicis_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "orbicularis oculi orbital",
+            "displayName": "Orbicularis Oculi Orbital",
+            "children": [
+                {
+                    "btxId": 16,
+                    "name": "Left Orbicularis Oculi Orbital",
+                    "side": "left",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 17,
+                    "name": "Right Orbicularis Oculi Orbital",
+                    "side": "right",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 38,
+                    "name": "Left Orbicularis Oculi Orbital",
+                    "side": "left",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 52,
+                    "name": "Right Orbicularis Oculi Orbital",
+                    "side": "right",
+                    "groupId": 1
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "orbicularis_oculi_orbital_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "orbicularis_oculi_orbital_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "orbicularis oculi palpebral",
+            "displayName": "Orbicularis Oculi Palpebral",
+            "children": [
+                {
+                    "btxId": 18,
+                    "name": "Left Orbicularis Oculi Palpebral",
+                    "side": "left",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 19,
+                    "name": "Right Orbicularis Oculi Palpebral",
+                    "side": "right",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 39,
+                    "name": "Left Orbicularis Oculi Palpebral",
+                    "side": "left",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 53,
+                    "name": "Right Orbicularis Oculi Palpebral",
+                    "side": "right",
+                    "groupId": 1
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "orbicularis_oculi_palpebral_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "orbicularis_oculi_palpebral_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "orbicularis oris",
+            "displayName": "Orbicularis Oris",
+            "children": [
+                {
+                    "btxId": 20,
+                    "name": "Orbicularis Oris",
+                    "side": "both",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 40,
+                    "name": "Left Orbicularis Oris",
+                    "side": "left",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 54,
+                    "name": "Right Orbicularis Oris",
+                    "side": "right",
+                    "groupId": 1
+                }
+            ],
+            "models": [
+                {
+                    "side": "both",
+                    "fileName": "orbicularis_oris.obj"
+                }
+            ]
+        },
+        {
+            "name": "palmar interossei 1-4",
+            "displayName": "Palmar Interossei 1-4",
+            "children": [
+                {
+                    "btxId": 432,
+                    "name": "Left Palmar Interossei 1-4",
+                    "side": "left",
+                    "groupId": 5
+                },
+                {
+                    "btxId": 433,
+                    "name": "Right Palmar Interossei 1-4",
+                    "side": "right",
+                    "groupId": 5
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "palmar_interossei_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "palmar_interossei_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "palmaris brevis",
+            "displayName": "Palmaris Brevis",
+            "children": [
+                {
+                    "btxId": 410,
+                    "name": "Left Palmaris Brevis",
+                    "side": "left",
+                    "groupId": 5
+                },
+                {
+                    "btxId": 411,
+                    "name": "Right Palmaris Brevis",
+                    "side": "right",
+                    "groupId": 5
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "palmaris_brevis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "palmaris_brevis_left.obj"
+                }
+            ]
+        },
+        {
+            "name": "palmaris longus",
+            "displayName": "Palmaris Longus",
+            "children": [
+                {
+                    "btxId": 406,
+                    "name": "Left Palmaris Longus",
+                    "side": "left",
+                    "groupId": 5
+                },
+                {
+                    "btxId": 407,
+                    "name": "Right Palmaris Longus",
+                    "side": "right",
+                    "groupId": 5
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "palmaris_longus_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "palmaris_longus_left.obj"
+                }
+            ]
+        },
+        {
+            "name": "parotid gland",
+            "displayName": "Parotid Gland",
+            "children": [
+                {
+                    "btxId": 706,
+                    "name": "Left Parotid Gland",
+                    "side": "left",
+                    "groupId": 10
+                },
+                {
+                    "btxId": 708,
+                    "name": "Right Parotid Gland",
+                    "side": "right",
+                    "groupId": 10
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "parotid_gland_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "parotid_gland_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "pectineus",
+            "displayName": "Pectineus",
+            "children": [
+                {
+                    "btxId": 615,
+                    "name": "Left Pectineus",
+                    "side": "left",
+                    "groupId": 6
+                },
+                {
+                    "btxId": 616,
+                    "name": "Right Pectineus",
+                    "side": "right",
+                    "groupId": 6
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "pectineus_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "pectineus_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "pectoralis major",
+            "displayName": "Pectoralis Major",
+            "children": [
+                {
+                    "btxId": 325,
+                    "name": "Left Pectoralis Major",
+                    "side": "left",
+                    "groupId": 4
+                },
+                {
+                    "btxId": 326,
+                    "name": "Right Pectoralis Major",
+                    "side": "right",
+                    "groupId": 4
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "pectoralis_major_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "pectoralis_major_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "pectoralis minor",
+            "displayName": "Pectoralis Minor",
+            "children": [
+                {
+                    "btxId": 331,
+                    "name": "Left Pectoralis Minor",
+                    "side": "left",
+                    "groupId": 4
+                },
+                {
+                    "btxId": 332,
+                    "name": "Right Pectoralis Minor",
+                    "side": "right",
+                    "groupId": 4
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "pectoralis_minor_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "pectoralis_minor_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "peroneus brevis",
+            "displayName": "Peroneus Brevis",
+            "children": [
+                {
+                    "btxId": 655,
+                    "name": "Left Peroneus Brevis",
+                    "side": "left",
+                    "groupId": 7
+                },
+                {
+                    "btxId": 656,
+                    "name": "Right Peroneus Brevis",
+                    "side": "right",
+                    "groupId": 7
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "peroneus_brevis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "peroneus_brevis_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "peroneus longus",
+            "displayName": "Peroneus Longus",
+            "children": [
+                {
+                    "btxId": 651,
+                    "name": "Left Peroneus Longus",
+                    "side": "left",
+                    "groupId": 7
+                },
+                {
+                    "btxId": 652,
+                    "name": "Right Peroneus Longus",
+                    "side": "right",
+                    "groupId": 7
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "peroneus_longus_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "peroneus_longus_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "peroneus tertius",
+            "displayName": "Peroneus Tertius",
+            "children": [
+                {
+                    "btxId": 653,
+                    "name": "Left Peroneus Tertius",
+                    "side": "left",
+                    "groupId": 7
+                },
+                {
+                    "btxId": 654,
+                    "name": "Right Peroneus Tertius",
+                    "side": "right",
+                    "groupId": 7
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "peroneus_tertius_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "peroneus_tertius_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "plantar interossei 1-3",
+            "displayName": "Plantar Interossei 1-3",
+            "children": [
+                {
+                    "btxId": 688,
+                    "name": "Left Plantar Interossei 1-3",
+                    "side": "left",
+                    "groupId": 8
+                },
+                {
+                    "btxId": 689,
+                    "name": "Right Plantar Interossei 1-3",
+                    "side": "right",
+                    "groupId": 8
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "plantar_interossei_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "plantar_interossei_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "platysma",
+            "displayName": "Platysma",
+            "children": [
+                {
+                    "btxId": 63,
+                    "name": "Left Platysma",
+                    "side": "left",
+                    "groupId": 2
+                },
+                {
+                    "btxId": 64,
+                    "name": "Right Platysma",
+                    "side": "right",
+                    "groupId": 2
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "platysma_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "platysma_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "posterior deltoid",
+            "displayName": "Posterior Deltoid",
+            "children": [
+                {
+                    "btxId": 352,
+                    "name": "Left Posterior Deltoid",
+                    "side": "left",
+                    "groupId": 4
+                },
+                {
+                    "btxId": 353,
+                    "name": "Right Posterior Deltoid",
+                    "side": "right",
+                    "groupId": 4
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "posterior_deltoid_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "posterior_deltoid_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "procerus",
+            "displayName": "Procerus",
+            "children": [
+                {
+                    "btxId": 27,
+                    "name": "Procerus",
+                    "side": "both",
+                    "groupId": 1
+                }
+            ],
+            "models": [
+                {
+                    "side": "both",
+                    "fileName": "procerus.obj"
+                }
+            ]
+        },
+        {
+            "name": "pronator quadratus",
+            "displayName": "Pronator Quadratus",
+            "children": [
+                {
+                    "btxId": 436,
+                    "name": "Left Pronator Quadratus",
+                    "side": "left",
+                    "groupId": 5
+                },
+                {
+                    "btxId": 437,
+                    "name": "Right Pronator Quadratus",
+                    "side": "right",
+                    "groupId": 5
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "pronator_quadratus_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "pronator_quadratus_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "pronator teres",
+            "displayName": "Pronator Teres",
+            "children": [
+                {
+                    "btxId": 428,
+                    "name": "Left Pronator Teres",
+                    "side": "left",
+                    "groupId": 5
+                },
+                {
+                    "btxId": 429,
+                    "name": "Right Pronator Teres",
+                    "side": "right",
+                    "groupId": 5
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "pronator_teres_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "pronator_teres_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "psoas major",
+            "displayName": "Psoas Major",
+            "children": [
+                {
+                    "btxId": 343,
+                    "name": "Left Psoas Major",
+                    "side": "left",
+                    "groupId": 4
+                },
+                {
+                    "btxId": 344,
+                    "name": "Right Psoas Major",
+                    "side": "right",
+                    "groupId": 4
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "psoas_major_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "psoas_major_left.obj"
+                }
+            ]
+        },
+        {
+            "name": "psoas minor",
+            "displayName": "Psoas Minor",
+            "children": [
+                {
+                    "btxId": 341,
+                    "name": "Left Psoas Minor",
+                    "side": "left",
+                    "groupId": 4
+                },
+                {
+                    "btxId": 342,
+                    "name": "Right Psoas Minor",
+                    "side": "right",
+                    "groupId": 4
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "psoas_minor_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "psoas_minor_left.obj"
+                }
+            ]
+        },
+        {
+            "name": "quadratus lumborum",
+            "displayName": "Quadratus Lumborum",
+            "children": [
+                {
+                    "btxId": 378,
+                    "name": "Left Quadratus Lumborum",
+                    "side": "left",
+                    "groupId": 4
+                },
+                {
+                    "btxId": 379,
+                    "name": "Right Quadratus Lumborum",
+                    "side": "right",
+                    "groupId": 4
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "quadratus_lumborum_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "quadratus_lumborum_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "quadratus plantae",
+            "displayName": "Quadratus Plantae",
+            "children": [
+                {
+                    "btxId": 678,
+                    "name": "Left Quadratus Plantae",
+                    "side": "left",
+                    "groupId": 8
+                },
+                {
+                    "btxId": 679,
+                    "name": "Right Quadratus Plantae",
+                    "side": "right",
+                    "groupId": 8
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "quadratus_plantae_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "quadratus_plantae_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "rectus abdominis",
+            "displayName": "Rectus Abdominis",
+            "children": [
+                {
+                    "btxId": 327,
+                    "name": "Left Rectus Abdominis",
+                    "side": "left",
+                    "groupId": 4
+                },
+                {
+                    "btxId": 328,
+                    "name": "Right Rectus Abdominis",
+                    "side": "right",
+                    "groupId": 4
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "rectus_abdominis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "rectus_abdominis_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "rectus capitis major",
+            "displayName": "Rectus Capitis Major",
+            "children": [
+                {
+                    "btxId": 84,
+                    "name": "Left Rectus Capitis Major",
+                    "side": "left",
+                    "groupId": 2
+                },
+                {
+                    "btxId": 85,
+                    "name": "Right Rectus Capitis Major",
+                    "side": "right",
+                    "groupId": 2
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "rectus_capitis_major_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "rectus_capitis_major_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "rectus femoris",
+            "displayName": "Rectus Femoris",
+            "children": [
+                {
+                    "btxId": 601,
+                    "name": "Left Rectus Femoris",
+                    "side": "left",
+                    "groupId": 6
+                },
+                {
+                    "btxId": 602,
+                    "name": "Right Rectus Femoris",
+                    "side": "right",
+                    "groupId": 6
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "rectus_femoris_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "rectus_femoris_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "rhomboid major",
+            "displayName": "Rhomboid Major",
+            "children": [
+                {
+                    "btxId": 356,
+                    "name": "Left Rhomboid Major",
+                    "side": "left",
+                    "groupId": 4
+                },
+                {
+                    "btxId": 357,
+                    "name": "Right Rhomboid Major",
+                    "side": "right",
+                    "groupId": 4
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "rhomboid_major_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "rhomboid_major_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "rhomboid minor",
+            "displayName": "Rhomboid Minor",
+            "children": [
+                {
+                    "btxId": 358,
+                    "name": "Left Rhomboid Minor",
+                    "side": "left",
+                    "groupId": 4
+                },
+                {
+                    "btxId": 359,
+                    "name": "Right Rhomboid Minor",
+                    "side": "right",
+                    "groupId": 4
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "rhomboid_minor_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "rhomboid_minor_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "risorius",
+            "displayName": "Risorius",
+            "children": [
+                {
+                    "btxId": 21,
+                    "name": "Left Risorius",
+                    "side": "left",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 22,
+                    "name": "Right Risorius",
+                    "side": "right",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 41,
+                    "name": "Left Risorius",
+                    "side": "left",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 55,
+                    "name": "Right Risorius",
+                    "side": "right",
+                    "groupId": 1
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "risorius_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "risorius_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "sartorius",
+            "displayName": "Sartorius",
+            "children": [
+                {
+                    "btxId": 603,
+                    "name": "Left Sartorius",
+                    "side": "left",
+                    "groupId": 6
+                },
+                {
+                    "btxId": 604,
+                    "name": "Right Sartorius",
+                    "side": "right",
+                    "groupId": 6
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "sartorius_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "sartorius_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "scalenus anterior",
+            "displayName": "Scalenus Anterior",
+            "children": [
+                {
+                    "btxId": 70,
+                    "name": "Left Scalenus Anterior",
+                    "side": "left",
+                    "groupId": 2
+                },
+                {
+                    "btxId": 74,
+                    "name": "Right Scalenus Anterior",
+                    "side": "right",
+                    "groupId": 2
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "scalenus_anterior_left_1.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "scalenus_anterior_right_1.obj"
+                },
+                {
+                    "side": "left",
+                    "fileName": "scalenus_anterior_left_2.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "scalenus_anterior_right_2.obj"
+                },
+                {
+                    "side": "left",
+                    "fileName": "scalenus_anterior_left_3.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "scalenus_anterior_right_3.obj"
+                }
+            ]
+        },
+        {
+            "name": "scalenus medius",
+            "displayName": "Scalenus Medius",
+            "children": [
+                {
+                    "btxId": 71,
+                    "name": "Left Scalenus Medius",
+                    "side": "left",
+                    "groupId": 2
+                },
+                {
+                    "btxId": 75,
+                    "name": "Right Scalenus Medius",
+                    "side": "right",
+                    "groupId": 2
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "scalenus_medius_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "scalenus_medius_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "scalenus posterior",
+            "displayName": "Scalenus Posterior",
+            "children": [
+                {
+                    "btxId": 72,
+                    "name": "Left Scalenus Posterior",
+                    "side": "left",
+                    "groupId": 2
+                },
+                {
+                    "btxId": 76,
+                    "name": "Right Scalenus Posterior",
+                    "side": "right",
+                    "groupId": 2
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "scalenus_posterior_left_1.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "scalenus_posterior_right_1.obj"
+                },
+                {
+                    "side": "left",
+                    "fileName": "scalenus_posterior_left_2.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "scalenus_posterior_right_2.obj"
+                },
+                {
+                    "side": "left",
+                    "fileName": "scalenus_posterior_left_3.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "scalenus_posterior_right_3.obj"
+                }
+            ]
+        },
+        {
+            "name": "semimembranosus",
+            "displayName": "Semimembranosus",
+            "children": [
+                {
+                    "btxId": 638,
+                    "name": "Left Semimembranosus",
+                    "side": "left",
+                    "groupId": 6
+                },
+                {
+                    "btxId": 639,
+                    "name": "Right Semimembranosus",
+                    "side": "right",
+                    "groupId": 6
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "semimembranosus_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "semimembranosus_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "semispinalis capitis",
+            "displayName": "Semispinalis Capitis",
+            "children": [
+                {
+                    "btxId": 82,
+                    "name": "Left Semispinalis Capitis",
+                    "side": "left",
+                    "groupId": 2
+                },
+                {
+                    "btxId": 83,
+                    "name": "Right Semispinalis Capitis",
+                    "side": "right",
+                    "groupId": 2
+                },
+                {
+                    "btxId": 102,
+                    "name": "Left Semispinalis Capitis",
+                    "side": "left",
+                    "groupId": 2
+                },
+                {
+                    "btxId": 104,
+                    "name": "Right Semispinalis Capitis",
+                    "side": "right",
+                    "groupId": 2
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "semispinalis_capitis_left_1.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "semispinalis_capitis_right_1.obj"
+                },
+                {
+                    "side": "left",
+                    "fileName": "semispinalis_capitis_left_2.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "semispinalis_capitis_right_2.obj"
+                },
+                {
+                    "side": "left",
+                    "fileName": "semispinalis_capitis_left_3.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "semispinalis_capitis_right_3.obj"
+                },
+                {
+                    "side": "left",
+                    "fileName": "semispinalis_capitis_left_4.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "semispinalis_capitis_right_4.obj"
+                },
+                {
+                    "side": "left",
+                    "fileName": "semispinalis_capitis_left_5.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "semispinalis_capitis_right_5.obj"
+                },
+                {
+                    "side": "left",
+                    "fileName": "semispinalis_capitis_left_6.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "semispinalis_capitis_right_6.obj"
+                }
+            ]
+        },
+        {
+            "name": "semispinalis cervicis",
+            "displayName": "Semispinalis Cervicis",
+            "children": [
+                {
+                    "btxId": 701,
+                    "name": "Left Semispinalis Cervicis",
+                    "side": "left",
+                    "groupId": 4
+                },
+                {
+                    "btxId": 702,
+                    "name": "Right Semispinalis Cervicis",
+                    "side": "right",
+                    "groupId": 4
+                },
+                {
+                    "btxId": 703,
+                    "name": "Left Semispinalis Cervicis",
+                    "side": "left",
+                    "groupId": 2
+                },
+                {
+                    "btxId": 704,
+                    "name": "Right Semispinalis Cervicis",
+                    "side": "right",
+                    "groupId": 2
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "semispinalis_cervicis_left_1.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "semispinalis_cervicis_right_1.obj"
+                },
+                {
+                    "side": "left",
+                    "fileName": "semispinalis_cervicis_left_2.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "semispinalis_cervicis_right_2.obj"
+                },
+                {
+                    "side": "left",
+                    "fileName": "semispinalis_cervicis_left_3.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "semispinalis_cervicis_right_3.obj"
+                },
+                {
+                    "side": "left",
+                    "fileName": "semispinalis_cervicis_left_4.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "semispinalis_cervicis_right_4.obj"
+                }
+            ]
+        },
+        {
+            "name": "semitendinosus",
+            "displayName": "Semitendinosus",
+            "children": [
+                {
+                    "btxId": 630,
+                    "name": "Left Semitendinosus",
+                    "side": "left",
+                    "groupId": 6
+                },
+                {
+                    "btxId": 631,
+                    "name": "Right Semitendinosus",
+                    "side": "right",
+                    "groupId": 6
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "semitendinosus_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "semitendinosus_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "serratus anterior",
+            "displayName": "Serratus Anterior",
+            "children": [
+                {
+                    "btxId": 346,
+                    "name": "Left Serratus Anterior",
+                    "side": "left",
+                    "groupId": 4
+                },
+                {
+                    "btxId": 348,
+                    "name": "Right Serratus Anterior",
+                    "side": "right",
+                    "groupId": 4
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "serratus_anterior_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "serratus_anterior_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "soleus",
+            "displayName": "Soleus",
+            "children": [
+                {
+                    "btxId": 660,
+                    "name": "Left Soleus",
+                    "side": "left",
+                    "groupId": 7
+                },
+                {
+                    "btxId": 661,
+                    "name": "Right Soleus",
+                    "side": "right",
+                    "groupId": 7
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "soleus_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "soleus_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "splenius capitis",
+            "displayName": "Splenius Capitis",
+            "children": [
+                {
+                    "btxId": 80,
+                    "name": "Left Splenius Capitis",
+                    "side": "left",
+                    "groupId": 2
+                },
+                {
+                    "btxId": 81,
+                    "name": "Right Splenius Capitis",
+                    "side": "right",
+                    "groupId": 2
+                },
+                {
+                    "btxId": 97,
+                    "name": "Left Splenius Capitis",
+                    "side": "left",
+                    "groupId": 2
+                },
+                {
+                    "btxId": 99,
+                    "name": "Right Splenius Capitis",
+                    "side": "right",
+                    "groupId": 2
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "splenius_capitis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "splenius_capitis_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "splenius cervicis",
+            "displayName": "Splenius Cervicis",
+            "children": [
+                {
+                    "btxId": 100,
+                    "name": "Left Splenius Cervicis",
+                    "side": "left",
+                    "groupId": 2
+                },
+                {
+                    "btxId": 101,
+                    "name": "Right Splenius Cervicis",
+                    "side": "right",
+                    "groupId": 2
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "splenius_cervicis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "splenius_cervicis_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "sternocleidomastoid",
+            "displayName": "Sternocleidomastoid",
+            "children": [
+                {
+                    "btxId": 67,
+                    "name": "Left Sternocleidomastoid",
+                    "side": "left",
+                    "groupId": 2
+                },
+                {
+                    "btxId": 68,
+                    "name": "Right Sternocleidomastoid",
+                    "side": "right",
+                    "groupId": 2
+                },
+                {
+                    "btxId": 92,
+                    "name": "Left Sternocleidomastoid",
+                    "side": "left",
+                    "groupId": 2
+                },
+                {
+                    "btxId": 94,
+                    "name": "Right Sternocleidomastoid",
+                    "side": "right",
+                    "groupId": 2
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "sternocleidomastoid_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "sternocleidomastoid_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "submandibular gland",
+            "displayName": "Submandibular Gland",
+            "children": [
+                {
+                    "btxId": 705,
+                    "name": "Left Submandibular Gland",
+                    "side": "left",
+                    "groupId": 10
+                },
+                {
+                    "btxId": 707,
+                    "name": "Right Submandibular Gland",
+                    "side": "right",
+                    "groupId": 10
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "submandibular_gland_left.obj",
+                    "skip": true
+                },
+                {
+                    "side": "right",
+                    "fileName": "submandibular_gland_right.obj",
+                    "skip": true
+                }
+            ]
+        },
+        {
+            "name": "subscapularis",
+            "displayName": "Subscapularis",
+            "children": [
+                {
+                    "btxId": 374,
+                    "name": "Left Subscapularis",
+                    "side": "left",
+                    "groupId": 4
+                },
+                {
+                    "btxId": 375,
+                    "name": "Right Subscapularis",
+                    "side": "right",
+                    "groupId": 4
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "subscapularis_left.obj",
+                    "skip": true
+                },
+                {
+                    "side": "right",
+                    "fileName": "subscapularis_right.obj",
+                    "skip": true
+                }
+            ]
+        },
+        {
+            "name": "supinator",
+            "displayName": "Supinator",
+            "children": [
+                {
+                    "btxId": 393,
+                    "name": "Left Supinator",
+                    "side": "left",
+                    "groupId": 5
+                },
+                {
+                    "btxId": 394,
+                    "name": "Right Supinator",
+                    "side": "right",
+                    "groupId": 5
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "supinator_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "supinator_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "supraspinatus",
+            "displayName": "Supraspinatus",
+            "children": [
+                {
+                    "btxId": 360,
+                    "name": "Left Supraspinatus",
+                    "side": "left",
+                    "groupId": 4
+                },
+                {
+                    "btxId": 361,
+                    "name": "Right Supraspinatus",
+                    "side": "right",
+                    "groupId": 4
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "supraspinatus_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "supraspinatus_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "temporalis",
+            "displayName": "Temporalis",
+            "children": [
+                {
+                    "btxId": 42,
+                    "name": "Left Temporalis",
+                    "side": "left",
+                    "groupId": 1
+                },
+                {
+                    "btxId": 56,
+                    "name": "Right Temporalis",
+                    "side": "right",
+                    "groupId": 1
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "temporalis_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "temporalis_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "tensor fasciae latae",
+            "displayName": "Tensor Fasciae Latae",
+            "children": [
+                {
+                    "btxId": 625,
+                    "name": "Left Tensor Fasciae Latae",
+                    "side": "left",
+                    "groupId": 6
+                },
+                {
+                    "btxId": 626,
+                    "name": "Right Tensor Fasciae Latae",
+                    "side": "right",
+                    "groupId": 6
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "tensor_fasciae_latae_left.obj",
+                    "skip": true
+                },
+                {
+                    "side": "right",
+                    "fileName": "tensor_fasciae_latae_right.obj",
+                    "skip": true
+                }
+            ]
+        },
+        {
+            "name": "teres major",
+            "displayName": "Teres Major",
+            "children": [
+                {
+                    "btxId": 370,
+                    "name": "Left Teres Major",
+                    "side": "left",
+                    "groupId": 4
+                },
+                {
+                    "btxId": 371,
+                    "name": "Right Teres Major",
+                    "side": "right",
+                    "groupId": 4
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "teres_major_left.obj",
+                    "skip": true
+                },
+                {
+                    "side": "right",
+                    "fileName": "teres_major_right.obj",
+                    "skip": true
+                }
+            ]
+        },
+        {
+            "name": "teres minor",
+            "displayName": "Teres Minor",
+            "children": [
+                {
+                    "btxId": 372,
+                    "name": "Left Teres Minor",
+                    "side": "left",
+                    "groupId": 4
+                },
+                {
+                    "btxId": 373,
+                    "name": "Right Teres Minor",
+                    "side": "right",
+                    "groupId": 4
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "teres_minor_left.obj",
+                    "skip": true
+                },
+                {
+                    "side": "right",
+                    "fileName": "teres_minor_right.obj",
+                    "skip": true
+                }
+            ]
+        },
+        {
+            "name": "tibialis anterior",
+            "displayName": "Tibialis Anterior",
+            "children": [
+                {
+                    "btxId": 641,
+                    "name": "Left Tibialis Anterior",
+                    "side": "left",
+                    "groupId": "7"
+                },
+                {
+                    "btxId": 642,
+                    "name": "Right Tibialis Anterior",
+                    "side": "right",
+                    "groupId": "7"
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "tibialis_anterior_left.obj",
+                    "skip": true
+                },
+                {
+                    "side": "right",
+                    "fileName": "tibialis_anterior_right.obj",
+                    "skip": true
+                }
+            ]
+        },
+        {
+            "name": "tibialis posterior",
+            "displayName": "Tibialis Posterior",
+            "children": [
+                {
+                    "btxId": 664,
+                    "name": "Left Tibialis Posterior",
+                    "side": "left",
+                    "groupId": "7"
+                },
+                {
+                    "btxId": 665,
+                    "name": "Right Tibialis Posterior",
+                    "side": "right",
+                    "groupId": "7"
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "tibialis_posterior_left.obj",
+                    "skip": true
+                },
+                {
+                    "side": "right",
+                    "fileName": "tibialis_posterior_right.obj",
+                    "skip": true
+                }
+            ]
+        },
+        {
+            "name": "transversus abdominis",
+            "displayName": "Transversus Abdominis",
+            "children": [
+                {
+                    "btxId": "339",
+                    "name": "Left Transversus Abdominis",
+                    "side": "left",
+                    "groupId": "4"
+                },
+                {
+                    "btxId": "340",
+                    "name": "Right Transversus Abdominis",
+                    "side": "right",
+                    "groupId": "4"
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "transversus_abdominis_left.obj",
+                    "skip": true
+                },
+                {
+                    "side": "right",
+                    "fileName": "transversus_abdominis_right.obj",
+                    "skip": true
+                }
+            ]
+        },
+        {
+            "name": "trapezius",
+            "displayName": "Trapezius",
+            "children": [
+                {
+                    "btxId": "78",
+                    "name": "Left Trapezius",
+                    "side": "left",
+                    "groupId": "2"
+                },
+                {
+                    "btxId": "79",
+                    "name": "Right Trapezius",
+                    "side": "right",
+                    "groupId": "2"
+                },
+                {
+                    "btxId": "93",
+                    "name": "Left Trapezius",
+                    "side": "left",
+                    "groupId": "2"
+                },
+                {
+                    "btxId": "95",
+                    "name": "Right Trapezius",
+                    "side": "right",
+                    "groupId": "2"
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "trapezius_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "trapezius_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "triceps brachii",
+            "displayName": "Triceps Brachii",
+            "children": [
+                {
+                    "btxId": "362",
+                    "name": "Left Triceps Brachii",
+                    "side": "left",
+                    "groupId": "4"
+                },
+                {
+                    "btxId": "363",
+                    "name": "Right Triceps Brachii",
+                    "side": "right",
+                    "groupId": "4"
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "triceps_brachii_left.obj",
+                    "skip": true
+                },
+                {
+                    "side": "right",
+                    "fileName": "triceps_brachii_right.obj",
+                    "skip": true
+                }
+            ]
+        },
+        {
+            "name": "vastus intermedius",
+            "displayName": "Vastus Intermedius",
+            "children": [
+                {
+                    "btxId": "607",
+                    "name": "Left Vastus Intermedius",
+                    "side": "left",
+                    "groupId": "6"
+                },
+                {
+                    "btxId": "608",
+                    "name": "Right Vastus Intermedius",
+                    "side": "right",
+                    "groupId": "6"
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "vastus_intermedius_left.obj",
+                    "skip": true
+                },
+                {
+                    "side": "right",
+                    "fileName": "vastus_intermedius_right.obj",
+                    "skip": true
+                }
+            ]
+        },
+        {
+            "name": "vastus lateralis",
+            "displayName": "Vastus Lateralis",
+            "children": [
+                {
+                    "btxId": "609",
+                    "name": "Left Vastus Lateralis",
+                    "side": "left",
+                    "groupId": "6"
+                },
+                {
+                    "btxId": "610",
+                    "name": "Right Vastus Lateralis",
+                    "side": "right",
+                    "groupId": "6"
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "vastus_lateralis_left.obj",
+                    "skip": true
+                },
+                {
+                    "side": "right",
+                    "fileName": "vastus_lateralis_right.obj",
+                    "skip": true
+                }
+            ]
+        },
+        {
+            "name": "vastus medialis",
+            "displayName": "Vastus Medialis",
+            "children": [
+                {
+                    "btxId": "611",
+                    "name": "Left Vastus Medialis",
+                    "side": "left",
+                    "groupId": "6"
+                },
+                {
+                    "btxId": "612",
+                    "name": "Right Vastus Medialis",
+                    "side": "right",
+                    "groupId": "6"
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "vastus_medialis_left.obj",
+                    "skip": true
+                },
+                {
+                    "side": "right",
+                    "fileName": "vastus_medialis_right.obj",
+                    "skip": true
+                }
+            ]
+        },
+        {
+            "name": "zygomaticus major",
+            "displayName": "Zygomaticus Major",
+            "children": [
+                {
+                    "btxId": "23",
+                    "name": "Left Zygomaticus Major",
+                    "side": "left",
+                    "groupId": "1"
+                },
+                {
+                    "btxId": "24",
+                    "name": "Right Zygomaticus Major",
+                    "side": "right",
+                    "groupId": "1"
+                },
+                {
+                    "btxId": "43",
+                    "name": "Left Zygomaticus Major",
+                    "side": "left",
+                    "groupId": "1"
+                },
+                {
+                    "btxId": "57",
+                    "name": "Right Zygomaticus Major",
+                    "side": "right",
+                    "groupId": "1"
+                }
+            ],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "zygomaticus_major_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "zygomaticus_major_right.obj"
+                },
+                {
+                    "side": "left",
+                    "fileName": "zygomaticus_minor_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "zygomaticus_minor_right.obj"
+                }
+            ]
+        },  
+        {
+            "name": "auricular anterior",
+            "displayName": "Auricular Anterior",
+            "children": [],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "auricular_anterior_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "auricular_anterior_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "buccinator",
+            "displayName": "Buccinator",
+            "children": [],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "buccinator_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "buccinator_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "depressor septi nasi",
+            "displayName": "Depressor Septi Nasi",
+            "children": [],
+            "models": [
+                {
+                    "side": "both",
+                    "fileName": "depressor_septi_nasi.obj"
+                }
+            ]
+        },
+        {
+            "name": "depressor supercilii",
+            "displayName": "Depressor Supercilii",
+            "children": [],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "depressor_supercilii_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "depressor_supercilii_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "hyoglossus",
+            "displayName": "Hyoglossus",
+            "children": [],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "hyoglossus_left.obj"
+                },
+                {
+                    "side": "right",
+                    "fileName": "hyoglossus_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "mylohyoid",
+            "displayName": "Mylohyoid",
+            "children": [],
+            "models": [
+                {
+                    "side": "both",
+                    "fileName": "mylohyoid.obj"
+                }
+            ]
+        },
+        {
+            "name": "nasal cartilage",
+            "displayName": "Nasal Cartilage",
+            "children": [],
+            "models": [
+                {
+                    "side": "both",
+                    "fileName": "nasal_cartilage.obj"
+                }
+            ]
+        },
+        {
+            "name": "omohyoideus",
+            "displayName": "Omohyoideus",
+            "children": [],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "omohyoideus_left.obj"
+                },
+                {
+                    "side": "left",
+                    "fileName": "omohyoideus_left.obj"
+                }
+            ]
+        },
+        {
+            "name": "posterior auricular",
+            "displayName": "Posterior Auricular",
+            "children": [],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "posterior_auricular_left.obj"
+                },
+                {
+                    "side": "left",
+                    "fileName": "posterior_auricular_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "spinalis",
+            "displayName": "Spinalis",
+            "children": [],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "spinalis_left.obj"
+                },
+                {
+                    "side": "left",
+                    "fileName": "spinalis_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "sternohyoid",
+            "displayName": "Sternohyoid",
+            "children": [],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "sternohyoid_left.obj"
+                },
+                {
+                    "side": "left",
+                    "fileName": "sternohyoid_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "sternothyroideus",
+            "displayName": "Sternothyroideus",
+            "children": [],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "sternothyroideus_left.obj"
+                },
+                {
+                    "side": "left",
+                    "fileName": "sternothyroideus_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "stylohyoid",
+            "displayName": "Stylohyoid",
+            "children": [],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "stylohyoid_left.obj"
+                },
+                {
+                    "side": "left",
+                    "fileName": "stylohyoid_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "superior auricular",
+            "displayName": "Superior Auricular",
+            "children": [],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "superior_auricular_left.obj"
+                },
+                {
+                    "side": "left",
+                    "fileName": "superior_auricular_right.obj"
+                }
+            ]
+        },
+        {
+            "name": "thyrohyoid",
+            "displayName": "Thyrohyoid",
+            "children": [],
+            "models": [
+                {
+                    "side": "left",
+                    "fileName": "thyrohyoid_left.obj"
+                },
+                {
+                    "side": "left",
+                    "fileName": "thyrohyoid_right.obj"
+                }
+            ]
+        }
+    ]
+}

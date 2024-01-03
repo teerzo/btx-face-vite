@@ -92,6 +92,8 @@ body {
             flex-direction: row;
         }
         label {
+            padding-left: 5px;
+            padding-right: 5px;
             @media only screen and (max-width: 420px) {
                 font-size: 14px;
             }
@@ -151,6 +153,9 @@ body {
 
                 font-size: 12px;
             }
+        }
+        .btn-wide {
+            width: 80px;
         }
 
         .btn-marg {
@@ -677,4 +682,19 @@ body {
     span:nth-last-child(2) {
         transform: rotate(-45deg) translate(0, -1px);
     }
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+
+    .grow {
+        flex-grow: 1;
+    }
+}
+
+
+
+.none { 
+    display: none !important;
 }

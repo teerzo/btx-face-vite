@@ -54,6 +54,9 @@ let app = {
   domBtnReset: document.getElementById('btn-reset'),
   domBtnHelp: document.getElementById('btn-help'),
   domBtnHelpClose: document.getElementById('btn-help-close'),
+  domInputAll: document.getElementById('input-all'),
+
+
 
   domOverlayHelp: document.getElementById('overlay-help'),
   domOverlayMove: document.getElementById('overlay-move'),
@@ -87,6 +90,8 @@ let app = {
 
   leftVisible: true,
   rightVisible: true,
+
+  viewAllMuscles: false,
 
   objectList: [],
   muscleBtxIds: [],
@@ -165,7 +170,7 @@ let app = {
     // console.log('Reset');
     app.resetCamera();
     app.resetSelectCondition();
-    app.resetSelectMuscle();
+    app.resetSelectMuscles();
     app.resetDom();
 
     resizeThree();
@@ -209,6 +214,7 @@ let app = {
     app.raycast.moveEnabled = false;
     app.controls.enabled = true;
     app.domInputMove.checked = false;
+    app.domInputAll.checked = false;
 
     app.updateSideName('All Muscles')
     app.showMusclesSelect(false);
@@ -307,7 +313,7 @@ let app = {
                   app.models.fullList[i].models[j].id = `${i}-${j}`;
                   app.models.fullList[i].models[j].displayName = app.models.fullList[i].displayName;
 
-                  if( !app.models.fullList[i].skipLoad && !app.models.fullList[i].models[j].skip) {
+                  if (!app.models.fullList[i].skipLoad) {
                     max += 1;
                   }
                 }
@@ -319,7 +325,7 @@ let app = {
             for (let i = 0; i < app.modelsMisc.fullList.length; i++) {
               if (app.modelsMisc.fullList[i].models?.length > 0) {
                 for (let j = 0; j < app.modelsMisc.fullList[i].models.length; j++) {
-                  if( !app.modelsMisc.fullList[i].skipLoad && !app.modelsMisc.fullList[i].models[j].skip) {
+                  if (!app.modelsMisc.fullList[i].skipLoad) {
                     max += 1;
                   }
                 }
@@ -362,13 +368,14 @@ let app = {
         let promises = [];
         for (let i in app.models.fullList) {
           const md = app.models.fullList[i];
-          if (md?.models && md?.models.length > 0) {
+
+          if (md.skipLoad) {
+            console.log("skip load -", md.name);
+          }
+          else if (md?.models && md?.models.length > 0) {
             for (let j in md.models) {
               const cm = md.models[j];
-              if (cm?.skip) {
-                // console.log('skipped loading', cm.fileName);
-              }
-              else if (cm.fileName) {
+              if (cm.fileName) {
                 let promise = new Promise(function (resolve, reject) {
                   app.loader.load(`./obj/${cm.fileName}`, function (model) {
                     app.models.list.push({
@@ -451,35 +458,35 @@ let app = {
   },
 
   setLoadedMax(value) {
-    console.log('setLoadedMax', value);
     app.loadedMax = value;
     app.domProgress.max = app.loadedMax;
   },
 
   updateLoadedCount: function () {
     app.loadedCount += 1;
-    console.log('loadedCount', app.loadedCount);
 
     app.domProgress.value = app.loadedCount;
     app.domProgress.max = app.loadedMax;
-
     app.domPercentage.innerText = Number(app.loadedCount / app.loadedMax * 100).toFixed(0);
   },
-
-
-
 
   updateSelectMuscles: function (list) {
     let optionList = [];
     for (let i in app.models.fullList) {
+
       let match = false;
 
-      for (let j in app.models.fullList[i].children) {
-        const child = app.models.fullList[i].children[j];
+      if (!app.viewAllMuscles && app.models.fullList[i]?.skipLoad) {
+        console.log('skipped -', app.models.fullList[i].name);
+      }
+      else {
+        for (let j in app.models.fullList[i].children) {
+          const child = app.models.fullList[i].children[j];
 
-        for (let l in list) {
-          if (child.btxId === list[l].id) {
-            match = true;
+          for (let l in list) {
+            if (child.btxId === list[l].id) {
+              match = true;
+            }
           }
         }
       }
@@ -495,7 +502,7 @@ let app = {
     }
 
     let option = document.createElement('option');
-    option.text = 'All muscles'
+    option.text = app.viewAllMuscles ? 'All muscles' : 'All displayed muscles';
     option.value = null;
 
     app.domSelectMuscles.add(option);
@@ -503,7 +510,8 @@ let app = {
     for (let i = 0; i < optionList.length; i++) {
       // console.log(optionList[i]);
       let option = document.createElement('option');
-      option.text = optionList[i].displayName;
+
+      option.text = `${app.viewAllMuscles && optionList[i].skipLoad ? '** ' : ''} ${optionList[i].displayName} `;
       option.value = optionList[i].id;
 
       app.domSelectMuscles.add(option);
@@ -549,7 +557,8 @@ let app = {
       item.state.transparent = false;
 
       if (item.type === 'muscle') {
-        if (item.id.indexOf(`${id}-`) !== -1) {
+        if (item.id.indexOf(`${id}-`) === 0) {
+          console.log('selectMuscleGroup', item.id, id);
           item.state.groupSelected = true;
         }
       }
@@ -608,16 +617,14 @@ let app = {
     for (let i in app.models.fullList) {
       if (app.models.fullList[i].id === id) {
         const muscleGroup = app.models.fullList[i];
-        meta.name = `${muscleGroup.displayName} ${muscleGroup.skipLoad ? '- No model available' : ''}`;
+        meta.name = `${muscleGroup.displayName}`;
 
-        console.log('length', muscleGroup.children.length);
         for (let j in muscleGroup.children) {
           for (let c in app.conditions.fullList) {
             for (let m in app.conditions.fullList[c].muscles) {
               const cMuscle = app.conditions.fullList[c].muscles[m];
 
               if (cMuscle.id === muscleGroup.children[j].btxId) {
-                console.log('add');
                 meta.percentageOfSessionsInjected += cMuscle.percentageOfSessionsInjected;
                 meta.botoxAverageDosePerMuscle += cMuscle.botoxAverageDosePerMuscle;
                 meta.botoxAverageNumberOfSites += cMuscle.botoxAverageNumberOfSites;
@@ -629,14 +636,11 @@ let app = {
         }
 
         const divide = muscleGroup.children.length > 1 ? 2 : 1;
-
-        console.log('pre', meta.dysportAverageDosePerMuscle);
         meta.percentageOfSessionsInjected = (meta.percentageOfSessionsInjected).toFixed(2);
         meta.botoxAverageDosePerMuscle = (meta.botoxAverageDosePerMuscle / divide).toFixed(2);
         meta.botoxAverageNumberOfSites = (meta.botoxAverageNumberOfSites / divide).toFixed(2);
         meta.dysportAverageDosePerMuscle = (meta.dysportAverageDosePerMuscle / divide).toFixed(2);
         meta.dysportAverageNumberOfSites = (meta.dysportAverageNumberOfSites / divide).toFixed(2);
-        console.log('post', meta.dysportAverageDosePerMuscle);
       }
     }
     return meta;
@@ -703,7 +707,7 @@ let app = {
     app.showOverlayScale(false);
   },
 
-  resetSelectMuscle: function () {
+  resetSelectMuscles: function () {
     app.muscleGroupId = null;
     app.muscleBtxIds = [];
     app.muscleId = null;
@@ -834,9 +838,9 @@ let app = {
           conditions.push(app.conditions.fullList[i]);
         }
       }
+      app.resetSelectCondition();
       app.updateSelectConditions(conditions);
     }
-
 
     // check muscles
     let conditionMuscles = [];
@@ -870,6 +874,7 @@ let app = {
       }
 
       app.conditionMuscles = conditionMuscles;
+      app.resetSelectMuscles();
       app.updateSelectMuscles(muscles);
     }
   },
@@ -1183,6 +1188,7 @@ let app = {
             app.raycast.currentObject = item;
 
             if (item.type === 'muscle') {
+              app.clearSelectedMuscle();
               app.selectMuscle(item);
             }
             else {
@@ -1344,6 +1350,7 @@ let app = {
       app.domInputMove.disabled = true;
     }
   },
+
   showButtonReset: function (show) { show ? app.domBtnReset.classList.remove('hide') : app.domBtnReset.classList.add('hide') },
 
 
@@ -1447,6 +1454,13 @@ const initEventListeners = function () {
     app.raycastPos.visible = app.raycast.moveEnabled;
   }
 
+  app.domInputAll.onclick = (event) => {
+    app.viewAllMuscles = !app.viewAllMuscles;
+
+    app.updateDom();
+  }
+
+
 
   app.domBtnReset.onclick = (event) => {
     event.preventDefault();
@@ -1484,7 +1498,7 @@ const initEventListeners = function () {
 
 
   function handleSelectConditions(event) {
-    app.resetSelectMuscle();
+    app.resetSelectMuscles();
     app.showSideBtnLeft(true);
     app.showSideBtnRight(true);
     app.resetObjects();
@@ -1516,9 +1530,6 @@ const initEventListeners = function () {
       app.resetSelectCondition();
       app.updateObjects();
       app.showMusclesSelect(false);
-
-
-
     }
   }
 
@@ -1529,22 +1540,20 @@ const initEventListeners = function () {
       value = Number(event.target.value);
     }
     if (value !== null) {
+      app.clearRaycastTarget();
       app.selectMuscleGroup(value);
     }
     else {
-      app.resetSelectMuscle();
+      app.resetSelectMuscles();
       app.selectCondition(app.conditionId);
       app.updateObjects();
       app.updateSideName('All Muscles');
-
     }
   }
 };
 
 const initDom = function () {
-
   app.showButtonReset(true);
-
 
 }
 

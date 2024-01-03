@@ -3729,6 +3729,7 @@
         {
             "name": "soleus",
             "displayName": "Soleus",
+            "skipLoad": true,
             "children": [
                 {
                     "btxId": 660,

@@ -614,10 +614,25 @@ let app = {
       dysportAverageNumberOfSites: 0
     }
 
+    const _meta = app.calculateGroupMeta(id, meta);
+
+    if (_meta) {
+      meta = _meta;
+    }
+    return meta;
+  },
+
+  calculateGroupMeta(id, meta) {
     for (let i in app.models.fullList) {
       if (app.models.fullList[i].id === id) {
         const muscleGroup = app.models.fullList[i];
         meta.name = `${muscleGroup.displayName}`;
+
+        let count = 0;
+
+        let left = 0;
+        let right = 0;
+        let both = 0;
 
         for (let j in muscleGroup.children) {
           for (let c in app.conditions.fullList) {
@@ -625,6 +640,19 @@ let app = {
               const cMuscle = app.conditions.fullList[c].muscles[m];
 
               if (cMuscle.id === muscleGroup.children[j].btxId) {
+                if (left === 0 && cMuscle.side === 'left') {
+                  left += 1;
+                }
+                if (right === 0 && cMuscle.side === 'right') {
+                  right += 1;
+                }
+                if (both === 0 && cMuscle.side === 'both') {
+                  both += 1;
+                }
+
+                count += 1;
+
+
                 meta.percentageOfSessionsInjected += cMuscle.percentageOfSessionsInjected;
                 meta.botoxAverageDosePerMuscle += cMuscle.botoxAverageDosePerMuscle;
                 meta.botoxAverageNumberOfSites += cMuscle.botoxAverageNumberOfSites;
@@ -635,15 +663,19 @@ let app = {
           }
         }
 
-        const divide = muscleGroup.children.length > 1 ? 2 : 1;
-        meta.percentageOfSessionsInjected = (meta.percentageOfSessionsInjected).toFixed(2);
-        meta.botoxAverageDosePerMuscle = (meta.botoxAverageDosePerMuscle / divide).toFixed(2);
-        meta.botoxAverageNumberOfSites = (meta.botoxAverageNumberOfSites / divide).toFixed(2);
-        meta.dysportAverageDosePerMuscle = (meta.dysportAverageDosePerMuscle / divide).toFixed(2);
-        meta.dysportAverageNumberOfSites = (meta.dysportAverageNumberOfSites / divide).toFixed(2);
+        // let count = left + right + both;
+        if (count >= 1) {
+          console.log('calculateGroupMeta', id, count, meta);
+          // const divide = muscleGroup.children.length > 1 ? 2 : 1;
+          const divide = count;
+          meta.percentageOfSessionsInjected = (meta.percentageOfSessionsInjected / divide).toFixed(2);
+          meta.botoxAverageDosePerMuscle = (meta.botoxAverageDosePerMuscle / divide).toFixed(2);
+          meta.botoxAverageNumberOfSites = (meta.botoxAverageNumberOfSites / divide).toFixed(2);
+          meta.dysportAverageDosePerMuscle = (meta.dysportAverageDosePerMuscle / divide).toFixed(2);
+          meta.dysportAverageNumberOfSites = (meta.dysportAverageNumberOfSites / divide).toFixed(2);
+        }
       }
     }
-    return meta;
   },
 
   getMuscleMeta(muscle) {
@@ -658,6 +690,8 @@ let app = {
       dysportAverageNumberOfSites: 0
     }
 
+    let count = 0;
+
     for (let i in app.models.fullList) {
       if (app.models.fullList[i].id === id) {
         const muscleGroup = app.models.fullList[i];
@@ -671,6 +705,7 @@ let app = {
 
                 if (cMuscle.id === muscleGroup.children[j].btxId) {
                   if (muscle.side === muscleGroup.children[j].side) {
+                    count += 1;
                     meta.percentageOfSessionsInjected += cMuscle.percentageOfSessionsInjected;
                     meta.botoxAverageDosePerMuscle += cMuscle.botoxAverageDosePerMuscle;
                     meta.botoxAverageNumberOfSites += cMuscle.botoxAverageNumberOfSites;
@@ -684,11 +719,14 @@ let app = {
       }
     }
 
-    meta.percentageOfSessionsInjected = meta.percentageOfSessionsInjected.toFixed(2);
-    meta.botoxAverageDosePerMuscle = meta.botoxAverageDosePerMuscle.toFixed(2);
-    meta.botoxAverageNumberOfSites = meta.botoxAverageNumberOfSites.toFixed(2);
-    meta.dysportAverageDosePerMuscle = meta.dysportAverageDosePerMuscle.toFixed(2);
-    meta.dysportAverageNumberOfSites = meta.dysportAverageNumberOfSites.toFixed(2);
+    if (count >= 1) {
+      const divide = count;
+      meta.percentageOfSessionsInjected = (meta.percentageOfSessionsInjected / divide).toFixed(2);
+      meta.botoxAverageDosePerMuscle = (meta.botoxAverageDosePerMuscle / divide).toFixed(2);
+      meta.botoxAverageNumberOfSites = (meta.botoxAverageNumberOfSites / divide).toFixed(2);
+      meta.dysportAverageDosePerMuscle = (meta.dysportAverageDosePerMuscle / divide).toFixed(2);
+      meta.dysportAverageNumberOfSites = (meta.dysportAverageNumberOfSites / divide).toFixed(2);
+    }
 
     return meta;
   },
@@ -966,6 +1004,7 @@ let app = {
 
         const id = muscle.id.slice(0, muscle.id.indexOf('-'));
         let percentage = 0;
+        let count = 0;
 
         for (let i in app.models.fullList) {
           const muscleGroup = app.models.fullList[i];
@@ -983,6 +1022,7 @@ let app = {
 
                     if (muscleGroup.children[j].btxId === cMuscle.id) {
                       if (muscleGroup.children[j].side === cMuscle.side) {
+                        count += 1;
                         percentage += cMuscle.percentageOfSessionsInjected;
                       }
                     }
@@ -1001,18 +1041,23 @@ let app = {
           new THREE.Color(0xe9542e), // red
         ];
 
+
+        if( count >= 1 ) {
+          percentage = (percentage / count);
+        }
+
         if (percentage === 0) {
           // colour white 
           muscle.scaleColor.copy(app.colorMuscle)
         }
-        else if (percentage <= 33) {
+        else if (percentage <= 16.5) {
           muscle.scaleColor = new THREE.Color(colours[0]).lerp(colours[1], percentage / 33);
         }
-        else if (percentage <= 66) {
+        else if (percentage <= 33) {
           muscle.scaleColor = new THREE.Color(colours[1]).lerp(colours[2], percentage / 66);
         }
         else { //if (percentage <= 66) {
-          muscle.scaleColor = new THREE.Color(colours[2]).lerp(colours[3], percentage / 100);
+          muscle.scaleColor = new THREE.Color(colours[2]).lerp(colours[3], percentage / 100 );
         }
       }
     }
@@ -1301,7 +1346,7 @@ let app = {
   mouseUp: function (event) {
     let mouse = getMousePosition(event, app.renderer.domElement);
     // console.log('mouseUp', mouse);
-    app.raycast.mouseDown = true;
+    // app.raycast.mouseDown = true;
 
 
     var a = app.raycast.mousePos.x - mouse.x;
@@ -1312,12 +1357,13 @@ let app = {
       // console.log('dist', dist);
       app.raycastFromCamera(mouse);
     }
+
     // window.setTimeout(function () {
-    //   if( !app.raycast.mouseDown && !app.raycast.mouseMove ) {
-    //     console.log('clear target');
-    //     app.clearSelectedMuscle();
-    //     app.clearRaycastTarget();
-    //   }
+    if (app.raycast.mouseDown && app.raycast.mouseMove) {
+      console.log('clear target');
+      app.clearSelectedMuscle();
+      app.clearRaycastTarget();
+    }
     // }, 1000);
 
     // if (!app.raycast.mouseMove) {

@@ -51,6 +51,16 @@
                 "dysportAverageNumberOfSites": 2.18
             },
             {
+                "id": 32,
+                "name": "Frontalis",
+                "side": "left",
+                "percentageOfSessionsInjected": 0.37,
+                "botoxAverageDosePerMuscle": 10,
+                "botoxAverageNumberOfSites": 2.16,
+                "dysportAverageDosePerMuscle": 0,
+                "dysportAverageNumberOfSites": 0
+            },
+            {
                 "id": 7,
                 "name": "Frontalis",
                 "side": "right",
@@ -59,6 +69,16 @@
                 "botoxAverageNumberOfSites": 3.34,
                 "dysportAverageDosePerMuscle": 24.47,
                 "dysportAverageNumberOfSites": 2.21
+            },
+            {
+                "id": 46,
+                "name": "Frontalis",
+                "side": "right",
+                "percentageOfSessionsInjected": 0.37,
+                "botoxAverageDosePerMuscle": 10,
+                "botoxAverageNumberOfSites": 2.16,
+                "dysportAverageDosePerMuscle": 0,
+                "dysportAverageNumberOfSites": 0
             },
             {
                 "id": 9,
@@ -251,16 +271,6 @@
                 "dysportAverageNumberOfSites": 1
             },
             {
-                "id": 32,
-                "name": "Frontalis",
-                "side": "left",
-                "percentageOfSessionsInjected": 0.37,
-                "botoxAverageDosePerMuscle": 10,
-                "botoxAverageNumberOfSites": 2.16,
-                "dysportAverageDosePerMuscle": 0,
-                "dysportAverageNumberOfSites": 0
-            },
-            {
                 "id": 36,
                 "name": "Masseter",
                 "side": "left",
@@ -297,16 +307,6 @@
                 "percentageOfSessionsInjected": 0.22,
                 "botoxAverageDosePerMuscle": 2.5,
                 "botoxAverageNumberOfSites": 1,
-                "dysportAverageDosePerMuscle": 0,
-                "dysportAverageNumberOfSites": 0
-            },
-            {
-                "id": 46,
-                "name": "Frontalis",
-                "side": "right",
-                "percentageOfSessionsInjected": 0.37,
-                "botoxAverageDosePerMuscle": 10,
-                "botoxAverageNumberOfSites": 2.16,
                 "dysportAverageDosePerMuscle": 0,
                 "dysportAverageNumberOfSites": 0
             },

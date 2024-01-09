@@ -1,0 +1,12 @@
+[
+    {
+      "id": 1,
+      "name": "Subdermal",
+      "side": "both",
+      "percentageOfSessionsInjected": 2.08,
+      "botoxAverageDosePerMuscle": 36.04,
+      "botoxAverageNumberOfSites": 5.31,
+      "dysportAverageDosePerMuscle": 260.8,
+      "dysportAverageNumberOfSites": 2
+    }
+  ]

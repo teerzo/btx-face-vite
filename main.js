@@ -127,6 +127,13 @@ let app = {
     path: './data/conditions.json',
     list: [],
     fullList: [],
+    subPath: './data/conditions/',
+    subConditions: [],
+  },
+  meta: {
+    path: './data/conditions/meta.json',
+    list: [],
+    fullList: [],
   },
   models: {
     path: './data/muscles.json',
@@ -145,22 +152,30 @@ let app = {
   },
 
   initialize: function () {
+
     app.getConditions().then(() => {
-      app.getTextures().then(() => {
-        app.getModels().then(() => {
-          app.loadTextures().then(() => {
-            app.loadModels().then(() => {
-              app.initModels().then(() => {
-                app.updateDom();
-                app.hideLoading();
-                app.initalized = true;
-                console.log('Initialized all data loaded');
+      app.getConditionFiles().then(() => {
+        app.getMeta().then(() => {
+          app.initConditions().then(() => {
+            app.getTextures().then(() => {
+              app.getModels().then(() => {
+                app.loadTextures().then(() => {
+                  app.loadModels().then(() => {
+                    app.initModels().then(() => {
+                      app.updateDom();
+                      app.hideLoading();
+                      app.initalized = true;
+                      console.log('Initialized all data loaded');
+                    });
+                  });
+                });
               });
             });
           });
         });
       });
     });
+
 
     initEventListeners();
     initDom();
@@ -278,6 +293,9 @@ let app = {
       axios.get(app.conditions.path).then(function (response) {
         if (response.data && response.data.length > 0) {
           app.conditions.fullList = response.data;
+          for (let i in app.conditions.fullList) {
+            app.conditions.fullList[i].id = Number(i) + 1;
+          }
           resolve();
         }
         else {
@@ -287,6 +305,92 @@ let app = {
         }
       });
     })
+  },
+
+  getConditionFiles: function () {
+    return new Promise(function (resolve, reject) {
+      let promises = [];
+      if (app.conditions.fullList && app.conditions.fullList.length > 0) {
+        for (let i in app.conditions.fullList) {
+          let promise = new Promise(function (resolve, reject) {
+
+            const path = `${app.conditions.subPath}${app.conditions.fullList[i].fileName}`;
+            axios.get(path).then(function (response) {
+              if (response.data && response.data.length > 0) {
+                let condition = {
+                  id: app.conditions.fullList[i].id,
+                  muscles: response.data
+                }
+                app.conditions.subConditions.push(condition);
+                resolve();
+              }
+              else {
+                app.showLoadingError(`Failed to load ${app.conditions[i].fileName}, format or content may be invalid`);
+                reject();
+              }
+            });
+          });
+          promises.push(promise);
+        }
+      }
+      Promise.all(promises).then(function () {
+        resolve();
+      })
+    });
+  },
+
+  getMeta: function () {
+    return new Promise(function (resolve, reject) {
+      axios.get(app.meta.path).then(function (response) {
+        if (response.data && response.data.length > 0) {
+          app.meta.fullList = response.data;
+          for (let i in app.meta.fullList) {
+            app.meta.fullList[i].id = Number(i) + 1;
+          }
+          resolve();
+        }
+        else {
+          console.log('invalid meta.json');
+          app.showLoadingError('Failed to load meta.json, format or content may be invalid');
+          reject();
+        }
+      });
+    })
+  },
+
+  initConditions: function () {
+    return new Promise(function (resolve, reject) {
+      if (app.conditions.fullList && app.conditions.fullList.length > 0) {
+        if (app.conditions.subConditions && app.conditions.subConditions.length > 0) {
+          if (app.meta.fullList && app.meta.fullList.length > 0) {
+
+            let conditions = [];
+            for (let i in app.conditions.fullList) {
+              let condition = app.conditions.fullList[i];
+              condition.muscles = [];
+              condition.meta = {};
+
+              for (let c in app.conditions.subConditions) {
+                let subCondition = app.conditions.subConditions[c];
+
+                if (condition.id === subCondition.id) {
+                  condition.muscles = subCondition.muscles;
+                }
+              }
+              for (let m in app.meta.fullList) {
+                let meta = app.meta.fullList[m];
+                if (condition.id === meta.id) {
+                  condition.meta = meta;
+                }
+              }
+              conditions.push(condition);
+            }
+            app.conditions.list = conditions;
+            resolve();
+          }
+        }
+      }
+    });
   },
 
   getTextures: function () {
@@ -416,9 +520,7 @@ let app = {
               const cm = md.models[j];
               let promise = new Promise(function (resolve, reject) {
                 app.loader.load(`./obj/${cm.fileName}`, function (model) {
-                  if (md.name === 'teeth') {
-                    // console.log('model', model);
-                  }
+
                   let obj = {
                     id: md.id,
                     type: 'misc',
@@ -426,7 +528,6 @@ let app = {
                     mesh: model,
                   }
                   if (cm.texture) {
-                    // console.log('texture', cm);
                     obj.texture = cm.texture;
                   }
 
@@ -514,7 +615,6 @@ let app = {
     app.domSelectMuscles.add(option);
 
     for (let i = 0; i < optionList.length; i++) {
-      // console.log(optionList[i]);
       let option = document.createElement('option');
 
       option.text = `${app.viewAllMuscles && optionList[i].skipLoad ? '** ' : ''} ${optionList[i].displayName} `;
@@ -533,36 +633,31 @@ let app = {
     }
   },
   selectCondition: function (id) {
-    // console.log('selectCondition', id);
-    for (let i in app.conditions.fullList) {
-      if (app.conditions.fullList[i].id === id) {
+    for (let i in app.conditions.list) {
+      if (app.conditions.list[i].id === id) {
         // app.sele
         let min = null;
         let max = null;
-        for (let j in app.conditions.fullList[i].muscles) {
-          if (min === null || app.conditions.fullList[i].muscles[j].percentageOfSessionsInjected < min) {
-            min = app.conditions.fullList[i].muscles[j].percentageOfSessionsInjected;
+        for (let j in app.conditions.list[i].muscles) {
+          if (min === null || app.conditions.list[i].muscles[j].percentageOfSessionsInjected < min) {
+            min = app.conditions.list[i].muscles[j].percentageOfSessionsInjected;
           }
-          if (max === null || app.conditions.fullList[i].muscles[j].percentageOfSessionsInjected > max) {
-            max = app.conditions.fullList[i].muscles[j].percentageOfSessionsInjected;
+          if (max === null || app.conditions.list[i].muscles[j].percentageOfSessionsInjected > max) {
+            max = app.conditions.list[i].muscles[j].percentageOfSessionsInjected;
           }
         }
-
-        console.log('scale', min, max);
 
         app.scaleMin = min;
         app.scaleMax = max;
 
-
         app.updateObjectsScale();
         app.updateMetaScale();
-        app.updateMetaCondition(app.conditions.fullList[i]);
+        app.updateMetaCondition(app.conditions.list[i]);
         app.updateDom();
       }
     }
   },
   selectMuscleGroup: function (idValue) {
-    // console.log('selectMuscleGroup', idValue);
     app.resetRaycast();
 
     app.showOverlayMuscle(true);
@@ -582,7 +677,6 @@ let app = {
 
       if (item.type === 'muscle') {
         if (item.id.indexOf(`${id}-`) === 0) {
-          console.log('selectMuscleGroup', item.id, id);
           item.state.groupSelected = true;
         }
       }
@@ -594,13 +688,11 @@ let app = {
   },
 
   selectMuscle: function (object) {
-    // console.log('selectMuscle', object);
     app.showOverlayMuscle(true);
     app.showSideBtnLeft(false);
     app.showSideBtnRight(false);
 
     let muscleMeta = app.getMuscleMeta(object);
-
     app.updateMetaMuscle(muscleMeta);
   },
 
@@ -659,9 +751,9 @@ let app = {
         let both = 0;
 
         for (let j in muscleGroup.children) {
-          for (let c in app.conditions.fullList) {
-            for (let m in app.conditions.fullList[c].muscles) {
-              const cMuscle = app.conditions.fullList[c].muscles[m];
+          for (let c in app.conditions.list) {
+            for (let m in app.conditions.list[c].muscles) {
+              const cMuscle = app.conditions.list[c].muscles[m];
 
               if (cMuscle.id === muscleGroup.children[j].btxId) {
                 if (left === 0 && cMuscle.side === 'left') {
@@ -676,7 +768,7 @@ let app = {
 
                 count += 1;
 
-                if( cMuscle.percentageOfSessionsInjected > meta.percentageOfSessionsInjected) {
+                if (cMuscle.percentageOfSessionsInjected > meta.percentageOfSessionsInjected) {
                   meta.percentageOfSessionsInjected = cMuscle.percentageOfSessionsInjected;
                 }
                 // meta.percentageOfSessionsInjected += cMuscle.percentageOfSessionsInjected;
@@ -691,7 +783,6 @@ let app = {
 
         // let count = left + right + both;
         if (count >= 1) {
-          console.log('calculateGroupMeta', id, count, meta);
           // const divide = muscleGroup.children.length > 1 ? 2 : 1;
           const divide = count;
           meta.percentageOfSessionsInjected = (meta.percentageOfSessionsInjected).toFixed(2);
@@ -724,15 +815,15 @@ let app = {
         meta.name = `${muscleGroup.displayName} (${muscle.side})`;
 
         for (let j in muscleGroup.children) {
-          for (let c in app.conditions.fullList) {
-            if (app.conditionId === app.conditions.fullList[c].id)
-              for (let m in app.conditions.fullList[c].muscles) {
-                const cMuscle = app.conditions.fullList[c].muscles[m];
+          for (let c in app.conditions.list) {
+            if (app.conditionId === app.conditions.list[c].id)
+              for (let m in app.conditions.list[c].muscles) {
+                const cMuscle = app.conditions.list[c].muscles[m];
 
                 if (cMuscle.id === muscleGroup.children[j].btxId) {
                   if (muscle.side === muscleGroup.children[j].side) {
                     count += 1;
-                    if( cMuscle.percentageOfSessionsInjected > meta.percentageOfSessionsInjected) {
+                    if (cMuscle.percentageOfSessionsInjected > meta.percentageOfSessionsInjected) {
                       meta.percentageOfSessionsInjected = cMuscle.percentageOfSessionsInjected;
                     }
                     // meta.percentageOfSessionsInjected += cMuscle.percentageOfSessionsInjected;
@@ -863,15 +954,8 @@ let app = {
   },
 
   updateMetaScale: function () {
-    if (app.domMetaScaleMin && app.scaleMin !== null) {
-      console.log('updateMetaScale', app.scaleMin);
-      app.domMetaScaleMin.innerHTML = `${app.scaleMin.toFixed(2)}%`
-    }
-    if (app.domMetaScaleMax && app.scaleMax !== null) {
-      console.log('updateMetaScale', app.scaleMax);
-
-      app.domMetaScaleMax.innerHTML = `≥${app.scaleMax.toFixed(2)}%`
-    }
+    if (app.domMetaScaleMin && app.scaleMin !== null) { app.domMetaScaleMin.innerHTML = `${app.scaleMin.toFixed(2)}%` }
+    if (app.domMetaScaleMax && app.scaleMax !== null) { app.domMetaScaleMax.innerHTML = `≥${app.scaleMax.toFixed(2)}%` }
   },
 
   updateMetaCondition: function (condition) {
@@ -899,7 +983,6 @@ let app = {
 
   updateSideName: function (name) {
     if (app.domSideName && name) {
-      // console.log('')
       app.domSideName.innerHTML = name.length > 15 ? `${name.slice(0, 12)}..` : name;
     }
   },
@@ -910,10 +993,10 @@ let app = {
 
     // check conditions
     if (app.conditionId === null) {
-      for (let i in app.conditions.fullList) {
+      for (let i in app.conditions.list) {
         // app
-        if (app.conditions.fullList[i].muscles && app.conditions.fullList[i].muscles.length > 0) {
-          conditions.push(app.conditions.fullList[i]);
+        if (app.conditions.list[i].muscles && app.conditions.list[i].muscles.length > 0) {
+          conditions.push(app.conditions.list[i]);
         }
       }
       app.resetSelectCondition();
@@ -924,10 +1007,10 @@ let app = {
     let conditionMuscles = [];
     if (app.conditionId !== null) {
 
-      for (let c in app.conditions.fullList) {
-        if (app.conditions.fullList[c].id === app.conditionId) {
-          for (let cm in app.conditions.fullList[c].muscles) {
-            const condMuscle = app.conditions.fullList[c].muscles[cm];
+      for (let c in app.conditions.list) {
+        if (app.conditions.list[c].id === app.conditionId) {
+          for (let cm in app.conditions.list[c].muscles) {
+            const condMuscle = app.conditions.list[c].muscles[cm];
             let match = true;
             if (condMuscle.percentageOfSessionsInjected === '') {
               match = false;
@@ -938,14 +1021,12 @@ let app = {
                 name: condMuscle.name,
                 muscles: [],
               };
-              // console.log('new', data);
               data.muscles.push(condMuscle);
               conditionMuscles.push(data);
             }
           }
         }
       }
-      // console.log('check muscles', conditionMuscles);
 
       for (let i in conditionMuscles) {
         muscles.push(conditionMuscles[i]);
@@ -957,7 +1038,6 @@ let app = {
     }
   },
   updateObjects: function () {
-    // console.log('updateObjects', app.conditionId, app.objectList);
     for (let i in app.objectList) {
       let item = app.objectList[i];
 
@@ -1049,23 +1129,21 @@ let app = {
 
         for (let i in app.models.fullList) {
           const muscleGroup = app.models.fullList[i];
-          // console.log('muscle', muscle);
 
           if (id === muscleGroup.id) {
             for (let j in muscleGroup.children) {
 
-              for (let c in app.conditions.fullList) {
-                // console.log('condition id', app.conditionId, app.conditions.fullList[c]);
-                if (app.conditionId === app.conditions.fullList[c].id) {
+              for (let c in app.conditions.list) {
+                if (app.conditionId === app.conditions.list[c].id) {
 
-                  for (let m in app.conditions.fullList[c].muscles) {
-                    const cMuscle = app.conditions.fullList[c].muscles[m];
+                  for (let m in app.conditions.list[c].muscles) {
+                    const cMuscle = app.conditions.list[c].muscles[m];
 
                     if (muscleGroup.children[j].btxId === cMuscle.id) {
                       if (muscleGroup.children[j].side === cMuscle.side) {
-                        
+
                         // count += 1;
-                        if( cMuscle.percentageOfSessionsInjected > percentage ) {
+                        if (cMuscle.percentageOfSessionsInjected > percentage) {
                           percentage = cMuscle.percentageOfSessionsInjected;
                         }
                         // percentage += cMuscle.percentageOfSessionsInjected;
@@ -1091,25 +1169,22 @@ let app = {
           percentage = (percentage / count);
         }
 
-        // console.log(muscle.name, percentage);
-          
+
         if (percentage === 0) {
           // colour white 
           muscle.scaleColor.copy(app.colorMuscle)
-          // console.log(muscle.name, percentage);
         }
         else if (percentage <= (app.scaleMax / 33)) {
           muscle.scaleColor = new THREE.Color(colours[0]).lerp(colours[1], percentage / (app.scaleMax * 0.33));
-          console.log(muscle.name, percentage, app.scaleMax * 0.33,   percentage / (app.scaleMax * 0.33));
+          // console.log(muscle.name, percentage, app.scaleMax * 0.33, percentage / (app.scaleMax * 0.33));
         }
         else if (percentage <= (app.scaleMax / 66)) {
           muscle.scaleColor = new THREE.Color(colours[1]).lerp(colours[2], percentage / (app.scaleMax * 0.66));
-          console.log(muscle.name, percentage, app.scaleMax * 0.66, percentage / (app.scaleMax * 0.66));
+          // console.log(muscle.name, percentage, app.scaleMax * 0.66, percentage / (app.scaleMax * 0.66));
         }
         else { //if (percentage <= 66) {
           muscle.scaleColor = new THREE.Color(colours[2]).lerp(colours[3], percentage / app.scaleMax);
-          console.log(muscle.name, percentage, app.scaleMax, percentage / app.scaleMax );
-
+          // console.log(muscle.name, percentage, app.scaleMax, percentage / app.scaleMax);
         }
       }
     }
@@ -1158,7 +1233,6 @@ let app = {
     app.updateObjects();
   },
   toggleRightMuscles: function () {
-    // console.log("toggleRightMuscles", app.rightVisible);
     app.rightVisible = !app.rightVisible;
 
     if (app.muscleGroupId !== null) {
@@ -1203,8 +1277,6 @@ let app = {
 
   // Raycast 
   raycastFromCamera: function (mouse) {
-    // console.log('raycastFromCamera', mouse);
-
     if (app.camera) {
 
       app.raycaster.setFromCamera(mouse, app.camera);
@@ -1218,20 +1290,14 @@ let app = {
           }
         }
         if (target !== null) {
-          // console.log('intersected object', target.object);
           const intersectPos = new THREE.Vector3().copy(target.point);
           app.raycastPos.position.copy(intersectPos);
-          // let firstObject  = 
-          // console.log('raycast target', target.object);
           app.setRaycastTarget(target.object);
 
           if (app.raycast.moveEnabled && app.raycast.currentObject) {
             var offsetPos = new THREE.Vector3().copy(intersectPos);
-            // console.log(target);
             offsetPos.sub(app.raycast.currentObject.object.position);
-
             app.raycast.positionOffset.copy(offsetPos);
-            // console.log('offset', offsetPos);
 
             var cameraQuat = new THREE.Quaternion().copy(app.camera.quaternion);
             var normalX = new THREE.Vector3(1, 0, 0);
@@ -1249,11 +1315,6 @@ let app = {
             app.raycast.plane.lookAt(lookPosition);
           }
         }
-        else {
-          // app.clearRaycastTarget();
-
-        }
-        // app.raycast.plane.lookAt( lookPosition );
       }
       else {
         console.log('clear target');
@@ -1266,22 +1327,14 @@ let app = {
   },
 
   setRaycastTarget: function (mesh) {
-    // console.log('setRaycastTarget', mesh);
-
     for (let i in app.objectList) {
       let item = app.objectList[i];
-
-      // console.log('setRaycastTarget check', item, mesh.name);
-
       item.state.raycastSelected = false;
 
       if (item.mesh && item.mesh.length > 0) {
         for (let j in item.mesh) {
-          // console.log('item mesh name', item.mesh[j].name);
-
           if (item.mesh[j].name === mesh.name) {
             item.state.raycastSelected = true;
-
             app.raycast.currentObject = item;
 
             if (item.type === 'muscle') {
@@ -1297,7 +1350,6 @@ let app = {
     }
   },
   clearRaycastTarget: function () {
-    // console.log('clearRaycastTarget');
     for (let i in app.objectList) {
       let item = app.objectList[i];
       item.state.raycastSelected = false;
@@ -1308,7 +1360,6 @@ let app = {
   // event handlers 
   mouseDown: function (event) {
     let mouse = getMousePosition(event, app.renderer.domElement);
-    // console.log('mouseDown', mouse);
 
     app.raycast.mouseDown = true;
     app.raycast.mousePos = mouse;
@@ -1318,9 +1369,7 @@ let app = {
     }
   },
   mouseMove: function (event) {
-    // console.log('mouseMove');
     let mouse = getMousePosition(event, app.renderer.domElement);
-    // app.raycastFromCamera(mouse);
 
     if (app.raycast.moveEnabled) {
       // app.controls.enabled = false;
@@ -1335,37 +1384,12 @@ let app = {
 
           var intersects = raycaster.intersectObject(app.raycast.plane);
           if (intersects.length > 0) {
-
-            // console.log(intersects);
             var position = new THREE.Vector3().copy(intersects[0].point);
-
             app.raycastPos.position.copy(position);
-
-            // console.log('offset move', app.raycast.positionOffset);
-
             position.sub(app.raycast.positionOffset);
-            // let testPos = new THREE.Vector3(0,-5,0);
-            // position.sub(testPos);
-
-            // var offsetPos = new THREE.Vector3().copy(intersectPos);
-            // console.log(target);
-            // offsetPos.sub(target.object.position);
-
-            // app.raycast.positionOffset.copy(offsetPos);
-
-            // let testPos = new THREE.Vector3(0,0,0);
-            // position.sub(testPos);
-
-            // console.log('object', app.raycast.currentObject);
             app.raycast.currentObject.object.position.copy(position);
-            // app.raycast.currentObject.mesh.position.copy(position);
-
-
-
           }
-
         }
-
 
         if (app.camera) {
           if (!app.raycast.moveEnabled) {
@@ -1378,16 +1402,11 @@ let app = {
                 if (target === null && !intersects[i].object.material.wireframe) {
                   target = intersects[i];
                 }
-
               }
-              // console.log('intersected object', target.object);
               const intersectPos = new THREE.Vector3().copy(target.point);
-
               app.raycastPos.position.copy(intersectPos);
-              // let firstObject  = 
               app.setRaycastTarget(target.object);
             }
-
             app.updateObjects();
           }
         }
@@ -1397,30 +1416,19 @@ let app = {
   },
   mouseUp: function (event) {
     let mouse = getMousePosition(event, app.renderer.domElement);
-    // console.log('mouseUp', mouse);
-    // app.raycast.mouseDown = true;
-
-
     var a = app.raycast.mousePos.x - mouse.x;
     var b = app.raycast.mousePos.y - mouse.y;
 
     let dist = Math.sqrt(a * a + b * b);
     if (!app.raycast.moveEnabled && dist < 0.05) {
-      // console.log('dist', dist);
       app.raycastFromCamera(mouse);
     }
 
-    // window.setTimeout(function () {
     if (app.raycast.mouseDown && app.raycast.mouseMove) {
       console.log('clear target');
       app.clearSelectedMuscle();
       app.clearRaycastTarget();
     }
-    // }, 1000);
-
-    // if (!app.raycast.mouseMove) {
-
-    // }
 
     app.raycast.mouseMove = false;
     app.raycast.mouseDown = false;
@@ -1429,10 +1437,7 @@ let app = {
 
   },
 
-  // dom show/hide 
-
   showMusclesSelect: function (show) { show ? app.domSelectMuscles.classList.remove('hide') : app.domSelectMuscles.classList.add('hide') },
-
   // showSidesButtons: function (show) { show ? app.domGroupBtnSides.classList.remove('hide') : app.domGroupBtnSides.classList.add('hide') },
   showSideBtnLeft: function (show) { show ? app.domBtnSideLeft.classList.remove('hide') : app.domBtnSideLeft.classList.add('hide') },
   showSideBtnRight: function (show) { show ? app.domBtnSideRight.classList.remove('hide') : app.domBtnSideRight.classList.add('hide') },
@@ -1450,13 +1455,9 @@ let app = {
   },
 
   showButtonReset: function (show) { show ? app.domBtnReset.classList.remove('hide') : app.domBtnReset.classList.add('hide') },
-
-
   showOverlayCondition: function (show) { show ? app.domOverlayCondition.classList.remove('hide') : app.domOverlayCondition.classList.add('hide') },
   showOverlayScale: function (show) { show ? app.domOverlayScale.classList.remove('hide') : app.domOverlayScale.classList.add('hide') },
-
   showOverlayHelp: function (show) { show ? app.domOverlayHelp.classList.remove('hide') : app.domOverlayHelp.classList.add('hide') },
-
   showOverlayMuscle: function (show) {
     if (show) {
       app.domOverlayMuscle.classList.remove('hide');
@@ -1475,21 +1476,12 @@ let app = {
       app.domOverlayMisc.classList.add('hide')
     }
   },
-
   showLoadingError: function (message) {
-
     app.domLoadingGroup.classList.add('hide');
-
     app.domLoadingErrorMessage.innerHTML = message ? message : 'Undefined error';
     app.domLoadingError.classList.remove('hide');
   }
-
-
-
-
 };
-
-
 
 const getElementPosition = function (element) {
   var xPosition = 0;
@@ -1509,8 +1501,6 @@ const getMousePosition = function (event, element) {
     x: ((event.clientX - ele.x) / element.clientWidth) * 2 - 1,
     y: -((event.clientY - ele.y) / element.clientHeight) * 2 + 1,
   };
-  // Interact3D.mousePosition.x = ((event.clientX - ele.x) / element.clientWidth) * 2 - 1;
-  // Interact3D.mousePosition.y = -((event.clientY - ele.y) / element.clientHeight) * 2 + 1;
   return mouse;
 };
 
@@ -1522,10 +1512,8 @@ const initEventListeners = function () {
   app.domSelectConditions.onchange = (event) => { handleSelectConditions(event) };
   app.domSelectMuscles.onchange = (event) => { handleSelectMuscles(event) };
 
-
   app.domBtnSideLeft.onclick = (event) => {
     event.preventDefault();
-
     if (app.conditionId) {
       app.toggleLeftMuscles();
       app.showSideBtnLeft(app.leftVisible);
@@ -1545,20 +1533,15 @@ const initEventListeners = function () {
 
   app.domInputMove.onclick = (event) => {
     app.raycast.moveEnabled = !app.raycast.moveEnabled;
-
     app.controls.enabled = !app.raycast.moveEnabled;
-
     app.raycast.plane.visible = app.raycast.moveEnabled;
     app.raycastPos.visible = app.raycast.moveEnabled;
   }
 
   app.domInputAll.onclick = (event) => {
     app.viewAllMuscles = !app.viewAllMuscles;
-
     app.updateDom();
   }
-
-
 
   app.domBtnReset.onclick = (event) => {
     event.preventDefault();
@@ -1579,8 +1562,6 @@ const initEventListeners = function () {
     app.showOverlayHelp(app.showHelp);
   }
 
-
-
   app.domContainer.addEventListener('mousedown', (event) => {
     event.preventDefault();
     app.mouseDown(event);
@@ -1593,7 +1574,6 @@ const initEventListeners = function () {
     event.preventDefault();
     app.mouseUp(event);
   });
-
 
   function handleSelectConditions(event) {
     app.resetSelectMuscles();
@@ -1613,14 +1593,12 @@ const initEventListeners = function () {
       app.selectCondition(value);
       app.showMusclesSelect(true);
 
-
       app.showOverlayCondition(true);
       app.showOverlayScale(true);
 
       app.showSideBtnLeft(true);
       app.showSideBtnRight(true);
       app.showGroupMove(true);
-
 
       app.updateObjects();
     }
@@ -1632,7 +1610,6 @@ const initEventListeners = function () {
   }
 
   function handleSelectMuscles(event) {
-
     let value = null;
     if (event.target.value !== '' && event.target.value !== 'null' && event.target.value !== null) {
       value = Number(event.target.value);
@@ -1652,20 +1629,13 @@ const initEventListeners = function () {
 
 const initDom = function () {
   app.showButtonReset(true);
-
 }
 
-// DOM EVENTS
 const onResize = function (event) {
   clearTimeout(app.resizeEnd);
   app.resizeEnd = setTimeout(function () {
-    // option 1
     var evt = new Event('resize-end');
     window.dispatchEvent(evt);
-    // option 2: old-fashioned
-    /*var evt = document.createEvent('Event');
-    evt.initEvent('resize-end', true, true);
-    window.dispatchEvent(evt);*/
   }, 100);
 };
 const onResizeEnd = function (event) {
@@ -1674,7 +1644,6 @@ const onResizeEnd = function (event) {
 
 const resizeThree = function (event) {
   if (app.renderer) {
-
     let width = window.innerWidth - 20;
     let height = (window.innerWidth <= 768 ? window.innerHeight - 210 : window.innerHeight - 80);
 
@@ -1694,9 +1663,7 @@ const resizeThree = function (event) {
     app.domRoot.innerHTML = '';
     app.domRoot.appendChild(app.renderer.domElement);
   }
-
 };
-
 
 // Data requests
 const initThree = function () {
@@ -1704,14 +1671,10 @@ const initThree = function () {
   let height = (window.innerWidth <= 768 ? window.innerHeight - 60 : window.innerHeight - 60);
 
   app.scene = new THREE.Scene();
-
-
-
   app.renderer = new THREE.WebGLRenderer();
   app.renderer.antialias = true;
   app.renderer.setPixelRatio(window.devicePixelRatio);
   app.renderer.setSize(width, height);
-
 
   app.domRoot = app.domContainer;
   app.domRoot.appendChild(app.renderer.domElement);
@@ -1719,30 +1682,16 @@ const initThree = function () {
   app.camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 10000);
   app.camera.position.copy(app.cameraDefaultPos);
 
-
   app.controls = new OrbitControls(app.camera, app.renderer.domElement)
   app.controls.target.copy(app.cameraTargetDefaultPos);
-  // app.controls.enableDamping = true
-  // app.controls.dampingFactor = 0.25
+  app.controls.enableDamping = true
+  app.controls.dampingFactor = 0.25
   app.controls.enableZoom = true
 };
 
 const initScene = function () {
-
-  // app.lightObject = new THREE.Object3D();
-  // let lightGeo = new THREE.BoxGeometry(1, 1, 1);
-  // let lightMat = new THREE.MeshPhongMaterial({ color: 0xFF0000, flatShading: true, wireframe: false, visible: true, transparent: true });
-  // app.lightCube = new THREE.Mesh(lightGeo, lightMat);
-  // app.lightCube.update = () => {
-  //   app.lightCube.position.copy(app.controls.target);
-  // }
-  // app.lightObject.add(app.lightCube);
-  // app.scene.add(app.lightObject);
-
   var light = new THREE.AmbientLight(0x404040, 1); // soft white light
   app.scene.add(light);
-  // const ambient = new THREE.HemisphereLight(0xffffff, 0x8d8d8d, 0.15);
-  // app.scene.add(ambient);
 
   app.directionalLight = new THREE.DirectionalLight(0xffffff, 1);
   app.directionalLight.position.set(0, 5, 50);
@@ -1753,49 +1702,26 @@ const initScene = function () {
     normal.normalize();
     normal.multiplyScalar(50);
 
-    let tar = new THREE.Vector3(0, 0, 0);
-
     app.directionalLight.position.copy(app.camera.position);
     app.directionalLight.target.position.copy(app.controls.target);
-
   }
   app.scene.add(app.directionalLight);
   app.scene.add(app.directionalLight.target);
 
-
   app.spotLight = new THREE.SpotLight({ color: 0xffffff, intensity: 100, distance: 0, decay: 0 });
   app.spotLight.position.copy(app.cameraDefaultPos);
-  // app.spotLight.target(app.controls);
   app.spotLight.update = (dt) => {
-    // console.log('update');
     let normal = new THREE.Vector3().copy(app.controls.target);
     normal.add(app.camera.position);
     normal.normalize();
     normal.multiplyScalar(100);
-    // console.log(normal);
 
-    let tar = new THREE.Vector3(0, 0, 0);
-
-    // console.log('update spotlight', app.controls.target, app.camera.position);
-
-
-
-
-    // app.spotLight.position.copy(tar.add(normal));
-    // app.spotLight.position.copy(app.controls.target);
     app.spotLight.position.copy(app.camera.position);
     app.spotLight.target.position.copy(app.controls.target);
-
-
-    // app.spotLight.position.x = Math.cos(dt) * 20;
-    // app.spotLight.position.z = Math.sin(dt) * 20;
   }
-  // app.scene.add(app.spotLight);
-  // app.scene.add(app.spotLight.target);
 
   app.lightHelper = new THREE.SpotLightHelper(app.spotLight);
   app.scene.add(app.lightHelper);
-
 }
 
 const initRaycast = function () {
@@ -1814,7 +1740,6 @@ const initRaycast = function () {
 };
 
 const createObject = function (props) {
-  // console.log('createObject', props);
   if (props === undefined) { props = {}; }
   if (props.name && props.name !== '' && props.mesh) {
     let data = {};
@@ -1838,15 +1763,6 @@ const createObject = function (props) {
 
     let mesh = obj.children;
 
-    // let mesh = null;
-    // if (props.multi) {
-    //   mesh = obj.children;
-    // }
-    // else {
-    //   mesh = obj.children[0];
-    // }
-
-
     let color = new THREE.Color(0xFF0000);
     if (data.type === 'muscle') {
       color.copy(app.colorMuscle);
@@ -1858,11 +1774,6 @@ const createObject = function (props) {
     let material = new THREE.MeshPhongMaterial({ color: color, map: texture ? texture : null, transparent: true, visible: data.state.visible });
 
     obj.name = props.name;
-    if (obj.name === 'mentalis') {
-      // console.log('mesh', obj, mesh);
-      mesh = obj.children;
-      // material = new THREE.MeshPhongMaterial({ color: 0x00FF00, transparent: true, visible: data.state.visible });
-    }
     if (mesh) {
       for (let i in mesh) {
         mesh[i].material = material;
@@ -1870,7 +1781,6 @@ const createObject = function (props) {
     }
 
     data.object = obj;
-
     data.mesh = mesh;
     data.material = material;
     data.texture = texture;
@@ -1884,9 +1794,6 @@ const createObject = function (props) {
 }
 
 const addObjectsToScene = function () {
-  // console.log('addObjectsToScene');
-
-  // console.log(app.objectList);
   if (app.scene) {
     if (app.objectList && app.objectList.length > 0) {
       for (let i in app.objectList) {
@@ -1913,7 +1820,6 @@ const update = function () {
     // norm.multiplyScalar(100);
     // app.camera.position.copy(norm);
 
-
     // CLAMP MAX CAMERA DISTANCE
     // app.camera.position.copy(cameraPos);
     // if (cameraPos.distanceTo(targetPos) > 90) {
@@ -1923,17 +1829,12 @@ const update = function () {
     //   app.camera.position.copy(norm);
     // }
   }
-  // if( cameraPos.distanceTo(targetPos) < 90 ) {
-  //     app.controls.update(app.clock.getDelta());
-  // }
 
   app.cameraLastPos = new THREE.Vector3(0, 0, 0).copy(app.camera.position);
-
 
   app.directionalLight.update(app.clock.getDelta());
   app.spotLight.update(app.clock.getDelta());
   app.lightHelper.update();
-  // app.lightCube.update();
 }
 
 app.initialize();

@@ -453,6 +453,7 @@ let app = {
       });
     });
   },
+
   loadTextures: function () {
     return new Promise(function (resolve, reject) {
       if (app.textureLoader) {

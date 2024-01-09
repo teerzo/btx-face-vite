@@ -65,6 +65,9 @@ let app = {
   domOverlayScale: document.getElementById('overlay-scale'),
   domOverlayMisc: document.getElementById('overlay-misc'),
 
+  domMetaScaleMin: document.getElementById('meta-scale-min'),
+  domMetaScaleMax: document.getElementById('meta-scale-max'),
+
   domMetaCondition: document.getElementById('meta-condition'),
   domMetaPatients: document.getElementById('meta-condition-patients'),
   domMetaSessions: document.getElementById('meta-condition-sessions'),
@@ -98,6 +101,9 @@ let app = {
 
   selectedMuscleGroup: null,
   selectedMuscle: null,
+
+  scaleMin: 0,
+  scaleMax: 100,
 
   raycast: {
     currentObject: null,
@@ -370,7 +376,7 @@ let app = {
           const md = app.models.fullList[i];
 
           if (md.skipLoad) {
-            console.log("skip load -", md.name);
+            // console.log("skip load -", md.name);
           }
           else if (md?.models && md?.models.length > 0) {
             for (let j in md.models) {
@@ -477,7 +483,7 @@ let app = {
       let match = false;
 
       if (!app.viewAllMuscles && app.models.fullList[i]?.skipLoad) {
-        console.log('skipped -', app.models.fullList[i].name);
+        // console.log('skipped -', app.models.fullList[i].name);
       }
       else {
         for (let j in app.models.fullList[i].children) {
@@ -531,7 +537,25 @@ let app = {
     for (let i in app.conditions.fullList) {
       if (app.conditions.fullList[i].id === id) {
         // app.sele
+        let min = null;
+        let max = null;
+        for (let j in app.conditions.fullList[i].muscles) {
+          if (min === null || app.conditions.fullList[i].muscles[j].percentageOfSessionsInjected < min) {
+            min = app.conditions.fullList[i].muscles[j].percentageOfSessionsInjected;
+          }
+          if (max === null || app.conditions.fullList[i].muscles[j].percentageOfSessionsInjected > max) {
+            max = app.conditions.fullList[i].muscles[j].percentageOfSessionsInjected;
+          }
+        }
+
+        console.log('scale', min, max);
+
+        app.scaleMin = min;
+        app.scaleMax = max;
+
+
         app.updateObjectsScale();
+        app.updateMetaScale();
         app.updateMetaCondition(app.conditions.fullList[i]);
         app.updateDom();
       }
@@ -652,8 +676,10 @@ let app = {
 
                 count += 1;
 
-
-                meta.percentageOfSessionsInjected += cMuscle.percentageOfSessionsInjected;
+                if( cMuscle.percentageOfSessionsInjected > meta.percentageOfSessionsInjected) {
+                  meta.percentageOfSessionsInjected = cMuscle.percentageOfSessionsInjected;
+                }
+                // meta.percentageOfSessionsInjected += cMuscle.percentageOfSessionsInjected;
                 meta.botoxAverageDosePerMuscle += cMuscle.botoxAverageDosePerMuscle;
                 meta.botoxAverageNumberOfSites += cMuscle.botoxAverageNumberOfSites;
                 meta.dysportAverageDosePerMuscle += cMuscle.dysportAverageDosePerMuscle;
@@ -668,7 +694,7 @@ let app = {
           console.log('calculateGroupMeta', id, count, meta);
           // const divide = muscleGroup.children.length > 1 ? 2 : 1;
           const divide = count;
-          meta.percentageOfSessionsInjected = (meta.percentageOfSessionsInjected / divide).toFixed(2);
+          meta.percentageOfSessionsInjected = (meta.percentageOfSessionsInjected).toFixed(2);
           meta.botoxAverageDosePerMuscle = (meta.botoxAverageDosePerMuscle / divide).toFixed(2);
           meta.botoxAverageNumberOfSites = (meta.botoxAverageNumberOfSites / divide).toFixed(2);
           meta.dysportAverageDosePerMuscle = (meta.dysportAverageDosePerMuscle / divide).toFixed(2);
@@ -706,7 +732,10 @@ let app = {
                 if (cMuscle.id === muscleGroup.children[j].btxId) {
                   if (muscle.side === muscleGroup.children[j].side) {
                     count += 1;
-                    meta.percentageOfSessionsInjected += cMuscle.percentageOfSessionsInjected;
+                    if( cMuscle.percentageOfSessionsInjected > meta.percentageOfSessionsInjected) {
+                      meta.percentageOfSessionsInjected = cMuscle.percentageOfSessionsInjected;
+                    }
+                    // meta.percentageOfSessionsInjected += cMuscle.percentageOfSessionsInjected;
                     meta.botoxAverageDosePerMuscle += cMuscle.botoxAverageDosePerMuscle;
                     meta.botoxAverageNumberOfSites += cMuscle.botoxAverageNumberOfSites;
                     meta.dysportAverageDosePerMuscle += cMuscle.dysportAverageDosePerMuscle;
@@ -721,7 +750,7 @@ let app = {
 
     if (count >= 1) {
       const divide = count;
-      meta.percentageOfSessionsInjected = (meta.percentageOfSessionsInjected / divide).toFixed(2);
+      meta.percentageOfSessionsInjected = (meta.percentageOfSessionsInjected).toFixed(2);
       meta.botoxAverageDosePerMuscle = (meta.botoxAverageDosePerMuscle / divide).toFixed(2);
       meta.botoxAverageNumberOfSites = (meta.botoxAverageNumberOfSites / divide).toFixed(2);
       meta.dysportAverageDosePerMuscle = (meta.dysportAverageDosePerMuscle / divide).toFixed(2);
@@ -833,6 +862,17 @@ let app = {
 
   },
 
+  updateMetaScale: function () {
+    if (app.domMetaScaleMin && app.scaleMin !== null) {
+      console.log('updateMetaScale', app.scaleMin);
+      app.domMetaScaleMin.innerHTML = `${app.scaleMin.toFixed(2)}%`
+    }
+    if (app.domMetaScaleMax && app.scaleMax !== null) {
+      console.log('updateMetaScale', app.scaleMax);
+
+      app.domMetaScaleMax.innerHTML = `≥${app.scaleMax.toFixed(2)}%`
+    }
+  },
 
   updateMetaCondition: function (condition) {
     if (app.domMetaCondition && condition?.name) { app.domMetaCondition.innerHTML = condition.name }
@@ -990,6 +1030,7 @@ let app = {
 
     }
   },
+
   updateObjectsScale: function () {
 
     // Clear scale colours
@@ -1022,8 +1063,12 @@ let app = {
 
                     if (muscleGroup.children[j].btxId === cMuscle.id) {
                       if (muscleGroup.children[j].side === cMuscle.side) {
-                        count += 1;
-                        percentage += cMuscle.percentageOfSessionsInjected;
+                        
+                        // count += 1;
+                        if( cMuscle.percentageOfSessionsInjected > percentage ) {
+                          percentage = cMuscle.percentageOfSessionsInjected;
+                        }
+                        // percentage += cMuscle.percentageOfSessionsInjected;
                       }
                     }
                   }
@@ -1042,22 +1087,29 @@ let app = {
         ];
 
 
-        if( count >= 1 ) {
+        if (count >= 1) {
           percentage = (percentage / count);
         }
 
+        // console.log(muscle.name, percentage);
+          
         if (percentage === 0) {
           // colour white 
           muscle.scaleColor.copy(app.colorMuscle)
+          // console.log(muscle.name, percentage);
         }
-        else if (percentage <= 16.5) {
-          muscle.scaleColor = new THREE.Color(colours[0]).lerp(colours[1], percentage / 33);
+        else if (percentage <= (app.scaleMax / 33)) {
+          muscle.scaleColor = new THREE.Color(colours[0]).lerp(colours[1], percentage / (app.scaleMax * 0.33));
+          console.log(muscle.name, percentage, app.scaleMax * 0.33,   percentage / (app.scaleMax * 0.33));
         }
-        else if (percentage <= 33) {
-          muscle.scaleColor = new THREE.Color(colours[1]).lerp(colours[2], percentage / 66);
+        else if (percentage <= (app.scaleMax / 66)) {
+          muscle.scaleColor = new THREE.Color(colours[1]).lerp(colours[2], percentage / (app.scaleMax * 0.66));
+          console.log(muscle.name, percentage, app.scaleMax * 0.66, percentage / (app.scaleMax * 0.66));
         }
         else { //if (percentage <= 66) {
-          muscle.scaleColor = new THREE.Color(colours[2]).lerp(colours[3], percentage / 100 );
+          muscle.scaleColor = new THREE.Color(colours[2]).lerp(colours[3], percentage / app.scaleMax);
+          console.log(muscle.name, percentage, app.scaleMax, percentage / app.scaleMax );
+
         }
       }
     }

@@ -76,7 +76,11 @@
       </div>
 
       <div class="group group-select grow marg">
-        <label> Muscles </label>
+        <div class="flex-row"> 
+          <label class="grow"> Muscles </label>
+          <label for="input-all" class="label"> <input id="input-all" type="checkbox" /> All? </label>
+
+        </div>
         <select id="select-muscles" class="hide">
           <option value=""> All muscles </option>
         </select>
@@ -175,14 +179,15 @@
 
       <div id="overlay-scale" class="overlay-scale">
         <div class="scale-parent">
-          <div class="scale-min"> 1% </div>
+          <div id="meta-scale-min" class="scale-min"> </div>
           <div class="scale-colour"> </div>
-          <div class="scale-max"> 100% </div>
+          <div id="meta-scale-max" class="scale-max"> </div>
         </div>
       </div>
 
       <div id="overlay-muscle" class="overlay-muscle">
         <p id="meta-muscle" class="muscle-name"></p>
+        <!-- <span id="meta-side" class="muscle-side"></span> -->
         <div class="flex-row">
           <div class="flex-text">
             <b> Injected in <span id="meta-muscle-injected"></span>% of sessions </b>

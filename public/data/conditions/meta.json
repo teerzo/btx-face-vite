@@ -1,0 +1,26 @@
+[
+  {
+    "condition": "Blepharospasm",
+    "numberOfPatients": 218,
+    "numberOfSessions": 1531,
+    "averageAge": 67.17,
+    "percentageMale": 36.7,
+    "percentageFemale": 52.75
+  },
+  {
+    "condition": "Cervical Dystonia",
+    "numberOfPatients": 962,
+    "numberOfSessions": 7307,
+    "averageAge": 65.91,
+    "percentageMale": 31.39,
+    "percentageFemale": 66.63
+  },
+  {
+    "condition": "Hemifacial Spasm",
+    "numberOfPatients": 627,
+    "numberOfSessions": 5747,
+    "averageAge": 65.25,
+    "percentageMale": 32.85,
+    "percentageFemale": 62.2
+  }
+]

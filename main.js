@@ -232,10 +232,13 @@ let app = {
   },
 
   resetDom: function () {
-    app.raycast.moveEnabled = false;
     app.controls.enabled = true;
+
     app.domInputMove.checked = false;
+    app.raycast.moveEnabled = false;
+
     app.domInputAll.checked = false;
+    app.viewAllMuscles = false;
 
     app.updateSideName('All Muscles')
     app.showMusclesSelect(false);
@@ -244,7 +247,7 @@ let app = {
     app.showOverlayScale(false);
     app.showOverlayMuscle(false);
     app.showOverlayMisc(false);
-    app.showGroupMove(false);
+    app.showGroupMove(true);
   },
 
   resetSideBtnLeft: function () {
@@ -1599,7 +1602,7 @@ const initEventListeners = function () {
 
       app.showSideBtnLeft(true);
       app.showSideBtnRight(true);
-      app.showGroupMove(false);
+      app.showGroupMove(true);
 
       app.updateObjects();
     }

@@ -1,12 +1,1642 @@
 [
-    {
-      "id": 1,
-      "name": "Subdermal",
-      "side": "both",
-      "percentageOfSessionsInjected": 2.08,
-      "botoxAverageDosePerMuscle": 36.04,
-      "botoxAverageNumberOfSites": 5.31,
-      "dysportAverageDosePerMuscle": 260.8,
-      "dysportAverageNumberOfSites": 2
-    }
-  ]
+  {
+    "id": 1,
+    "name": "Subdermal",
+    "side": "both",
+    "percentageOfSessionsInjected": 2.09,
+    "botoxAverageDosePerMuscle": 30.58,
+    "botoxAverageNumberOfSites": 8.14,
+    "dysportAverageDosePerMuscle": 91.41,
+    "dysportAverageNumberOfSites": 6.72
+  },
+  {
+    "id": 2,
+    "name": "Depressor Anguli Oris",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.11,
+    "botoxAverageDosePerMuscle": 3.13,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 12.5,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 3,
+    "name": "Depressor Anguli Oris",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.07,
+    "botoxAverageDosePerMuscle": 2.5,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 5,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 6,
+    "name": "Frontalis",
+    "side": "left",
+    "percentageOfSessionsInjected": 1.9,
+    "botoxAverageDosePerMuscle": 8.01,
+    "botoxAverageNumberOfSites": 3.13,
+    "dysportAverageDosePerMuscle": 22.98,
+    "dysportAverageNumberOfSites": 2.17
+  },
+  {
+    "id": 7,
+    "name": "Frontalis",
+    "side": "right",
+    "percentageOfSessionsInjected": 1.92,
+    "botoxAverageDosePerMuscle": 7.95,
+    "botoxAverageNumberOfSites": 3.31,
+    "dysportAverageDosePerMuscle": 24.76,
+    "dysportAverageNumberOfSites": 2.21
+  },
+  {
+    "id": 9,
+    "name": "Levator Anguli Oris",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.1,
+    "botoxAverageDosePerMuscle": 5,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 10,
+    "name": "Levator Labii Superioris Alaeque Nasi",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.01,
+    "botoxAverageDosePerMuscle": 2.5,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 11,
+    "name": "Levator Labii Superioris Alaeque Nasi",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.01,
+    "botoxAverageDosePerMuscle": 2.5,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 13,
+    "name": "Levator Labii Superioris",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.1,
+    "botoxAverageDosePerMuscle": 5,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 14,
+    "name": "Mentalis",
+    "side": "both",
+    "percentageOfSessionsInjected": 0.01,
+    "botoxAverageDosePerMuscle": 2.5,
+    "botoxAverageNumberOfSites": 2,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 15,
+    "name": "Nasalis",
+    "side": "both",
+    "percentageOfSessionsInjected": 0.29,
+    "botoxAverageDosePerMuscle": 4.72,
+    "botoxAverageNumberOfSites": 2,
+    "dysportAverageDosePerMuscle": 10,
+    "dysportAverageNumberOfSites": 2
+  },
+  {
+    "id": 16,
+    "name": "Orbicularis Oculi (Orbital Portion)",
+    "side": "left",
+    "percentageOfSessionsInjected": 1.33,
+    "botoxAverageDosePerMuscle": 13.61,
+    "botoxAverageNumberOfSites": 2.93,
+    "dysportAverageDosePerMuscle": 41.91,
+    "dysportAverageNumberOfSites": 3.23
+  },
+  {
+    "id": 17,
+    "name": "Orbicularis Oculi (Orbital Portion)",
+    "side": "right",
+    "percentageOfSessionsInjected": 1.31,
+    "botoxAverageDosePerMuscle": 13.11,
+    "botoxAverageNumberOfSites": 3.02,
+    "dysportAverageDosePerMuscle": 38.31,
+    "dysportAverageNumberOfSites": 2.83
+  },
+  {
+    "id": 18,
+    "name": "Orbicularis Oculi (Palpebral Portion)",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.7,
+    "botoxAverageDosePerMuscle": 4.26,
+    "botoxAverageNumberOfSites": 1.77,
+    "dysportAverageDosePerMuscle": 16.31,
+    "dysportAverageNumberOfSites": 1.52
+  },
+  {
+    "id": 19,
+    "name": "Orbicularis Oculi (Palpebral Portion)",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.81,
+    "botoxAverageDosePerMuscle": 3.34,
+    "botoxAverageNumberOfSites": 1.33,
+    "dysportAverageDosePerMuscle": 12.64,
+    "dysportAverageNumberOfSites": 1.38
+  },
+  {
+    "id": 20,
+    "name": "Orbicularis Oris",
+    "side": "both",
+    "percentageOfSessionsInjected": 0.11,
+    "botoxAverageDosePerMuscle": 4.83,
+    "botoxAverageNumberOfSites": 6,
+    "dysportAverageDosePerMuscle": 20,
+    "dysportAverageNumberOfSites": 4
+  },
+  {
+    "id": 22,
+    "name": "Risorius",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.1,
+    "botoxAverageDosePerMuscle": 2,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 23,
+    "name": "Zygomaticus Major",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.01,
+    "botoxAverageDosePerMuscle": 5,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 25,
+    "name": "Corrugator Supercilii",
+    "side": "left",
+    "percentageOfSessionsInjected": 1.81,
+    "botoxAverageDosePerMuscle": 4.83,
+    "botoxAverageNumberOfSites": 1.16,
+    "dysportAverageDosePerMuscle": 14.23,
+    "dysportAverageNumberOfSites": 1.13
+  },
+  {
+    "id": 26,
+    "name": "Corrugator Supercilii",
+    "side": "right",
+    "percentageOfSessionsInjected": 1.81,
+    "botoxAverageDosePerMuscle": 4.83,
+    "botoxAverageNumberOfSites": 1.16,
+    "dysportAverageDosePerMuscle": 14.23,
+    "dysportAverageNumberOfSites": 1.13
+  },
+  {
+    "id": 27,
+    "name": "Procerus",
+    "side": "both",
+    "percentageOfSessionsInjected": 1.92,
+    "botoxAverageDosePerMuscle": 6.78,
+    "botoxAverageNumberOfSites": 1.22,
+    "dysportAverageDosePerMuscle": 11.72,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 28,
+    "name": "Subdermal",
+    "side": "both",
+    "percentageOfSessionsInjected": 1.63,
+    "botoxAverageDosePerMuscle": 22.64,
+    "botoxAverageNumberOfSites": 5.32,
+    "dysportAverageDosePerMuscle": 57.98,
+    "dysportAverageNumberOfSites": 3.51
+  },
+  {
+    "id": 29,
+    "name": "Subdermal",
+    "side": "both",
+    "percentageOfSessionsInjected": 1.37,
+    "botoxAverageDosePerMuscle": 31.04,
+    "botoxAverageNumberOfSites": 6.05,
+    "dysportAverageDosePerMuscle": 51.49,
+    "dysportAverageNumberOfSites": 2.97
+  },
+  {
+    "id": 30,
+    "name": "Depressor Anguli Oris",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.34,
+    "botoxAverageDosePerMuscle": 3.54,
+    "botoxAverageNumberOfSites": 1.04,
+    "dysportAverageDosePerMuscle": 15,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 32,
+    "name": "Frontalis",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.38,
+    "botoxAverageDosePerMuscle": 10,
+    "botoxAverageNumberOfSites": 2.21,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 36,
+    "name": "Masseter",
+    "side": "left",
+    "percentageOfSessionsInjected": 8.98,
+    "botoxAverageDosePerMuscle": 13.88,
+    "botoxAverageNumberOfSites": 1.22,
+    "dysportAverageDosePerMuscle": 42.58,
+    "dysportAverageNumberOfSites": 1.13
+  },
+  {
+    "id": 38,
+    "name": "Orbicularis Oculi (Orbital Portion)",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.03,
+    "botoxAverageDosePerMuscle": 25,
+    "botoxAverageNumberOfSites": 5,
+    "dysportAverageDosePerMuscle": 45,
+    "dysportAverageNumberOfSites": 3
+  },
+  {
+    "id": 42,
+    "name": "Temporalis",
+    "side": "left",
+    "percentageOfSessionsInjected": 6.08,
+    "botoxAverageDosePerMuscle": 19.46,
+    "botoxAverageNumberOfSites": 3.58,
+    "dysportAverageDosePerMuscle": 48.04,
+    "dysportAverageNumberOfSites": 3.08
+  },
+  {
+    "id": 44,
+    "name": "Depressor Anguli Oris",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.22,
+    "botoxAverageDosePerMuscle": 2.5,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 46,
+    "name": "Frontalis",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.38,
+    "botoxAverageDosePerMuscle": 10,
+    "botoxAverageNumberOfSites": 2.21,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 50,
+    "name": "Masseter",
+    "side": "right",
+    "percentageOfSessionsInjected": 8.85,
+    "botoxAverageDosePerMuscle": 13.98,
+    "botoxAverageNumberOfSites": 1.18,
+    "dysportAverageDosePerMuscle": 40.12,
+    "dysportAverageNumberOfSites": 1.22
+  },
+  {
+    "id": 52,
+    "name": "Orbicularis Oculi (Orbital Portion)",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.03,
+    "botoxAverageDosePerMuscle": 25,
+    "botoxAverageNumberOfSites": 5,
+    "dysportAverageDosePerMuscle": 45,
+    "dysportAverageNumberOfSites": 3
+  },
+  {
+    "id": 56,
+    "name": "Temporalis",
+    "side": "right",
+    "percentageOfSessionsInjected": 6.35,
+    "botoxAverageDosePerMuscle": 19.05,
+    "botoxAverageNumberOfSites": 3.33,
+    "dysportAverageDosePerMuscle": 46.61,
+    "dysportAverageNumberOfSites": 3.1
+  },
+  {
+    "id": 62,
+    "name": "Subdermal",
+    "side": "both",
+    "percentageOfSessionsInjected": 0.18,
+    "botoxAverageDosePerMuscle": 141.5,
+    "botoxAverageNumberOfSites": 5.22,
+    "dysportAverageDosePerMuscle": 112.5,
+    "dysportAverageNumberOfSites": 2.25
+  },
+  {
+    "id": 63,
+    "name": "Platysma",
+    "side": "left",
+    "percentageOfSessionsInjected": 2.05,
+    "botoxAverageDosePerMuscle": 20.16,
+    "botoxAverageNumberOfSites": 3.78,
+    "dysportAverageDosePerMuscle": 48.21,
+    "dysportAverageNumberOfSites": 3.85
+  },
+  {
+    "id": 64,
+    "name": "Platysma",
+    "side": "right",
+    "percentageOfSessionsInjected": 2.18,
+    "botoxAverageDosePerMuscle": 18.06,
+    "botoxAverageNumberOfSites": 3.92,
+    "dysportAverageDosePerMuscle": 40.33,
+    "dysportAverageNumberOfSites": 2.91
+  },
+  {
+    "id": 65,
+    "name": "Subdermal",
+    "side": "both",
+    "percentageOfSessionsInjected": 0.05,
+    "botoxAverageDosePerMuscle": 35,
+    "botoxAverageNumberOfSites": 1.75,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 66,
+    "name": "Subdermal",
+    "side": "both",
+    "percentageOfSessionsInjected": 0.11,
+    "botoxAverageDosePerMuscle": 128.57,
+    "botoxAverageNumberOfSites": 2.57,
+    "dysportAverageDosePerMuscle": 150,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 67,
+    "name": "Sternocleidomastoid",
+    "side": "left",
+    "percentageOfSessionsInjected": 19.61,
+    "botoxAverageDosePerMuscle": 34,
+    "botoxAverageNumberOfSites": 1.59,
+    "dysportAverageDosePerMuscle": 138.9,
+    "dysportAverageNumberOfSites": 1.4
+  },
+  {
+    "id": 68,
+    "name": "Sternocleidomastoid",
+    "side": "right",
+    "percentageOfSessionsInjected": 19.76,
+    "botoxAverageDosePerMuscle": 35.3,
+    "botoxAverageNumberOfSites": 1.66,
+    "dysportAverageDosePerMuscle": 116.2,
+    "dysportAverageNumberOfSites": 1.38
+  },
+  {
+    "id": 69,
+    "name": "Longus Colli",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.37,
+    "botoxAverageDosePerMuscle": 51.6,
+    "botoxAverageNumberOfSites": 1.96,
+    "dysportAverageDosePerMuscle": 135,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 70,
+    "name": "Scalenus Anterior",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.38,
+    "botoxAverageDosePerMuscle": 12.35,
+    "botoxAverageNumberOfSites": 1.35,
+    "dysportAverageDosePerMuscle": 90,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 71,
+    "name": "Scalenus Medius",
+    "side": "left",
+    "percentageOfSessionsInjected": 13.36,
+    "botoxAverageDosePerMuscle": 15.8,
+    "botoxAverageNumberOfSites": 1.06,
+    "dysportAverageDosePerMuscle": 38.75,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 72,
+    "name": "Scalenus Posterior",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.62,
+    "botoxAverageDosePerMuscle": 32.81,
+    "botoxAverageNumberOfSites": 1.03,
+    "dysportAverageDosePerMuscle": 74.23,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 73,
+    "name": "Longus Colli",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.29,
+    "botoxAverageDosePerMuscle": 24.75,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 20,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 74,
+    "name": "Scalenus Anterior",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.12,
+    "botoxAverageDosePerMuscle": 13.75,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 67,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 75,
+    "name": "Scalenus Medius",
+    "side": "right",
+    "percentageOfSessionsInjected": 9.7,
+    "botoxAverageDosePerMuscle": 14.41,
+    "botoxAverageNumberOfSites": 1.08,
+    "dysportAverageDosePerMuscle": 32.39,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 76,
+    "name": "Scalenus Posterior",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.94,
+    "botoxAverageDosePerMuscle": 24.48,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 87.5,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 77,
+    "name": "Subdermal",
+    "side": "both",
+    "percentageOfSessionsInjected": 6.98,
+    "botoxAverageDosePerMuscle": 39.95,
+    "botoxAverageNumberOfSites": 6.32,
+    "dysportAverageDosePerMuscle": 133.35,
+    "dysportAverageNumberOfSites": 6.4
+  },
+  {
+    "id": 78,
+    "name": "Trapezius",
+    "side": "left",
+    "percentageOfSessionsInjected": 24.96,
+    "botoxAverageDosePerMuscle": 43.82,
+    "botoxAverageNumberOfSites": 2.23,
+    "dysportAverageDosePerMuscle": 124.33,
+    "dysportAverageNumberOfSites": 1.78
+  },
+  {
+    "id": 79,
+    "name": "Trapezius",
+    "side": "right",
+    "percentageOfSessionsInjected": 24.85,
+    "botoxAverageDosePerMuscle": 42.39,
+    "botoxAverageNumberOfSites": 2.28,
+    "dysportAverageDosePerMuscle": 111.03,
+    "dysportAverageNumberOfSites": 1.76
+  },
+  {
+    "id": 80,
+    "name": "Splenius Capitis",
+    "side": "left",
+    "percentageOfSessionsInjected": 36.76,
+    "botoxAverageDosePerMuscle": 53.1,
+    "botoxAverageNumberOfSites": 1.66,
+    "dysportAverageDosePerMuscle": 173.27,
+    "dysportAverageNumberOfSites": 1.56
+  },
+  {
+    "id": 81,
+    "name": "Splenius Capitis",
+    "side": "right",
+    "percentageOfSessionsInjected": 37.07,
+    "botoxAverageDosePerMuscle": 50.94,
+    "botoxAverageNumberOfSites": 1.7,
+    "dysportAverageDosePerMuscle": 163.14,
+    "dysportAverageNumberOfSites": 1.64
+  },
+  {
+    "id": 82,
+    "name": "Semispinalis Capitis",
+    "side": "left",
+    "percentageOfSessionsInjected": 5.15,
+    "botoxAverageDosePerMuscle": 24.79,
+    "botoxAverageNumberOfSites": 1.2,
+    "dysportAverageDosePerMuscle": 87,
+    "dysportAverageNumberOfSites": 1.15
+  },
+  {
+    "id": 83,
+    "name": "Semispinalis Capitis",
+    "side": "right",
+    "percentageOfSessionsInjected": 5.08,
+    "botoxAverageDosePerMuscle": 30.72,
+    "botoxAverageNumberOfSites": 1.37,
+    "dysportAverageDosePerMuscle": 85.16,
+    "dysportAverageNumberOfSites": 1.11
+  },
+  {
+    "id": 84,
+    "name": "Rectus Capitis Major",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.14,
+    "botoxAverageDosePerMuscle": 50,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 150,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 85,
+    "name": "Rectus Capitis Major",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.14,
+    "botoxAverageDosePerMuscle": 54,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 86,
+    "name": "Obliqus Capitis Inferior",
+    "side": "left",
+    "percentageOfSessionsInjected": 14.64,
+    "botoxAverageDosePerMuscle": 18.83,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 57.52,
+    "dysportAverageNumberOfSites": 1.01
+  },
+  {
+    "id": 87,
+    "name": "Obliqus Capitis Inferior",
+    "side": "right",
+    "percentageOfSessionsInjected": 14.47,
+    "botoxAverageDosePerMuscle": 20.09,
+    "botoxAverageNumberOfSites": 1.02,
+    "dysportAverageDosePerMuscle": 52.54,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 88,
+    "name": "Obliqus Capitis Superior",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.04,
+    "botoxAverageDosePerMuscle": 50,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0.5,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 89,
+    "name": "Obliqus Capitis Superior",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.04,
+    "botoxAverageDosePerMuscle": 0,
+    "botoxAverageNumberOfSites": 0,
+    "dysportAverageDosePerMuscle": 35.33,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 90,
+    "name": "Subdermal",
+    "side": "both",
+    "percentageOfSessionsInjected": 0.04,
+    "botoxAverageDosePerMuscle": 30,
+    "botoxAverageNumberOfSites": 6,
+    "dysportAverageDosePerMuscle": 60,
+    "dysportAverageNumberOfSites": 3
+  },
+  {
+    "id": 91,
+    "name": "Subdermal",
+    "side": "both",
+    "percentageOfSessionsInjected": 0.44,
+    "botoxAverageDosePerMuscle": 24.77,
+    "botoxAverageNumberOfSites": 1.59,
+    "dysportAverageDosePerMuscle": 60,
+    "dysportAverageNumberOfSites": 3.9
+  },
+  {
+    "id": 92,
+    "name": "Sternocleidomastoid",
+    "side": "left",
+    "percentageOfSessionsInjected": 24.29,
+    "botoxAverageDosePerMuscle": 32.88,
+    "botoxAverageNumberOfSites": 1.9,
+    "dysportAverageDosePerMuscle": 71.47,
+    "dysportAverageNumberOfSites": 2.04
+  },
+  {
+    "id": 93,
+    "name": "Trapezius",
+    "side": "left",
+    "percentageOfSessionsInjected": 26.7,
+    "botoxAverageDosePerMuscle": 32.25,
+    "botoxAverageNumberOfSites": 2.71,
+    "dysportAverageDosePerMuscle": 95.69,
+    "dysportAverageNumberOfSites": 2.67
+  },
+  {
+    "id": 94,
+    "name": "Sternocleidomastoid",
+    "side": "right",
+    "percentageOfSessionsInjected": 20.54,
+    "botoxAverageDosePerMuscle": 37.14,
+    "botoxAverageNumberOfSites": 1.77,
+    "dysportAverageDosePerMuscle": 85.11,
+    "dysportAverageNumberOfSites": 1.92
+  },
+  {
+    "id": 95,
+    "name": "Trapezius",
+    "side": "right",
+    "percentageOfSessionsInjected": 20.71,
+    "botoxAverageDosePerMuscle": 30.94,
+    "botoxAverageNumberOfSites": 2.64,
+    "dysportAverageDosePerMuscle": 97.62,
+    "dysportAverageNumberOfSites": 2.53
+  },
+  {
+    "id": 96,
+    "name": "Levator Scapulae",
+    "side": "left",
+    "percentageOfSessionsInjected": 51.05,
+    "botoxAverageDosePerMuscle": 29.82,
+    "botoxAverageNumberOfSites": 1.5,
+    "dysportAverageDosePerMuscle": 94.65,
+    "dysportAverageNumberOfSites": 1.78
+  },
+  {
+    "id": 97,
+    "name": "Splenius Capitis",
+    "side": "left",
+    "percentageOfSessionsInjected": 38.09,
+    "botoxAverageDosePerMuscle": 33.5,
+    "botoxAverageNumberOfSites": 2.18,
+    "dysportAverageDosePerMuscle": 113.12,
+    "dysportAverageNumberOfSites": 2.63
+  },
+  {
+    "id": 98,
+    "name": "Levator Scapulae",
+    "side": "right",
+    "percentageOfSessionsInjected": 43.66,
+    "botoxAverageDosePerMuscle": 30.69,
+    "botoxAverageNumberOfSites": 1.55,
+    "dysportAverageDosePerMuscle": 77.33,
+    "dysportAverageNumberOfSites": 1.64
+  },
+  {
+    "id": 99,
+    "name": "Splenius Capitis",
+    "side": "right",
+    "percentageOfSessionsInjected": 37.09,
+    "botoxAverageDosePerMuscle": 33.55,
+    "botoxAverageNumberOfSites": 2.3,
+    "dysportAverageDosePerMuscle": 98.09,
+    "dysportAverageNumberOfSites": 2.49
+  },
+  {
+    "id": 100,
+    "name": "Splenius Cervicis",
+    "side": "left",
+    "percentageOfSessionsInjected": 11.63,
+    "botoxAverageDosePerMuscle": 33.11,
+    "botoxAverageNumberOfSites": 1.1,
+    "dysportAverageDosePerMuscle": 98.04,
+    "dysportAverageNumberOfSites": 1.11
+  },
+  {
+    "id": 101,
+    "name": "Splenius Cervicis",
+    "side": "right",
+    "percentageOfSessionsInjected": 9.36,
+    "botoxAverageDosePerMuscle": 34.55,
+    "botoxAverageNumberOfSites": 1.08,
+    "dysportAverageDosePerMuscle": 100.94,
+    "dysportAverageNumberOfSites": 1.19
+  },
+  {
+    "id": 102,
+    "name": "Semispinalis Capitis",
+    "side": "left",
+    "percentageOfSessionsInjected": 1.56,
+    "botoxAverageDosePerMuscle": 35.33,
+    "botoxAverageNumberOfSites": 1.55,
+    "dysportAverageDosePerMuscle": 87,
+    "dysportAverageNumberOfSites": 1.25
+  },
+  {
+    "id": 103,
+    "name": "Longissimus Capitis",
+    "side": "left",
+    "percentageOfSessionsInjected": 7.05,
+    "botoxAverageDosePerMuscle": 42.7,
+    "botoxAverageNumberOfSites": 1.08,
+    "dysportAverageDosePerMuscle": 93.82,
+    "dysportAverageNumberOfSites": 1.28
+  },
+  {
+    "id": 104,
+    "name": "Semispinalis Capitis",
+    "side": "right",
+    "percentageOfSessionsInjected": 1.94,
+    "botoxAverageDosePerMuscle": 39.67,
+    "botoxAverageNumberOfSites": 1.08,
+    "dysportAverageDosePerMuscle": 68.29,
+    "dysportAverageNumberOfSites": 1.26
+  },
+  {
+    "id": 105,
+    "name": "Longissimus Capitis",
+    "side": "right",
+    "percentageOfSessionsInjected": 7.6,
+    "botoxAverageDosePerMuscle": 34.64,
+    "botoxAverageNumberOfSites": 1.23,
+    "dysportAverageDosePerMuscle": 98.99,
+    "dysportAverageNumberOfSites": 1.3
+  },
+  {
+    "id": 106,
+    "name": "Lateral Pterygoid",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.26,
+    "botoxAverageDosePerMuscle": 15,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 52.5,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 107,
+    "name": "Medial Pterygoid",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.89,
+    "botoxAverageDosePerMuscle": 20.83,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 21,
+    "dysportAverageNumberOfSites": 1.05
+  },
+  {
+    "id": 108,
+    "name": "Lateral Pterygoid",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.31,
+    "botoxAverageDosePerMuscle": 15.59,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 74.17,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 109,
+    "name": "Medial Pterygoid",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.55,
+    "botoxAverageDosePerMuscle": 14.38,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 21,
+    "dysportAverageNumberOfSites": 1.05
+  },
+  {
+    "id": 110,
+    "name": "Digastric",
+    "side": "left",
+    "percentageOfSessionsInjected": 1.19,
+    "botoxAverageDosePerMuscle": 4.78,
+    "botoxAverageNumberOfSites": 1.26,
+    "dysportAverageDosePerMuscle": 12.62,
+    "dysportAverageNumberOfSites": 1.43
+  },
+  {
+    "id": 111,
+    "name": "Digastric",
+    "side": "right",
+    "percentageOfSessionsInjected": 1.15,
+    "botoxAverageDosePerMuscle": 4.79,
+    "botoxAverageNumberOfSites": 1.29,
+    "dysportAverageDosePerMuscle": 12.62,
+    "dysportAverageNumberOfSites": 1.43
+  },
+  {
+    "id": 318,
+    "name": "Subdermal",
+    "side": "both",
+    "percentageOfSessionsInjected": 0.01,
+    "botoxAverageDosePerMuscle": 50,
+    "botoxAverageNumberOfSites": 16,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 319,
+    "name": "Subdermal",
+    "side": "both",
+    "percentageOfSessionsInjected": 0.01,
+    "botoxAverageDosePerMuscle": 50,
+    "botoxAverageNumberOfSites": 16,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 321,
+    "name": "Anterior Deltoid",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.07,
+    "botoxAverageDosePerMuscle": 10,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 322,
+    "name": "Anterior Deltoid",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.08,
+    "botoxAverageDosePerMuscle": 13.33,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 325,
+    "name": "Pectoralis Major",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.16,
+    "botoxAverageDosePerMuscle": 35.45,
+    "botoxAverageNumberOfSites": 1.64,
+    "dysportAverageDosePerMuscle": 80,
+    "dysportAverageNumberOfSites": 2
+  },
+  {
+    "id": 326,
+    "name": "Pectoralis Major",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.18,
+    "botoxAverageDosePerMuscle": 20.42,
+    "botoxAverageNumberOfSites": 1.58,
+    "dysportAverageDosePerMuscle": 80,
+    "dysportAverageNumberOfSites": 2
+  },
+  {
+    "id": 327,
+    "name": "Rectus Abdominis",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.04,
+    "botoxAverageDosePerMuscle": 50,
+    "botoxAverageNumberOfSites": 4,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 328,
+    "name": "Rectus Abdominis",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.04,
+    "botoxAverageDosePerMuscle": 50,
+    "botoxAverageNumberOfSites": 4,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 329,
+    "name": "Biceps Brachii",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.05,
+    "botoxAverageDosePerMuscle": 25,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 330,
+    "name": "Biceps Brachii",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.15,
+    "botoxAverageDosePerMuscle": 28.33,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 30,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 332,
+    "name": "Pectoralis Minor",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.08,
+    "botoxAverageDosePerMuscle": 10,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 336,
+    "name": "Brachialis",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.04,
+    "botoxAverageDosePerMuscle": 20,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 337,
+    "name": "Internal Oblique",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.04,
+    "botoxAverageDosePerMuscle": 30,
+    "botoxAverageNumberOfSites": 3,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 338,
+    "name": "Internal Oblique",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.14,
+    "botoxAverageDosePerMuscle": 31.67,
+    "botoxAverageNumberOfSites": 2.22,
+    "dysportAverageDosePerMuscle": 60,
+    "dysportAverageNumberOfSites": 2
+  },
+  {
+    "id": 339,
+    "name": "Transversus Abdominis",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.04,
+    "botoxAverageDosePerMuscle": 20,
+    "botoxAverageNumberOfSites": 2,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 340,
+    "name": "Transversus Abdominis",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.05,
+    "botoxAverageDosePerMuscle": 20,
+    "botoxAverageNumberOfSites": 2,
+    "dysportAverageDosePerMuscle": 30,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 349,
+    "name": "Subdermal",
+    "side": "both",
+    "percentageOfSessionsInjected": 0.01,
+    "botoxAverageDosePerMuscle": 80,
+    "botoxAverageNumberOfSites": 2,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 350,
+    "name": "Levator Scapulae",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.89,
+    "botoxAverageDosePerMuscle": 25.21,
+    "botoxAverageNumberOfSites": 1.38,
+    "dysportAverageDosePerMuscle": 111.15,
+    "dysportAverageNumberOfSites": 1.02
+  },
+  {
+    "id": 351,
+    "name": "Levator Scapulae",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.57,
+    "botoxAverageDosePerMuscle": 20.26,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 89.83,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 352,
+    "name": "Posterior Deltoid",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.01,
+    "botoxAverageDosePerMuscle": 50,
+    "botoxAverageNumberOfSites": 2,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 353,
+    "name": "Posterior Deltoid",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.04,
+    "botoxAverageDosePerMuscle": 35,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 354,
+    "name": "Latissimus Dorsi",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.18,
+    "botoxAverageDosePerMuscle": 17.14,
+    "botoxAverageNumberOfSites": 2.57,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 355,
+    "name": "Latissimus Dorsi",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.16,
+    "botoxAverageDosePerMuscle": 28.08,
+    "botoxAverageNumberOfSites": 2.85,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 356,
+    "name": "Rhomboid Major",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.34,
+    "botoxAverageDosePerMuscle": 13.1,
+    "botoxAverageNumberOfSites": 1.16,
+    "dysportAverageDosePerMuscle": 50,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 357,
+    "name": "Rhomboid Major",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.56,
+    "botoxAverageDosePerMuscle": 15.3,
+    "botoxAverageNumberOfSites": 1.83,
+    "dysportAverageDosePerMuscle": 50,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 358,
+    "name": "Rhomboid Minor",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.01,
+    "botoxAverageDosePerMuscle": 10,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 359,
+    "name": "Rhomboid Minor",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.01,
+    "botoxAverageDosePerMuscle": 10,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 362,
+    "name": "Triceps Brachii",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.04,
+    "botoxAverageDosePerMuscle": 25,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 363,
+    "name": "Triceps Brachii",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.18,
+    "botoxAverageDosePerMuscle": 19,
+    "botoxAverageNumberOfSites": 1.4,
+    "dysportAverageDosePerMuscle": 30,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 366,
+    "name": "Iliocostalis",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.12,
+    "botoxAverageDosePerMuscle": 21.43,
+    "botoxAverageNumberOfSites": 2.14,
+    "dysportAverageDosePerMuscle": 2,
+    "dysportAverageNumberOfSites": 2
+  },
+  {
+    "id": 367,
+    "name": "Iliocostalis",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.07,
+    "botoxAverageDosePerMuscle": 30.83,
+    "botoxAverageNumberOfSites": 3.33,
+    "dysportAverageDosePerMuscle": 2,
+    "dysportAverageNumberOfSites": 2
+  },
+  {
+    "id": 368,
+    "name": "Longissimus Thoracis",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.3,
+    "botoxAverageDosePerMuscle": 25.56,
+    "botoxAverageNumberOfSites": 2.44,
+    "dysportAverageDosePerMuscle": 65,
+    "dysportAverageNumberOfSites": 2.5
+  },
+  {
+    "id": 369,
+    "name": "Longissimus Thoracis",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.19,
+    "botoxAverageDosePerMuscle": 26.92,
+    "botoxAverageNumberOfSites": 2.54,
+    "dysportAverageDosePerMuscle": 56.67,
+    "dysportAverageNumberOfSites": 2.33
+  },
+  {
+    "id": 370,
+    "name": "Teres Major",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.14,
+    "botoxAverageDosePerMuscle": 21,
+    "botoxAverageNumberOfSites": 1.6,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 371,
+    "name": "Teres Major",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.29,
+    "botoxAverageDosePerMuscle": 24.42,
+    "botoxAverageNumberOfSites": 1.62,
+    "dysportAverageDosePerMuscle": 30,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 372,
+    "name": "Teres Minor",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.1,
+    "botoxAverageDosePerMuscle": 15,
+    "botoxAverageNumberOfSites": 1.14,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 373,
+    "name": "Teres Minor",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.26,
+    "botoxAverageDosePerMuscle": 24.08,
+    "botoxAverageNumberOfSites": 1.11,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 378,
+    "name": "Quadratus Lumborum",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.08,
+    "botoxAverageDosePerMuscle": 20,
+    "botoxAverageNumberOfSites": 2,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 380,
+    "name": "Subdermal",
+    "side": "both",
+    "percentageOfSessionsInjected": 0.03,
+    "botoxAverageDosePerMuscle": 25,
+    "botoxAverageNumberOfSites": 4,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 381,
+    "name": "Extensor Digitorum",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.04,
+    "botoxAverageDosePerMuscle": 4.17,
+    "botoxAverageNumberOfSites": 1.33,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 382,
+    "name": "Extensor Digitorum",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.03,
+    "botoxAverageDosePerMuscle": 5.63,
+    "botoxAverageNumberOfSites": 1.5,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 383,
+    "name": "Extensor Carpi Radialis Longus Brevis",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.04,
+    "botoxAverageDosePerMuscle": 6.67,
+    "botoxAverageNumberOfSites": 1.33,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 384,
+    "name": "Extensor Carpi Radialis Longus Brevis",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.07,
+    "botoxAverageDosePerMuscle": 5,
+    "botoxAverageNumberOfSites": 1.2,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 386,
+    "name": "Extensor Carpi Ulnaris",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.04,
+    "botoxAverageDosePerMuscle": 2.5,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 389,
+    "name": "Extensor Pollicis Brevis",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.07,
+    "botoxAverageDosePerMuscle": 1.25,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 390,
+    "name": "Extensor Pollicis Brevis",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.1,
+    "botoxAverageDosePerMuscle": 1.25,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 391,
+    "name": "Abductor Pollicis Longus",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.01,
+    "botoxAverageDosePerMuscle": 50,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 393,
+    "name": "Supinator",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.07,
+    "botoxAverageDosePerMuscle": 10,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 1,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 394,
+    "name": "Supinator",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.12,
+    "botoxAverageDosePerMuscle": 18.89,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 397,
+    "name": "Extensor Indicis",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.01,
+    "botoxAverageDosePerMuscle": 50,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 401,
+    "name": "Subdermal",
+    "side": "both",
+    "percentageOfSessionsInjected": 0.03,
+    "botoxAverageDosePerMuscle": 20,
+    "botoxAverageNumberOfSites": 2,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 402,
+    "name": "Brachioradialis",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.01,
+    "botoxAverageDosePerMuscle": 15,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 404,
+    "name": "Flexor Carpi Radialis",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.05,
+    "botoxAverageDosePerMuscle": 25,
+    "botoxAverageNumberOfSites": 2,
+    "dysportAverageDosePerMuscle": 60,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 405,
+    "name": "Flexor Carpi Radialis",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.04,
+    "botoxAverageDosePerMuscle": 30,
+    "botoxAverageNumberOfSites": 2,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 417,
+    "name": "Abductor Digiti Minimi Manus",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.01,
+    "botoxAverageDosePerMuscle": 5,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 418,
+    "name": "Flexor Digitorum Superficialis",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.03,
+    "botoxAverageDosePerMuscle": 10,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 419,
+    "name": "Flexor Digitorum Superficialis",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.01,
+    "botoxAverageDosePerMuscle": 10,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 425,
+    "name": "Flexor Pollicis Longus",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.04,
+    "botoxAverageDosePerMuscle": 5,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 426,
+    "name": "Flexor Digitorum Profundus",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.03,
+    "botoxAverageDosePerMuscle": 10,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 427,
+    "name": "Flexor Digitorum Profundus",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.05,
+    "botoxAverageDosePerMuscle": 10,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 428,
+    "name": "Pronator Teres",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.12,
+    "botoxAverageDosePerMuscle": 10.63,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 45,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 429,
+    "name": "Pronator Teres",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.21,
+    "botoxAverageDosePerMuscle": 19.06,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 45,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 433,
+    "name": "Palmar Interossei 1-4",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.01,
+    "botoxAverageDosePerMuscle": 10,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 434,
+    "name": "Flexor Carpi Ulnaris",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.08,
+    "botoxAverageDosePerMuscle": 26.67,
+    "botoxAverageNumberOfSites": 2,
+    "dysportAverageDosePerMuscle": 45,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 435,
+    "name": "Flexor Carpi Ulnaris",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.11,
+    "botoxAverageDosePerMuscle": 20,
+    "botoxAverageNumberOfSites": 1.5,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 436,
+    "name": "Pronator Quadratus",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.01,
+    "botoxAverageDosePerMuscle": 10,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 437,
+    "name": "Pronator Quadratus",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.04,
+    "botoxAverageDosePerMuscle": 10,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 601,
+    "name": "Rectus Femoris",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.04,
+    "botoxAverageDosePerMuscle": 166.67,
+    "botoxAverageNumberOfSites": 3.33,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 621,
+    "name": "Adductor Magnus",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.03,
+    "botoxAverageDosePerMuscle": 50,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 634,
+    "name": "Biceps Femoris",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.03,
+    "botoxAverageDosePerMuscle": 50,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 658,
+    "name": "Gastrocnemius",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.04,
+    "botoxAverageDosePerMuscle": 37.5,
+    "botoxAverageNumberOfSites": 1.5,
+    "dysportAverageDosePerMuscle": 200,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 660,
+    "name": "Soleus",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.04,
+    "botoxAverageDosePerMuscle": 37.5,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 200,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 664,
+    "name": "Tibialis Posterior",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.04,
+    "botoxAverageDosePerMuscle": 37.5,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 200,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 666,
+    "name": "Flexor Digitorum Longus",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.01,
+    "botoxAverageDosePerMuscle": 0,
+    "botoxAverageNumberOfSites": 0,
+    "dysportAverageDosePerMuscle": 75,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 700,
+    "name": "Bladder",
+    "side": "both",
+    "percentageOfSessionsInjected": 0.01,
+    "botoxAverageDosePerMuscle": 50,
+    "botoxAverageNumberOfSites": 10,
+    "dysportAverageDosePerMuscle": 0,
+    "dysportAverageNumberOfSites": 0
+  },
+  {
+    "id": 701,
+    "name": "Semispinalis Cervicis",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.44,
+    "botoxAverageDosePerMuscle": 14.55,
+    "botoxAverageNumberOfSites": 1.14,
+    "dysportAverageDosePerMuscle": 20.7,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 702,
+    "name": "Semispinalis Cervicis",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.12,
+    "botoxAverageDosePerMuscle": 10,
+    "botoxAverageNumberOfSites": 2,
+    "dysportAverageDosePerMuscle": 15.4,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 703,
+    "name": "Semispinalis Cervicis",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.18,
+    "botoxAverageDosePerMuscle": 10,
+    "botoxAverageNumberOfSites": 1.08,
+    "dysportAverageDosePerMuscle": 10,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 704,
+    "name": "Semispinalis Cervicis",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.15,
+    "botoxAverageDosePerMuscle": 15,
+    "botoxAverageNumberOfSites": 1,
+    "dysportAverageDosePerMuscle": 13.33,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 706,
+    "name": "Parotid Gland",
+    "side": "left",
+    "percentageOfSessionsInjected": 0.07,
+    "botoxAverageDosePerMuscle": 10,
+    "botoxAverageNumberOfSites": 2,
+    "dysportAverageDosePerMuscle": 187.5,
+    "dysportAverageNumberOfSites": 1
+  },
+  {
+    "id": 708,
+    "name": "Parotid Gland",
+    "side": "right",
+    "percentageOfSessionsInjected": 0.07,
+    "botoxAverageDosePerMuscle": 10,
+    "botoxAverageNumberOfSites": 2,
+    "dysportAverageDosePerMuscle": 187.5,
+    "dysportAverageNumberOfSites": 1
+  }
+]

@@ -956,7 +956,7 @@ let app = {
 
   updateMetaScale: function () {
     if (app.domMetaScaleMin && app.scaleMin !== null) { app.domMetaScaleMin.innerHTML = `${app.scaleMin.toFixed(2)}%` }
-    if (app.domMetaScaleMax && app.scaleMax !== null) { app.domMetaScaleMax.innerHTML = `≥${app.scaleMax.toFixed(2)}%` }
+    if (app.domMetaScaleMax && app.scaleMax !== null) { app.domMetaScaleMax.innerHTML = `${app.scaleMax.toFixed(2)}%` }
   },
 
   updateMetaCondition: function (condition) {
@@ -1599,7 +1599,7 @@ const initEventListeners = function () {
 
       app.showSideBtnLeft(true);
       app.showSideBtnRight(true);
-      app.showGroupMove(true);
+      app.showGroupMove(false);
 
       app.updateObjects();
     }

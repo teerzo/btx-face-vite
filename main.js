@@ -723,19 +723,48 @@ let app = {
     app.updateMetaMisc(miscMeta);
   },
 
-  getMuscleGroupMeta(id) {
+  calculateWeightedValues: function (meta) {
+    // console.log('calculateWeightedValue', meta);
+    let _meta = {...meta};
+    if (meta) {
+      _meta.sessions = app.weightedValue(meta.sessions).toFixed(2);
+      _meta.botoxDose = app.weightedValue(meta.botoxDose ).toFixed(2);;
+      _meta.botoxSites = app.weightedValue(meta.botoxSites ).toFixed(2);
+      _meta.dysportDose = app.weightedValue(meta.dysportDose ).toFixed(2);
+      _meta.dysportSites = app.weightedValue(meta.dysportSites ).toFixed(2);
+    }
+    return _meta;
+  },
 
-    let meta = {
-      name: '',
-      percentageOfSessionsInjected: 0,
-      botoxAverageDosePerMuscle: 0,
-      botoxAverageNumberOfSites: 0,
-      dysportAverageDosePerMuscle: 0,
-      dysportAverageNumberOfSites: 0
+  weightedValue: function (values) {
+    // console.log('weightedValue', values);
+    const max = Math.max(...values);
+    const weights = [];
+    for( let i in values) {
+      weights.push(values[i]/max);
     }
 
-    const _meta = app.calculateGroupMeta(id, meta);
+    const [sum, weightSum] = weights.reduce(
+      (acc, w, i) => {
+        acc[0] = acc[0] + values[i] * w;
+        acc[1] = acc[1] + w;
+        return acc;
+      },
+      [0, 0]
+    );
+    return sum / weightSum;
+  },
 
+  getMuscleGroupMeta(id) {
+    let meta = {
+      name: '',
+      sessions: [],
+      botoxDose: [],
+      botoxSites: [],
+      dysportDose: [],
+      dysportSites: []
+    }
+    const _meta = app.calculateGroupMeta(id, meta);
     if (_meta) {
       meta = _meta;
     }
@@ -749,52 +778,28 @@ let app = {
         meta.name = `${muscleGroup.displayName}`;
 
         let count = 0;
-
-        let left = 0;
-        let right = 0;
-        let both = 0;
-
         for (let j in muscleGroup.children) {
           for (let c in app.conditions.list) {
-            for (let m in app.conditions.list[c].muscles) {
-              const cMuscle = app.conditions.list[c].muscles[m];
+            if (app.conditionId === app.conditions.list[c].id) {
+              for (let m in app.conditions.list[c].muscles) {
+                const cMuscle = app.conditions.list[c].muscles[m];
 
-              if (cMuscle.id === muscleGroup.children[j].btxId) {
-                if (left === 0 && cMuscle.side === 'left') {
-                  left += 1;
+                if (cMuscle.id === muscleGroup.children[j].btxId) {
+                  count += 1;
+                  meta.sessions.push(cMuscle.percentageOfSessionsInjected);
+                  meta.botoxDose.push(cMuscle.botoxAverageDosePerMuscle);
+                  meta.botoxSites.push(cMuscle.botoxAverageNumberOfSites);
+                  meta.dysportDose.push(cMuscle.dysportAverageDosePerMuscle);
+                  meta.dysportSites.push(cMuscle.dysportAverageNumberOfSites);
                 }
-                if (right === 0 && cMuscle.side === 'right') {
-                  right += 1;
-                }
-                if (both === 0 && cMuscle.side === 'both') {
-                  both += 1;
-                }
-
-                count += 1;
-
-                if (cMuscle.percentageOfSessionsInjected > meta.percentageOfSessionsInjected) {
-                  meta.percentageOfSessionsInjected = cMuscle.percentageOfSessionsInjected;
-                }
-                // meta.percentageOfSessionsInjected += cMuscle.percentageOfSessionsInjected;
-                meta.botoxAverageDosePerMuscle += cMuscle.botoxAverageDosePerMuscle;
-                meta.botoxAverageNumberOfSites += cMuscle.botoxAverageNumberOfSites;
-                meta.dysportAverageDosePerMuscle += cMuscle.dysportAverageDosePerMuscle;
-                meta.dysportAverageNumberOfSites += cMuscle.dysportAverageNumberOfSites;
               }
             }
           }
         }
-
-        // let count = left + right + both;
         if (count >= 1) {
-          // const divide = muscleGroup.children.length > 1 ? 2 : 1;
-          const divide = count;
-          meta.percentageOfSessionsInjected = (meta.percentageOfSessionsInjected).toFixed(2);
-          meta.botoxAverageDosePerMuscle = (meta.botoxAverageDosePerMuscle / divide).toFixed(2);
-          meta.botoxAverageNumberOfSites = (meta.botoxAverageNumberOfSites / divide).toFixed(2);
-          meta.dysportAverageDosePerMuscle = (meta.dysportAverageDosePerMuscle / divide).toFixed(2);
-          meta.dysportAverageNumberOfSites = (meta.dysportAverageNumberOfSites / divide).toFixed(2);
+          meta = app.calculateWeightedValues(meta);
         }
+        return meta;
       }
     }
   },
@@ -804,11 +809,11 @@ let app = {
 
     let meta = {
       name: '',
-      percentageOfSessionsInjected: 0,
-      botoxAverageDosePerMuscle: 0,
-      botoxAverageNumberOfSites: 0,
-      dysportAverageDosePerMuscle: 0,
-      dysportAverageNumberOfSites: 0
+      sessions: [],
+      botoxDose: [],
+      botoxSites: [],
+      dysportDose: [],
+      dysportSites: []
     }
 
     let count = 0;
@@ -827,14 +832,11 @@ let app = {
                 if (cMuscle.id === muscleGroup.children[j].btxId) {
                   if (muscle.side === muscleGroup.children[j].side) {
                     count += 1;
-                    if (cMuscle.percentageOfSessionsInjected > meta.percentageOfSessionsInjected) {
-                      meta.percentageOfSessionsInjected = cMuscle.percentageOfSessionsInjected;
-                    }
-                    // meta.percentageOfSessionsInjected += cMuscle.percentageOfSessionsInjected;
-                    meta.botoxAverageDosePerMuscle += cMuscle.botoxAverageDosePerMuscle;
-                    meta.botoxAverageNumberOfSites += cMuscle.botoxAverageNumberOfSites;
-                    meta.dysportAverageDosePerMuscle += cMuscle.dysportAverageDosePerMuscle;
-                    meta.dysportAverageNumberOfSites += cMuscle.dysportAverageNumberOfSites;
+                    meta.sessions.push(cMuscle.percentageOfSessionsInjected);
+                    meta.botoxDose.push(cMuscle.botoxAverageDosePerMuscle);
+                    meta.botoxSites.push(cMuscle.botoxAverageNumberOfSites);
+                    meta.dysportDose.push(cMuscle.dysportAverageDosePerMuscle);
+                    meta.dysportSites.push(cMuscle.dysportAverageNumberOfSites);
                   }
                 }
               }
@@ -842,16 +844,9 @@ let app = {
         }
       }
     }
-
     if (count >= 1) {
-      const divide = count;
-      meta.percentageOfSessionsInjected = (meta.percentageOfSessionsInjected).toFixed(2);
-      meta.botoxAverageDosePerMuscle = (meta.botoxAverageDosePerMuscle / divide).toFixed(2);
-      meta.botoxAverageNumberOfSites = (meta.botoxAverageNumberOfSites / divide).toFixed(2);
-      meta.dysportAverageDosePerMuscle = (meta.dysportAverageDosePerMuscle / divide).toFixed(2);
-      meta.dysportAverageNumberOfSites = (meta.dysportAverageNumberOfSites / divide).toFixed(2);
+      meta = app.calculateWeightedValues(meta);
     }
-
     return meta;
   },
 
@@ -974,11 +969,11 @@ let app = {
   updateMetaMuscle: function (muscle) {
     if (app.domMetaMuscle) { app.domMetaMuscle.innerHTML = muscle.name }
     if (app.domMetaSide) { app.domMetaSide.innerHTML = muscle.side }
-    if (app.domMetaInjected) { app.domMetaInjected.innerHTML = Number(muscle.percentageOfSessionsInjected) }
-    if (app.domMetaBotox && muscle?.botoxAverageDosePerMuscle) { app.domMetaBotox.innerHTML = muscle.botoxAverageDosePerMuscle }
-    if (app.domMetaBotoxSessions && muscle?.botoxAverageNumberOfSites) { app.domMetaBotoxSessions.innerHTML = Number(muscle.botoxAverageNumberOfSites) }
-    if (app.domMetaDysport && muscle?.dysportAverageDosePerMuscle) { app.domMetaDysport.innerHTML = Number(muscle.dysportAverageDosePerMuscle) }
-    if (app.domMetaDysportSessions && muscle?.dysportAverageNumberOfSites) { app.domMetaDysportSessions.innerHTML = Number(muscle.dysportAverageNumberOfSites) }
+    if (app.domMetaInjected) { app.domMetaInjected.innerHTML = Number(muscle.sessions) }
+    if (app.domMetaBotox && muscle?.botoxDose) { app.domMetaBotox.innerHTML = muscle.botoxDose }
+    if (app.domMetaBotoxSessions && muscle?.botoxSites) { app.domMetaBotoxSessions.innerHTML = Number(muscle.botoxSites) }
+    if (app.domMetaDysport && muscle?.dysportDose) { app.domMetaDysport.innerHTML = Number(muscle.dysportDose) }
+    if (app.domMetaDysportSessions && muscle?.dysportSites) { app.domMetaDysportSessions.innerHTML = Number(muscle.dysportSites) }
   },
 
   updateMetaMisc: function (misc) {

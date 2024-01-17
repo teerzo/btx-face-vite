@@ -741,9 +741,15 @@ let app = {
     const max = Math.max(...values);
     const weights = [];
     for( let i in values) {
-      weights.push(values[i]/max);
+      if( values[i] > 0 ) {
+        weights.push(values[i]/max);
+      }
+      else {
+        weights.push(values[i]);
+      }
     }
 
+    console.log('weighted', values, weights, max);
     const [sum, weightSum] = weights.reduce(
       (acc, w, i) => {
         acc[0] = acc[0] + values[i] * w;
@@ -752,7 +758,13 @@ let app = {
       },
       [0, 0]
     );
-    return sum / weightSum;
+
+    console.log('sum', sum, weightSum);
+
+    if( sum > 0 && weightSum > 0 ) {
+      return sum / weightSum;
+    }
+    return 0;
   },
 
   getMuscleGroupMeta(id) {
@@ -796,6 +808,7 @@ let app = {
             }
           }
         }
+        console.log('meta check', meta);
         if (count >= 1) {
           meta = app.calculateWeightedValues(meta);
         }

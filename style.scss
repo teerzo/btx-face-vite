@@ -95,7 +95,7 @@ body {
         label {
             padding-left: 5px;
             padding-right: 5px;
-            
+
 
             @media only screen and (max-width: 420px) {
                 font-size: 14px;
@@ -294,9 +294,49 @@ body {
                 display: none;
             }
 
+            .section {
+                display: flex;
+                flex-direction: row;
+
+                padding: 10px 5px;
+                margin-bottom: 10px;
+                border: 1px solid #aaaaaa;
+                border-radius: 5px;
+
+                img {
+                    width: 100%;
+                    max-width: 150px;
+                    height: 100%;
+                    // margin-right: 10px;
+                }
+
+                div {
+                    padding-left: 20px;
+                }
+
+                .icon {
+                    max-width: 100px;
+                    height: auto;
+                    margin-right: 50px;
+                }
+
+                .image {
+                    max-width: 300px;
+                    height: auto;
+                }
+
+                h3 {
+                    text-align: left;
+                    // padding-left: 20px;
+                }
+                ul {
+                    padding-left: 20px;
+                }
+            }
+
             .help-parent {
-                padding: 10px;
-                max-width: 400px;
+                padding: 20px;
+                max-width: 800px;
                 // height: 100%;
                 display: flex;
                 flex-direction: column;

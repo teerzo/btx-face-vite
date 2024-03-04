@@ -303,6 +303,7 @@ body {
                 border: 1px solid #aaaaaa;
                 border-radius: 5px;
 
+               
                 img {
                     width: 100%;
                     max-width: 150px;
@@ -331,6 +332,13 @@ body {
                 }
                 ul {
                     padding-left: 20px;
+                }
+
+                @media only screen and (max-width: 768px) {
+                    flex-direction: column;
+                    img {
+                        padding-left: 20px;
+                    }
                 }
             }
 

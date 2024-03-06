@@ -71,14 +71,15 @@
       <div class="group group-select grow marg">
         <label> Conditions </label>
         <select id="select-conditions">
-          <option value=""> Please select... </option>
+          <option value=""> No condition selected </option>
         </select>
       </div>
 
       <div class="group group-select grow marg">
-        <div class="flex-row"> 
+        <div class="flex-row">
           <label class="grow"> Muscles </label>
-          <label for="input-all" class="label" title="Show all available muscles"> <input id="input-all" type="checkbox" /> All? </label>
+          <label for="input-all" class="label" title="Show all available muscles"> <input id="input-all"
+              type="checkbox" /> All? </label>
 
         </div>
         <select id="select-muscles" class="hide">
@@ -122,45 +123,127 @@
 
       <div id="overlay-help" class="overlay-help">
         <div class="help-parent">
-          <h3> Instructions </h3>
+          <h3> Welcome to BnTx Data Stream </h3>
 
-          <label> Camera Controls: </label>
-          <ul>
-            <li> Left click and drag to rotate </li>
-            <li> Right click and drag to pan </li>
-            <li> Scroll wheel in and out to zoom </li>
-          </ul>
+          <p>
+            With thousands of treatment sessions captured, we are able to provide a 3D model of the Head and Neck that
+            will display average doses per muscle, per condition, for cases in the BnTx Data Repository.
+          </p>
+          <p>
+            The programming allows you to manipulate the image, removing and clicking on muscles to reveal the
+            percentage-of-sessions injected, and dose for the main botulinum toxin preparations.
+          </p>
+          <p>
+            Please see the instructions below on how to navigate the 3D model and view data from different conditions.
+          </p>
 
-          <label> Usage: </label>
-          <ul>
-            <li> Select a condition from the condition dropdown </li>
-          </ul>
-          <div class="usage">
-            <p> The condition selected with highlight the muscles with the corresponding injection percentage relative to the colour scale at the bottom of the window while also displaying the condition data in the bottom right hand corner of the window </p>
+          <div class="section">
+            <img class="icon" rel="preload" src="./img/mouse-left.svg" />
+            <div>
+              <h3> Rotating the model </h3>
+              <ul>
+                <li> Choose a place on the screen slightly away from the model </li>
+                <li> Click and hold down the left click button </li>
+                <li> Move your mouse in the direction you wish the model to move </li>
+                <li> Side to side is left to right </li>
+
+              </ul>
+            </div>
           </div>
-          <ul>
-            <li> Select a muscle from the muscle dropdown </li>
-          </ul>
-          <div class="usage">
-            <p> Selecting a muscle from the muscle dropdown will highlight and focus on that muscle while also displaying the injection data in the top right hand corner of the window </p>
+
+          <div class="section">
+            <img class="icon" rel="preload" src="./img/mouse-right.svg" />
+            <div>
+              <h3> Moving the model </h3>
+              <ul>
+                <li> Choose a place on the screen slightly away from the model
+                </li>
+                <li> Click and hold down the left click button
+                </li>
+                <li>Move your mouse in the direction you wish the model to move
+                </li>
+                <li> Side to side is left to right
+                </li>
+              </ul>
+            </div>
           </div>
 
-          <ul>
-            <li> The L and R buttons will hide/show either the muscle selected or all muscles on that side of the face when clicked </li>
-          </ul>
+          <div class="section">
+            <img class="icon" rel="preload" src="./img/mouse-click.svg" />
+            <div>
+              <h3> Selecting a muscle </h3>
+              <ul>
+                <li> Choose the muscle on the model
+                </li>
+                <li> Click the left mouse button
+                </li>
+                <li> Details abour the muscle will appear in the top right hand corner
+                </li>
+                <li> If a condition is selected this will show the data for the muscle when injected for the condition
+                </li>
 
-          <ul>
-            <li> The move checkbox when enabled disables the camera movement and allows muscles and bones to be moved by clicking and dragging </li>
-          </ul>
 
-          <div class="usage">
-            <p> Muscles moved will stay in that position until moved again or the reset button is pressed, this is helpful to see various muscles obscured by muscles such as the frontalis  </p>
+              </ul>
+              <img class="image" rel="preload" src="./img/muscle-select.png" />
+
+            </div>
           </div>
-          
 
-          <ul>
-            <li> Reset button resets the entire scene back to default layout </li>
-          </ul>
+          <div class="section">
+            <img class="" rel="preload" src="./img/condition-dropdown.png" />
+            <div>
+              <h3> Displaying the national data </h3>
+              <ul>
+                <li> In the top left corner select conditions
+                </li>
+                <li> Click the condition you wish to populate the model with
+                </li>
+                <li> The model will change colours with the muscle color being represented by the frequency of
+                  injection, see below.
+                </li>
+
+
+
+              </ul>
+              <img class="image" rel="preload" src="./img/condition-select.png" />
+
+            </div>
+          </div>
+
+          <div class="section">
+            <img class="" rel="preload" src="./img/muscle-dropdown.png" />
+            <div>
+              <h3> Select a muscle from the menu </h3>
+              <ul>
+                <li> When condition is selected the musclesw list will populate with only the muscle injected when the
+                  patient has that condition
+                </li>
+                <li> Clicking on a muscle will make the other muscle transparent
+                </li>
+
+
+
+              </ul>
+              <img class="image" rel="preload" src="./img/muscle-select2.png" />
+
+            </div>
+          </div>
+
+          <div class="section">
+            <img class="" rel="preload" src="./img/move-check.png" />
+            <div>
+              <h3> Moving a muscle </h3>
+              <ul>
+                <li> Clicking on a the move checkbox in the header section
+                </li>
+                <li> Click on a muscle
+                </li>
+                <li> Holding you left click button down move the mouse and the muscle will follow
+                </li>
+              </ul>
+              <!-- <img class="image" rel="preload" src="./img/mouse-left.svg" /> -->
+            </div>
+          </div>
 
           <div class="center">
             <div id="btn-help-close" class="btn btn-help"> Close </div>

@@ -164,6 +164,7 @@ let app = {
                     app.initModels().then(() => {
                       app.updateDom();
                       app.hideLoading();
+                      app.checkQueryString();
                       app.initalized = true;
                       console.log('Initialized all data loaded');
                     });
@@ -289,6 +290,25 @@ let app = {
         app.domLoading.classList.add('hide');
       }, 500);
     }, 500);
+  },
+
+  checkQueryString: function () {
+    const search = window.location.search;
+    const params = new URLSearchParams(search)
+    // console.log('checkQueryString', params);
+    // console.log(params.toString());
+
+    if (params.has('help', 'true')) {
+      console.log('help', params.toString());
+      app.buttonHelp();
+    }
+    else {
+      console.log('false');
+    }
+
+    // for( let i in params) {
+    //   console.log(i);
+    // }
   },
 
   getConditions: function () {
@@ -628,6 +648,23 @@ let app = {
     }
   },
   updateSelectConditions: function (list) {
+
+
+    if (app.domSelectConditions.options.length > 0) {
+      for (let i in app.domSelectConditions.options) {
+        app.domSelectConditions.remove(i);
+      }
+    }
+
+    let defaultOption = document.createElement('option');
+    defaultOption.text = 'No condition selected';
+    defaultOption.value = -1;
+    defaultOption.selected = true;
+    defaultOption.disabled = true;
+
+    app.domSelectConditions.add(defaultOption);
+
+
     for (let i in list) {
       let option = document.createElement('option');
       option.text = list[i].name;
@@ -725,13 +762,13 @@ let app = {
 
   calculateWeightedValues: function (meta) {
     // console.log('calculateWeightedValue', meta);
-    let _meta = {...meta};
+    let _meta = { ...meta };
     if (meta) {
       _meta.sessions = app.weightedValue(meta.sessions).toFixed(2);
-      _meta.botoxDose = app.weightedValue(meta.botoxDose ).toFixed(2);;
-      _meta.botoxSites = app.weightedValue(meta.botoxSites ).toFixed(2);
-      _meta.dysportDose = app.weightedValue(meta.dysportDose ).toFixed(2);
-      _meta.dysportSites = app.weightedValue(meta.dysportSites ).toFixed(2);
+      _meta.botoxDose = app.weightedValue(meta.botoxDose).toFixed(2);;
+      _meta.botoxSites = app.weightedValue(meta.botoxSites).toFixed(2);
+      _meta.dysportDose = app.weightedValue(meta.dysportDose).toFixed(2);
+      _meta.dysportSites = app.weightedValue(meta.dysportSites).toFixed(2);
     }
     return _meta;
   },
@@ -740,10 +777,16 @@ let app = {
     // console.log('weightedValue', values);
     const max = Math.max(...values);
     const weights = [];
-    for( let i in values) {
-      weights.push(values[i]/max);
+    for (let i in values) {
+      if (values[i] > 0) {
+        weights.push(values[i] / max);
+      }
+      else {
+        weights.push(values[i]);
+      }
     }
 
+    console.log('weighted', values, weights, max);
     const [sum, weightSum] = weights.reduce(
       (acc, w, i) => {
         acc[0] = acc[0] + values[i] * w;
@@ -752,7 +795,13 @@ let app = {
       },
       [0, 0]
     );
-    return sum / weightSum;
+
+    console.log('sum', sum, weightSum);
+
+    if (sum > 0 && weightSum > 0) {
+      return sum / weightSum;
+    }
+    return 0;
   },
 
   getMuscleGroupMeta(id) {
@@ -796,6 +845,7 @@ let app = {
             }
           }
         }
+        console.log('meta check', meta);
         if (count >= 1) {
           meta = app.calculateWeightedValues(meta);
         }
@@ -1316,9 +1366,9 @@ let app = {
         }
       }
       else {
-        console.log('clear target');
-        app.clearSelectedMuscle();
-        app.clearRaycastTarget();
+        // console.log('clear target');
+        // app.clearSelectedMuscle();
+        // app.clearRaycastTarget();
       }
 
       app.updateObjects();
@@ -1424,9 +1474,9 @@ let app = {
     }
 
     if (app.raycast.mouseDown && app.raycast.mouseMove) {
-      console.log('clear target');
-      app.clearSelectedMuscle();
-      app.clearRaycastTarget();
+      // console.log('clear target');
+      // app.clearSelectedMuscle();
+      // app.clearRaycastTarget();
     }
 
     app.raycast.mouseMove = false;
@@ -1550,6 +1600,12 @@ const initEventListeners = function () {
   app.domBtnHelp.onclick = (event) => {
     event.preventDefault();
 
+    app.buttonHelp();
+    // app.showHelp = !app.showHelp;
+    // app.showOverlayHelp(app.showHelp);
+  }
+
+  app.buttonHelp = () => {
     app.showHelp = !app.showHelp;
     app.showOverlayHelp(app.showHelp);
   }
@@ -1655,6 +1711,9 @@ const resizeThree = function (event) {
     app.controls = new OrbitControls(app.camera, app.renderer.domElement)
     app.controls.target.copy(controlsTarget);
     app.controls.enableZoom = true;
+    app.controls.zoomSpeed = 0.3;
+    app.controls.minDistance = 30;
+    app.controls.maxDistance = 150;
 
     app.renderer.setSize(width, height);
 
@@ -1807,30 +1866,6 @@ const update = function () {
     return;
   }
   app.controls.update(app.clock.getDelta());
-
-  const cameraPos = app.cameraLastPos ? app.cameraLastPos : new THREE.Vector3(0, 0, 0).copy(app.camera.position);
-  const targetPos = new THREE.Vector3(0, 0, 0).copy(app.controls.target);
-
-  if (cameraPos.distanceTo(targetPos) > 100) {
-    // console.log(cameraPos, targetPos, cameraPos.distanceTo(targetPos));
-
-    // let norm = cameraPos;
-    // norm.normalize();
-    // norm.multiplyScalar(100);
-    // app.camera.position.copy(norm);
-
-    // CLAMP MAX CAMERA DISTANCE
-    // app.camera.position.copy(cameraPos);
-    // if (cameraPos.distanceTo(targetPos) > 90) {
-    //   let norm = cameraPos;
-    //   norm.normalize();
-    //   norm.multiplyScalar(90);
-    //   app.camera.position.copy(norm);
-    // }
-  }
-
-  app.cameraLastPos = new THREE.Vector3(0, 0, 0).copy(app.camera.position);
-
   app.directionalLight.update(app.clock.getDelta());
   app.spotLight.update(app.clock.getDelta());
   app.lightHelper.update();

@@ -84,163 +84,163 @@
             "skipLoad": true,
             "children": [
                 {
-                    "btxId": "1",
+                    "btxId": 1,
                     "name": "Subdermal",
                     "side": "both",
                     "groupId": "1"
                 },
                 {
-                    "btxId": "28",
+                    "btxId": 28,
                     "name": "Subdermal",
                     "side": "both",
                     "groupId": "1"
                 },
                 {
-                    "btxId": "29",
+                    "btxId": 29,
                     "name": "Subdermal",
                     "side": "both",
                     "groupId": "1"
                 },
                 {
-                    "btxId": "62",
+                    "btxId": 62,
                     "name": "Subdermal",
                     "side": "both",
                     "groupId": "2"
                 },
                 {
-                    "btxId": "65",
+                    "btxId": 65,
                     "name": "Subdermal",
                     "side": "both",
                     "groupId": "2"
                 },
                 {
-                    "btxId": "66",
+                    "btxId": 66,
                     "name": "Subdermal",
                     "side": "both",
                     "groupId": "2"
                 },
                 {
-                    "btxId": "77",
+                    "btxId": 77,
                     "name": "Subdermal",
                     "side": "both",
                     "groupId": "2"
                 },
                 {
-                    "btxId": "90",
+                    "btxId": 90,
                     "name": "Subdermal",
                     "side": "both",
                     "groupId": "2"
                 },
                 {
-                    "btxId": "91",
+                    "btxId": 91,
                     "name": "Subdermal",
                     "side": "both",
                     "groupId": "2"
                 },
                 {
-                    "btxId": "318",
+                    "btxId": 318,
                     "name": "Subdermal",
                     "side": "both",
                     "groupId": "3"
                 },
                 {
-                    "btxId": "319",
+                    "btxId": 319,
                     "name": "Subdermal",
                     "side": "both",
                     "groupId": "3"
                 },
                 {
-                    "btxId": "320",
+                    "btxId": 320,
                     "name": "Subdermal",
                     "side": "both",
                     "groupId": "4"
                 },
                 {
-                    "btxId": "345",
+                    "btxId": 345,
                     "name": "Subdermal",
                     "side": "both",
                     "groupId": "4"
                 },
                 {
-                    "btxId": "347",
+                    "btxId": 347,
                     "name": "Subdermal",
                     "side": "both",
                     "groupId": "4"
                 },
                 {
-                    "btxId": "349",
+                    "btxId": 349,
                     "name": "Subdermal",
                     "side": "both",
                     "groupId": "4"
                 },
                 {
-                    "btxId": "380",
+                    "btxId": 380,
                     "name": "Subdermal",
                     "side": "both",
                     "groupId": "5"
                 },
                 {
-                    "btxId": "401",
+                    "btxId": 401,
                     "name": "Subdermal",
                     "side": "both",
                     "groupId": "5"
                 },
                 {
-                    "btxId": "600",
+                    "btxId": 600,
                     "name": "Subdermal",
                     "side": "both",
                     "groupId": "6"
                 },
                 {
-                    "btxId": "623",
+                    "btxId": 623,
                     "name": "Subdermal",
                     "side": "both",
                     "groupId": "6"
                 },
                 {
-                    "btxId": "624",
+                    "btxId": 624,
                     "name": "Subdermal",
                     "side": "both",
                     "groupId": "6"
                 },
                 {
-                    "btxId": "627",
+                    "btxId": 627,
                     "name": "Subdermal",
                     "side": "both",
                     "groupId": "6"
                 },
                 {
-                    "btxId": "640",
+                    "btxId": 640,
                     "name": "Subdermal",
                     "side": "both",
                     "groupId": "7"
                 },
                 {
-                    "btxId": "649",
+                    "btxId": 649,
                     "name": "Subdermal",
                     "side": "both",
                     "groupId": "7"
                 },
                 {
-                    "btxId": "650",
+                    "btxId": 650,
                     "name": "Subdermal",
                     "side": "both",
                     "groupId": "7"
                 },
                 {
-                    "btxId": "657",
+                    "btxId": 657,
                     "name": "Subdermal",
                     "side": "both",
                     "groupId": "7"
                 },
                 {
-                    "btxId": "668",
+                    "btxId": 668,
                     "name": "Subdermal",
                     "side": "both",
                     "groupId": "8"
                 },
                 {
-                    "btxId": "671",
+                    "btxId": 671,
                     "name": "Subdermal",
                     "side": "both",
                     "groupId": "8"
@@ -4083,13 +4083,13 @@
             "skipLoad": true,
             "children": [
                 {
-                    "btxId": "339",
+                    "btxId": 339,
                     "name": "Left Transversus Abdominis",
                     "side": "left",
                     "groupId": "4"
                 },
                 {
-                    "btxId": "340",
+                    "btxId": 340,
                     "name": "Right Transversus Abdominis",
                     "side": "right",
                     "groupId": "4"
@@ -4111,25 +4111,25 @@
             "displayName": "Trapezius",
             "children": [
                 {
-                    "btxId": "78",
+                    "btxId": 78,
                     "name": "Left Trapezius",
                     "side": "left",
                     "groupId": "2"
                 },
                 {
-                    "btxId": "79",
+                    "btxId": 79,
                     "name": "Right Trapezius",
                     "side": "right",
                     "groupId": "2"
                 },
                 {
-                    "btxId": "93",
+                    "btxId": 93,
                     "name": "Left Trapezius",
                     "side": "left",
                     "groupId": "2"
                 },
                 {
-                    "btxId": "95",
+                    "btxId": 95,
                     "name": "Right Trapezius",
                     "side": "right",
                     "groupId": "2"
@@ -4152,13 +4152,13 @@
             "skipLoad": true,
             "children": [
                 {
-                    "btxId": "362",
+                    "btxId": 362,
                     "name": "Left Triceps Brachii",
                     "side": "left",
                     "groupId": "4"
                 },
                 {
-                    "btxId": "363",
+                    "btxId": 363,
                     "name": "Right Triceps Brachii",
                     "side": "right",
                     "groupId": "4"
@@ -4181,13 +4181,13 @@
             "skipLoad": true,
             "children": [
                 {
-                    "btxId": "607",
+                    "btxId": 607,
                     "name": "Left Vastus Intermedius",
                     "side": "left",
                     "groupId": "6"
                 },
                 {
-                    "btxId": "608",
+                    "btxId": 608,
                     "name": "Right Vastus Intermedius",
                     "side": "right",
                     "groupId": "6"
@@ -4210,13 +4210,13 @@
             "skipLoad": true,
             "children": [
                 {
-                    "btxId": "609",
+                    "btxId": 609,
                     "name": "Left Vastus Lateralis",
                     "side": "left",
                     "groupId": "6"
                 },
                 {
-                    "btxId": "610",
+                    "btxId": 610,
                     "name": "Right Vastus Lateralis",
                     "side": "right",
                     "groupId": "6"
@@ -4239,13 +4239,13 @@
             "skipLoad": true,
             "children": [
                 {
-                    "btxId": "611",
+                    "btxId": 611,
                     "name": "Left Vastus Medialis",
                     "side": "left",
                     "groupId": "6"
                 },
                 {
-                    "btxId": "612",
+                    "btxId": 612,
                     "name": "Right Vastus Medialis",
                     "side": "right",
                     "groupId": "6"
@@ -4267,25 +4267,25 @@
             "displayName": "Zygomaticus Major",
             "children": [
                 {
-                    "btxId": "23",
+                    "btxId": 23,
                     "name": "Left Zygomaticus Major",
                     "side": "left",
                     "groupId": "1"
                 },
                 {
-                    "btxId": "24",
+                    "btxId": 24,
                     "name": "Right Zygomaticus Major",
                     "side": "right",
                     "groupId": "1"
                 },
                 {
-                    "btxId": "43",
+                    "btxId": 43,
                     "name": "Left Zygomaticus Major",
                     "side": "left",
                     "groupId": "1"
                 },
                 {
-                    "btxId": "57",
+                    "btxId": 57,
                     "name": "Right Zygomaticus Major",
                     "side": "right",
                     "groupId": "1"
